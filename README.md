@@ -49,14 +49,13 @@ const manuel = {
 
 <div align="center">
 
-<img height="165" src="https://github-readme-stats.vercel.app/api?username=manu-brighter&show_icons=true&hide_border=true&bg_color=0d1117&title_color=64ffda&icon_color=64ffda&text_color=8892b0&ring_color=64ffda&include_all_commits=true" />
-<img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=manu-brighter&layout=compact&hide_border=true&bg_color=0d1117&title_color=64ffda&text_color=8892b0&langs_count=6" />
+<img src="https://streak-stats.demolab.com?user=manu-brighter&theme=transparent&hide_border=true&ring=64FFDA&fire=64FFDA&currStreakLabel=64FFDA&sideLabels=8892b0&currStreakNum=ccd6f6&sideNums=ccd6f6&dates=8892b0" />
 
 </div>
 
 <div align="center">
 
-<img src="https://streak-stats.demolab.com?user=manu-brighter&theme=transparent&hide_border=true&ring=64FFDA&fire=64FFDA&currStreakLabel=64FFDA&sideLabels=8892b0&currStreakNum=ccd6f6&sideNums=ccd6f6&dates=8892b0" />
+<img src="https://github-profile-trophy.vercel.app/?username=manu-brighter&theme=onestar&no-frame=true&no-bg=true&margin-w=8&column=4" />
 
 </div>
 
