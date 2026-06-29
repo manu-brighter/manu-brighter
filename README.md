@@ -66,6 +66,7 @@ const manuel = {
 |:---:|---|---|---|
 | 🎨 | [**manuelheller.dev**](https://manuelheller.dev) | Creative portfolio — WebGL fluid simulation, Risograph aesthetics, GLSL shaders | Next.js · Three.js · GSAP |
 | 🎯 | [**joggediballa.ch**](https://joggediballa.ch) | Full-stack club platform — events, members, shot counter | React · tRPC · Drizzle · MySQL |
+| 🤖 | [**full-project-rework**](https://github.com/manu-brighter/full-project-rework) | Claude Code skill — autonomous multi-agent codebase overhaul | Claude Code · Multi-Agent |
 
 </div>
 
