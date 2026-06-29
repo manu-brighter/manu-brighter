@@ -2,7 +2,7 @@
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,40:0f1b35,100:0d2137&height=220&section=header&text=Manuel%20Heller&fontSize=54&fontColor=64ffda&fontAlignY=38&desc=Full%20Stack%20Developer%20%C2%B7%20Craftsman%20%C2%B7%20Vibecoder&descAlignY=56&descColor=8892b0&animation=fadeIn" />
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=18&duration=3000&pause=1200&color=64FFDA&center=true&vCenter=true&width=520&lines=PHP+%C2%B7+Vue.js+%C2%B7+TypeScript+%C2%B7+React;Building+production-grade+apps+from+Switzerland+%F0%9F%87%A8%F0%9F%87%AD;Craft+first+%E2%80%94+always.)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=18&duration=3000&pause=1200&color=64FFDA&center=true&vCenter=true&width=440&lines=PHP+%C2%B7+Vue.js+%C2%B7+TypeScript+%C2%B7+React;Full+Stack+Dev+%C2%B7+Switzerland+%F0%9F%87%A8%F0%9F%87%AD;Craft+first+%E2%80%94+always.)](https://git.io/typing-svg)
 
 </div>
 
@@ -53,11 +53,6 @@ const manuel = {
 
 </div>
 
-<div align="center">
-
-<img src="https://github-profile-trophy.vercel.app/?username=manu-brighter&theme=onestar&no-frame=true&no-bg=true&margin-w=8&column=4" />
-
-</div>
 
 <br>
 
