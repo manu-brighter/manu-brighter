@@ -72,11 +72,11 @@ Some people write bios. I keep a changelog.
 
 ```mermaid
 %%{init: { 'theme': 'base', 'themeVariables': {
-  'git0': '#ff6ba0', 'git1': '#7ce8c4', 'git2': '#ffc474', 'git3': '#b89aff', 'git4': '#3fc39a',
-  'gitBranchLabel0': '#0a0608', 'gitBranchLabel1': '#0a0608', 'gitBranchLabel2': '#0a0608', 'gitBranchLabel3': '#0a0608', 'gitBranchLabel4': '#0a0608',
+  'git0': '#ff6ba0', 'git1': '#3fc39a', 'git2': '#e8983a', 'git3': '#8b6fd8', 'git4': '#8a3157',
+  'gitBranchLabel0': '#f0e8dc', 'gitBranchLabel1': '#f0e8dc', 'gitBranchLabel2': '#f0e8dc', 'gitBranchLabel3': '#f0e8dc', 'gitBranchLabel4': '#f0e8dc',
   'gitInv0': '#ff6ba0',
   'commitLabelColor': '#f0e8dc', 'commitLabelBackground': '#1a0e12',
-  'tagLabelColor': '#0a0608', 'tagLabelBackground': '#7ce8c4', 'tagLabelBorder': '#3fc39a'
+  'tagLabelColor': '#f0e8dc', 'tagLabelBackground': '#1a0e12', 'tagLabelBorder': '#ff6ba0'
 }, 'gitGraph': { 'mainBranchName': 'life', 'rotateCommitLabel': true } } }%%
 gitGraph
     commit id: "2001 · feat : init" tag: "v1.0"
