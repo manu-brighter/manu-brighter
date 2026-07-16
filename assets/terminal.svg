@@ -1,18 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 250" width="760" height="250" role="img" aria-label="Animated terminal: whoami — Manuel Heller, Full Stack Developer, Switzerland">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 250" width="760" height="250" role="img" aria-label="Animated terminal: whoami, Manuel Heller, Full Stack Developer, Switzerland">
   <style>
     text {
       font-family: 'Cascadia Code', ui-monospace, 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
       font-size: 14px;
     }
-    .t { fill: #ccd6f6; }
-    .p { fill: #64ffda; }
-    .o { fill: #8892b0; }
-    .dir { fill: #64ffda; opacity: 0.85; }
-    .str { fill: #e3b341; }
-    .ok { fill: #3fb950; }
-    .title { fill: #8892b0; font-size: 12px; }
-    .curtain { fill: #0d1117; transform-box: fill-box; transform-origin: 100% 50%; }
-    .cur { fill: #64ffda; animation: blink 1.12s steps(1, end) infinite; }
+    .t { fill: #f0e8dc; }
+    .p { fill: #ffd700; }
+    .o { fill: #a8988f; }
+    .dir { fill: #ffc474; }
+    .str { fill: #ff6b35; }
+    .ok { fill: #7ce8c4; }
+    .title { fill: #a8988f; font-size: 12px; }
+    .curtain { fill: #100b08; transform-box: fill-box; transform-origin: 100% 50%; }
+    .cur { fill: #ffd700; animation: blink 1.12s steps(1, end) infinite; }
     #screen { animation: clear 16s linear infinite; }
     .l1 { animation: r1 16s linear infinite; }
     .c1 { animation: t1 16s linear infinite; }
@@ -44,15 +44,15 @@
 
   <clipPath id="win"><rect x="1.5" y="1.5" width="757" height="247" rx="12"/></clipPath>
 
-  <rect x="1.5" y="1.5" width="757" height="247" rx="12" fill="#0d1117" stroke="#223055" stroke-width="1.5"/>
+  <rect x="1.5" y="1.5" width="757" height="247" rx="12" fill="#100b08" stroke="#2a1d16" stroke-width="1.5"/>
   <g clip-path="url(#win)">
-    <rect x="0" y="0" width="760" height="35" fill="#0f1b35"/>
-    <line x1="0" y1="35.5" x2="760" y2="35.5" stroke="#223055" stroke-width="1"/>
+    <rect x="0" y="0" width="760" height="35" fill="#1a110d"/>
+    <line x1="0" y1="35.5" x2="760" y2="35.5" stroke="#2a1d16" stroke-width="1"/>
   </g>
   <circle cx="24" cy="17.5" r="6" fill="#ff5f56"/>
   <circle cx="44" cy="17.5" r="6" fill="#ffbd2e"/>
   <circle cx="64" cy="17.5" r="6" fill="#27c93f"/>
-  <text x="380" y="22" text-anchor="middle" class="title">manuel@brighter: ~ — zsh</text>
+  <text x="380" y="22" text-anchor="middle" class="title">manuel@brighter: ~</text>
 
   <g id="screen">
     <g class="l1">
@@ -60,7 +60,7 @@
       <rect class="curtain c1" x="26" y="50" width="71" height="18"/>
     </g>
     <g class="l2">
-      <text y="89"><tspan x="28" class="o" textLength="495.6" lengthAdjust="spacingAndGlyphs">Manuel Heller — Full Stack Developer @ zvoove · Switzerland</tspan></text>
+      <text y="89"><tspan x="28" class="o" textLength="495.6" lengthAdjust="spacingAndGlyphs">Manuel Heller · Full Stack Developer @ zvoove · Switzerland</tspan></text>
     </g>
     <g class="l3">
       <text y="114"><tspan x="28" class="p" textLength="8.4" lengthAdjust="spacingAndGlyphs">$</tspan><tspan x="44.8" class="t" textLength="92.4" lengthAdjust="spacingAndGlyphs">ls ~/skills</tspan></text>
@@ -74,7 +74,7 @@
       <rect class="curtain c5" x="26" y="150" width="331" height="18"/>
     </g>
     <g class="l6">
-      <text y="189"><tspan x="28" class="ok" textLength="8.4" lengthAdjust="spacingAndGlyphs">✔</tspan><tspan x="44.8" class="o" textLength="319.2" lengthAdjust="spacingAndGlyphs">works on my machine — deploying anyway</tspan></text>
+      <text y="189"><tspan x="28" class="ok" textLength="8.4" lengthAdjust="spacingAndGlyphs">✔</tspan><tspan x="44.8" class="o" textLength="310.8" lengthAdjust="spacingAndGlyphs">works on my machine, deploying anyway</tspan></text>
     </g>
     <g class="l7">
       <text y="214"><tspan x="28" class="p" textLength="8.4" lengthAdjust="spacingAndGlyphs">$</tspan></text>

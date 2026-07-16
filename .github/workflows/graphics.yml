@@ -18,13 +18,14 @@ jobs:
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
-            dist/github-snake.svg
-            dist/github-snake-dark.svg?palette=github-dark
+            dist/github-snake.svg?color_snake=#ff6b35&color_dots=#f5ead2,#ffdf80,#e9b613,#a9820c,#6b5306
+            dist/github-snake-dark.svg?color_snake=#ff6b35&color_dots=#241a10,#4d3a12,#8a680e,#c4a20a,#ffd700
 
       - uses: yoshi389111/github-profile-3d-contrib@v0.9.3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           USERNAME: ${{ github.repository_owner }}
+          SETTING_JSON: conf/3d-settings.json
 
       - name: Collect SVGs
         run: sudo cp profile-3d-contrib/*.svg dist/
