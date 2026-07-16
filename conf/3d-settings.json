@@ -3,15 +3,15 @@
   "fileName": "profile-riso.svg",
   "backgroundColor": "#0a0608",
   "foregroundColor": "#f0e8dc",
-  "strongColor": "#ff6ba0",
+  "strongColor": "#b89aff",
   "weakColor": "#b9a99e",
   "radarColor": "#7ce8c4",
   "growingAnimation": true,
   "contribColors": [
-    "#241318",
-    "#4d2033",
-    "#8a3157",
-    "#c44d7e",
-    "#ff6ba0"
+    "#1d1526",
+    "#3a2a52",
+    "#614492",
+    "#8b6fd8",
+    "#b89aff"
   ]
 }

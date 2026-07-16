@@ -18,14 +18,29 @@ jobs:
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
-            dist/github-snake.svg?color_snake=#3fc39a&color_dots=#fbe3ed,#ffb7d2,#ff87b4,#e0447e,#a82e5c
-            dist/github-snake-dark.svg?color_snake=#7ce8c4&color_dots=#241318,#4d2033,#8a3157,#c44d7e,#ff6ba0
+            dist/github-snake.svg?color_snake=#e0447e&color_dots=#f9ecd9,#f7d9a4,#e8b467,#c98a2e,#8f5f16
+            dist/github-snake-dark.svg?color_snake=#ff6ba0&color_dots=#2a2114,#5c4526,#9c713a,#d99e54,#ffc474
 
       - uses: yoshi389111/github-profile-3d-contrib@v0.9.3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           USERNAME: ${{ github.repository_owner }}
           SETTING_JSON: conf/3d-settings.json
+
+      # The language pie uses GitHub's fixed linguist colors, remap them to the profile palette
+      - name: Recolor language pie
+        run: |
+          sed -i \
+            -e 's/#3178c6/#b89aff/gi' \
+            -e 's/#41b883/#7ce8c4/gi' \
+            -e 's/#f1e05a/#ffc474/gi' \
+            -e 's/#4f5d95/#8b6fd8/gi' \
+            -e 's/#c6538c/#ff6ba0/gi' \
+            -e 's/#e34c26/#e0447e/gi' \
+            -e 's/#563d7c/#f0e8dc/gi' \
+            -e 's/#663399/#f0e8dc/gi' \
+            -e 's/#444444/#4d4046/gi' \
+            profile-3d-contrib/*.svg
 
       - name: Collect SVGs
         run: sudo cp profile-3d-contrib/*.svg dist/
