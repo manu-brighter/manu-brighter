@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 28" width="210" height="28" role="img" aria-label="portfolio: manuelheller.dev">
+  <rect width="210" height="28" rx="4" fill="#1a0e12"/>
+  <path d="M81,0 H206 Q210,0 210,4 V24 Q210,28 206,28 H81 Z" fill="#e0447e"/>
+  <g font-family="'Cascadia Code', ui-monospace, Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="11" font-weight="700" fill="#f0e8dc" text-anchor="middle">
+    <text x="40.5" y="18.5" textLength="61.2" lengthAdjust="spacingAndGlyphs">PORTFOLIO</text>
+    <text x="145.5" y="18.5" textLength="108.8" lengthAdjust="spacingAndGlyphs">MANUELHELLER.DEV</text>
+  </g>
+</svg>

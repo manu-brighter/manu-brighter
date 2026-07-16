@@ -18,8 +18,8 @@ jobs:
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
-            dist/github-snake.svg?color_snake=#e0447e&color_dots=#f9ecd9,#f7d9a4,#e8b467,#c98a2e,#8f5f16
-            dist/github-snake-dark.svg?color_snake=#ff6ba0&color_dots=#2a2114,#5c4526,#9c713a,#d99e54,#ffc474
+            dist/github-snake.svg?color_snake=#3fc39a&color_dots=#ece5f8,#cdb9f2,#a988e8,#8b6fd8,#5d4494
+            dist/github-snake-dark.svg?color_snake=#7ce8c4&color_dots=#1d1526,#3a2a52,#614492,#8b6fd8,#b89aff
 
       - uses: yoshi389111/github-profile-3d-contrib@v0.9.3
         env:
@@ -39,7 +39,7 @@ jobs:
             -e 's/#e34c26/#e0447e/gi' \
             -e 's/#563d7c/#f0e8dc/gi' \
             -e 's/#663399/#f0e8dc/gi' \
-            -e 's/#444444/#4d4046/gi' \
+            -e 's/#444444/#e8983a/gi' \
             profile-3d-contrib/*.svg
 
       - name: Collect SVGs

@@ -6,9 +6,9 @@
 
 <br><br>
 
-[![Portfolio](https://img.shields.io/badge/portfolio-manuelheller.dev-ff6ba0?style=for-the-badge&labelColor=1a0e12)](https://manuelheller.dev)&nbsp;
-[![Photography](https://img.shields.io/badge/photography-myportfolio.com-3fc39a?style=for-the-badge&labelColor=1a0e12)](https://manuelheller.myportfolio.com)&nbsp;
-[![Jogge di Balla](https://img.shields.io/badge/club-joggediballa.ch-b89aff?style=for-the-badge&labelColor=1a0e12)](https://joggediballa.ch)
+<a href="https://manuelheller.dev"><img src="assets/badge-portfolio.svg" alt="portfolio: manuelheller.dev" height="28" /></a>&nbsp;
+<a href="https://manuelheller.myportfolio.com"><img src="assets/badge-photography.svg" alt="photography: myportfolio.com" height="28" /></a>&nbsp;
+<a href="https://joggediballa.ch"><img src="assets/badge-club.svg" alt="club: joggediballa.ch" height="28" /></a>
 
 </div>
 
@@ -33,10 +33,10 @@
 <img src="https://skillicons.dev/icons?i=ts,react,nextjs,threejs&theme=dark" />
 <br><br>
 <sub><b>CREATIVE</b></sub><br>
-<img src="https://img.shields.io/badge/Lightroom-1a0e12?style=for-the-badge" alt="Lightroom" />&nbsp;<img src="https://img.shields.io/badge/Photoshop-1a0e12?style=for-the-badge" alt="Photoshop" />&nbsp;<img src="https://img.shields.io/badge/DaVinci%20Resolve-1a0e12?style=for-the-badge" alt="DaVinci Resolve" />
+<img src="assets/chips-creative.svg" alt="Lightroom, Photoshop, DaVinci Resolve" height="28" />
 <br><br>
 <sub><b>AI&nbsp;WORKFLOW</b></sub><br>
-<img src="https://img.shields.io/badge/Claude%20Code-1a0e12?style=for-the-badge&logo=claude&logoColor=ff6ba0" alt="Claude Code" />&nbsp;<img src="https://img.shields.io/badge/Cursor-1a0e12?style=for-the-badge" alt="Cursor" />&nbsp;<img src="https://img.shields.io/badge/Prompt%20Engineering-1a0e12?style=for-the-badge" alt="Prompt Engineering" />&nbsp;<img src="https://img.shields.io/badge/Custom%20Agents%20%2B%20Skills-1a0e12?style=for-the-badge" alt="Custom Agents and Skills" />&nbsp;<img src="https://img.shields.io/badge/MCP-1a0e12?style=for-the-badge" alt="MCP" />
+<img src="assets/chips-ai.svg" alt="Claude Code, Prompt Engineering, Custom Agents and Skills, MCP" height="28" />
 
 </div>
 
@@ -50,15 +50,15 @@
 
 | &nbsp; | Project | Description | Stack |
 |:---:|---|---|---|
-| 🎨 | [**manuelheller.dev**](https://manuelheller.dev) | Creative developer portfolio: WebGL fluid simulation, Risograph aesthetics, GLSL shaders | <img src="https://img.shields.io/badge/Next.js-ff6ba0?style=flat-square" alt="Next.js" /> <img src="https://img.shields.io/badge/Three.js-b89aff?style=flat-square" alt="Three.js" /> <img src="https://img.shields.io/badge/GSAP-ff6ba0?style=flat-square" alt="GSAP" /> |
-| 📷 | [**photography**](https://manuelheller.myportfolio.com) | Wildlife, cars and events: Costa Rica, Thailand, The ICE St. Moritz | <img src="https://img.shields.io/badge/Lightroom-b89aff?style=flat-square" alt="Lightroom" /> <img src="https://img.shields.io/badge/Photoshop-ff6ba0?style=flat-square" alt="Photoshop" /> |
-| 🎯 | [**joggediballa.ch**](https://joggediballa.ch) | Club platform: events, members, permissions, sponsors, live Twitch overlay | <img src="https://img.shields.io/badge/React-ff6ba0?style=flat-square" alt="React" /> <img src="https://img.shields.io/badge/tRPC-b89aff?style=flat-square" alt="tRPC" /> <img src="https://img.shields.io/badge/Drizzle-ff6ba0?style=flat-square" alt="Drizzle" /> <img src="https://img.shields.io/badge/MySQL-b89aff?style=flat-square" alt="MySQL" /> |
-| 🥃 | [**shot-counter**](https://github.com/manu-brighter/shot-counter) | Party scoreboard: live SSE sync, QR join by phone, desktop app | <img src="https://img.shields.io/badge/Vue%203-b89aff?style=flat-square" alt="Vue 3" /> <img src="https://img.shields.io/badge/Express%205-ff6ba0?style=flat-square" alt="Express 5" /> <img src="https://img.shields.io/badge/SQLite-b89aff?style=flat-square" alt="SQLite" /> <img src="https://img.shields.io/badge/Electron-ff6ba0?style=flat-square" alt="Electron" /> |
-| 🤖 | [**full-project-rework**](https://github.com/manu-brighter/full-project-rework) | Claude Code skill for autonomous multi-agent codebase overhauls | <img src="https://img.shields.io/badge/Claude%20Code-ff6ba0?style=flat-square" alt="Claude Code" /> <img src="https://img.shields.io/badge/Multi--Agent-b89aff?style=flat-square" alt="Multi-Agent" /> |
+| 🎨 | [**manuelheller.dev**](https://manuelheller.dev) | Creative developer portfolio: WebGL fluid simulation, Risograph aesthetics, GLSL shaders | <img src="https://img.shields.io/badge/Next.js-e0447e?style=flat-square" alt="Next.js" /> <img src="https://img.shields.io/badge/Three.js-8b6fd8?style=flat-square" alt="Three.js" /> <img src="https://img.shields.io/badge/GSAP-e0447e?style=flat-square" alt="GSAP" /> |
+| 📷 | [**photography**](https://manuelheller.myportfolio.com) | Wildlife, cars and events: Costa Rica, Thailand, The ICE St. Moritz | <img src="https://img.shields.io/badge/Lightroom-8b6fd8?style=flat-square" alt="Lightroom" /> <img src="https://img.shields.io/badge/Photoshop-e0447e?style=flat-square" alt="Photoshop" /> |
+| 🎯 | [**joggediballa.ch**](https://joggediballa.ch) | Club platform: events, members, permissions, sponsors, live Twitch overlay | <img src="https://img.shields.io/badge/React-e0447e?style=flat-square" alt="React" /> <img src="https://img.shields.io/badge/tRPC-8b6fd8?style=flat-square" alt="tRPC" /> <img src="https://img.shields.io/badge/Drizzle-e0447e?style=flat-square" alt="Drizzle" /> <img src="https://img.shields.io/badge/MySQL-8b6fd8?style=flat-square" alt="MySQL" /> |
+| 🥃 | [**shot-counter**](https://github.com/manu-brighter/shot-counter) | Party scoreboard: live SSE sync, QR join by phone, desktop app | <img src="https://img.shields.io/badge/Vue%203-8b6fd8?style=flat-square" alt="Vue 3" /> <img src="https://img.shields.io/badge/Express%205-e0447e?style=flat-square" alt="Express 5" /> <img src="https://img.shields.io/badge/SQLite-8b6fd8?style=flat-square" alt="SQLite" /> <img src="https://img.shields.io/badge/Electron-e0447e?style=flat-square" alt="Electron" /> |
+| 🤖 | [**full-project-rework**](https://github.com/manu-brighter/full-project-rework) | Claude Code skill for autonomous multi-agent codebase overhauls | <img src="https://img.shields.io/badge/Claude%20Code-e0447e?style=flat-square" alt="Claude Code" /> <img src="https://img.shields.io/badge/Multi--Agent-8b6fd8?style=flat-square" alt="Multi-Agent" /> |
 
 <br>
 
-<a href="https://github.com/manu-brighter/shot-counter/releases/latest"><img src="https://img.shields.io/github/v/release/manu-brighter/shot-counter?style=for-the-badge&label=shot-counter%20download&labelColor=1a0e12&color=b89aff" alt="download the latest shot-counter release" /></a>
+<a href="https://github.com/manu-brighter/shot-counter/releases/latest"><img src="assets/badge-download.svg" alt="download the latest shot-counter release" height="28" /></a>
 
 </div>
 
@@ -72,7 +72,7 @@ Some people write bios. I keep a changelog.
 
 ```mermaid
 %%{init: { 'theme': 'base', 'themeVariables': {
-  'git0': '#ff6ba0', 'git1': '#3fc39a', 'git2': '#e8983a', 'git3': '#8b6fd8', 'git4': '#8a3157',
+  'git0': '#ff6ba0', 'git1': '#3fc39a', 'git2': '#8a3157', 'git3': '#e8983a', 'git4': '#8b6fd8',
   'gitBranchLabel0': '#f0e8dc', 'gitBranchLabel1': '#f0e8dc', 'gitBranchLabel2': '#f0e8dc', 'gitBranchLabel3': '#f0e8dc', 'gitBranchLabel4': '#f0e8dc',
   'gitInv0': '#ff6ba0',
   'commitLabelColor': '#f0e8dc', 'commitLabelBackground': '#1a0e12',
@@ -82,33 +82,48 @@ gitGraph
     commit id: "2001 · feat : init" tag: "v1.0"
     branch career
     commit id: "2016 · feat / novartis : IT apprenticeship"
-    commit id: "2020 · feat / efz : Betriebsinformatiker"
+    checkout life
+    branch garage
+    commit id: "2019 · feat / garage : KTM Duke 390"
+    checkout career
+    commit id: "2020 · feat / efz : Betriebsinformatiker" tag: "v5.2"
     commit id: "2021 · feat / zvoove : Full Stack Dev"
     checkout life
-    merge career
     branch club
     commit id: "2022 · feat / jogge di balla : co-founder, vice president"
     checkout life
-    merge club
     commit id: "2023 · hotfix / life : motorcycle accident"
     commit id: "2023 · fix / recovery : came back stronger"
-    branch photo
-    commit id: "2023 · feat / photo : first camera"
-    checkout life
-    branch garage
+    checkout garage
+    commit id: "2023 · refactor / garage : two wheels to four"
     commit id: "2023 · feat / garage : Audi TT RS"
-    checkout photo
-    commit id: "2024 · feat / wildlife : Costa Rica solo"
+    checkout career
+    commit id: "2023 · feat / zvoove : Cypress testing lead"
+    checkout life
+    branch photo
+    commit id: "2023 · feat / photo : first camera" tag: "va7.IV"
     checkout garage
     commit id: "2024 · feat / garage : Audi S5 project"
     checkout photo
+    commit id: "2024 · feat / wildlife : Costa Rica solo"
+    checkout career
+    commit id: "2025 · feat / zvoove : interfaces and API main"
+    commit id: "2025 · feat / ai : specializing in AI coding"
+    checkout photo
     commit id: "2025 · feat / cars : The ICE, Koenigsegg shoot"
+    checkout club
+    commit id: "2026 · feat / jogge di balla : club platform deployed"
+    commit id: "2026 · feat / jogge di balla : 1000 Instagram followers"
+    checkout career
+    commit id: "2026 · feat / zvoove : joined the next team"
     checkout garage
     commit id: "2026 · feat / power : supercharger" tag: "v440hp"
     checkout life
+    merge career
+    merge club
     merge photo
     merge garage
-    commit id: "2026 · feat / ai : vibecoding apps"
+    commit id: "2026 · feat / ship : publishing own apps and websites"
     commit id: "now · chore : this README" type: HIGHLIGHT
 ```
 

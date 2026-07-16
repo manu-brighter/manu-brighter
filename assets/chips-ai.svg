@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 464 28" width="464" height="28" role="img" aria-label="Claude Code, Prompt Engineering, Custom Agents and Skills, MCP">
+  <g fill="#1a0e12" stroke="#2a1a22" stroke-width="1">
+    <rect x="0.5" y="0.5" width="94" height="27" rx="4"/>
+    <rect x="103.5" y="0.5" width="141" height="27" rx="4"/>
+    <rect x="253.5" y="0.5" width="162" height="27" rx="4"/>
+    <rect x="424.5" y="0.5" width="39" height="27" rx="4"/>
+  </g>
+  <g font-family="'Cascadia Code', ui-monospace, Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="11" font-weight="700" fill="#f0e8dc" text-anchor="middle">
+    <text x="47.5" y="18.5" textLength="74.8" lengthAdjust="spacingAndGlyphs">CLAUDE CODE</text>
+    <text x="174" y="18.5" textLength="122.4" lengthAdjust="spacingAndGlyphs">PROMPT ENGINEERING</text>
+    <text x="334.5" y="18.5" textLength="142.8" lengthAdjust="spacingAndGlyphs">CUSTOM AGENTS + SKILLS</text>
+    <text x="444" y="18.5" textLength="20.4" lengthAdjust="spacingAndGlyphs">MCP</text>
+  </g>
+</svg>
