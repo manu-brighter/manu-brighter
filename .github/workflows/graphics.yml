@@ -27,7 +27,7 @@ jobs:
           USERNAME: ${{ github.repository_owner }}
 
       - name: Collect SVGs
-        run: cp profile-3d-contrib/*.svg dist/
+        run: sudo cp profile-3d-contrib/*.svg dist/
 
       - uses: crazy-max/ghaction-github-pages@v3.1.0
         with:
