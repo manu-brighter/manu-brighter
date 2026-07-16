@@ -1,14 +1,14 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0a0608,35:1a0e12,70:b8860b,100:ffd700&height=220&section=header&text=Manuel%20Heller&fontSize=54&fontColor=ffd700&fontAlignY=38&desc=Full%20Stack%20Developer%20%C2%B7%20Craftsman%20%C2%B7%20Vibecoder&descAlignY=56&descColor=f0e8dc&animation=fadeIn" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0a0608,40:1a0e12,75:2a1420,100:3d1b2e&height=220&section=header&text=Manuel%20Heller&fontSize=54&fontColor=ff6ba0&fontAlignY=38&desc=Full%20Stack%20Developer%20%C2%B7%20Craftsman%20%C2%B7%20Vibecoder&descAlignY=56&descColor=f0e8dc&animation=fadeIn" />
 
 <img src="assets/terminal.svg" alt="animated terminal: whoami, Manuel Heller, Full Stack Developer, Switzerland" width="760" />
 
 <br><br>
 
-[![Portfolio](https://img.shields.io/badge/portfolio-manuelheller.dev-ffd700?style=for-the-badge&labelColor=1a110d)](https://manuelheller.dev)&nbsp;
-[![Photography](https://img.shields.io/badge/photography-myportfolio.com-ffc474?style=for-the-badge&labelColor=1a110d)](https://manuelheller.myportfolio.com)&nbsp;
-[![Jogge di Balla](https://img.shields.io/badge/club-joggediballa.ch-ff6ba0?style=for-the-badge&labelColor=1a110d)](https://joggediballa.ch)
+[![Portfolio](https://img.shields.io/badge/portfolio-manuelheller.dev-ff6ba0?style=for-the-badge&labelColor=1a0e12)](https://manuelheller.dev)&nbsp;
+[![Photography](https://img.shields.io/badge/photography-myportfolio.com-7ce8c4?style=for-the-badge&labelColor=1a0e12)](https://manuelheller.myportfolio.com)&nbsp;
+[![Jogge di Balla](https://img.shields.io/badge/club-joggediballa.ch-b89aff?style=for-the-badge&labelColor=1a0e12)](https://joggediballa.ch)
 
 </div>
 
@@ -40,13 +40,13 @@
 
 <sub><b>CREATIVE</b></sub>
 
-<img src="https://img.shields.io/badge/Lightroom-1a110d?style=for-the-badge" alt="Lightroom" />&nbsp;<img src="https://img.shields.io/badge/Photoshop-1a110d?style=for-the-badge" alt="Photoshop" />&nbsp;<img src="https://img.shields.io/badge/DaVinci%20Resolve-1a110d?style=for-the-badge" alt="DaVinci Resolve" />&nbsp;<img src="https://img.shields.io/badge/Canva-1a110d?style=for-the-badge" alt="Canva" />
+<img src="https://img.shields.io/badge/Lightroom-1a0e12?style=for-the-badge" alt="Lightroom" />&nbsp;<img src="https://img.shields.io/badge/Photoshop-1a0e12?style=for-the-badge" alt="Photoshop" />&nbsp;<img src="https://img.shields.io/badge/DaVinci%20Resolve-1a0e12?style=for-the-badge" alt="DaVinci Resolve" />&nbsp;<img src="https://img.shields.io/badge/Canva-1a0e12?style=for-the-badge" alt="Canva" />
 
 <br><br>
 
 <sub><b>AI&nbsp;WORKFLOW</b></sub>
 
-<img src="https://img.shields.io/badge/Claude%20Code-1a110d?style=for-the-badge&logo=claude&logoColor=ffd700" alt="Claude Code" />&nbsp;<img src="https://img.shields.io/badge/Cursor-1a110d?style=for-the-badge" alt="Cursor" />
+<img src="https://img.shields.io/badge/Claude%20Code-1a0e12?style=for-the-badge&logo=claude&logoColor=ff6ba0" alt="Claude Code" />&nbsp;<img src="https://img.shields.io/badge/Cursor-1a0e12?style=for-the-badge" alt="Cursor" />
 
 </div>
 
@@ -68,7 +68,7 @@
 
 <br>
 
-<a href="https://github.com/manu-brighter/shot-counter/releases/latest"><img src="https://img.shields.io/github/v/release/manu-brighter/shot-counter?style=for-the-badge&label=shot--counter%20download&labelColor=1a110d&color=ffd700" alt="download the latest shot-counter release" /></a>
+<a href="https://github.com/manu-brighter/shot-counter/releases/latest"><img src="https://img.shields.io/github/v/release/manu-brighter/shot-counter?style=for-the-badge&label=shot--counter%20download&labelColor=1a0e12&color=ff6ba0" alt="download the latest shot-counter release" /></a>
 
 </div>
 
@@ -82,11 +82,11 @@ Some people write bios. I keep a changelog.
 
 ```mermaid
 %%{init: { 'theme': 'base', 'themeVariables': {
-  'git0': '#ffd700', 'git1': '#ff6b35', 'git2': '#ff6ba0', 'git3': '#ffc474', 'git4': '#b89aff',
+  'git0': '#e0447e', 'git1': '#7ce8c4', 'git2': '#ff6ba0', 'git3': '#ffc474', 'git4': '#b89aff',
   'gitBranchLabel0': '#0a0608', 'gitBranchLabel1': '#0a0608', 'gitBranchLabel2': '#0a0608', 'gitBranchLabel3': '#0a0608', 'gitBranchLabel4': '#0a0608',
-  'gitInv0': '#ffd700',
-  'commitLabelColor': '#f0e8dc', 'commitLabelBackground': '#1a110d',
-  'tagLabelColor': '#0a0608', 'tagLabelBackground': '#ffd700', 'tagLabelBorder': '#b8860b'
+  'gitInv0': '#e0447e',
+  'commitLabelColor': '#f0e8dc', 'commitLabelBackground': '#1a0e12',
+  'tagLabelColor': '#0a0608', 'tagLabelBackground': '#ff6ba0', 'tagLabelBorder': '#e0447e'
 }, 'gitGraph': { 'mainBranchName': 'life' } } }%%
 gitGraph TB:
     commit id: "feat / life : init" tag: "2001"
@@ -127,14 +127,14 @@ gitGraph TB:
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com?user=manu-brighter&theme=transparent&hide_border=true&ring=FFD700&fire=FF6B35&currStreakLabel=FFD700&sideLabels=A8988F&currStreakNum=F0E8DC&sideNums=F0E8DC&dates=A8988F" />
-  <source media="(prefers-color-scheme: light)" srcset="https://streak-stats.demolab.com?user=manu-brighter&theme=transparent&hide_border=true&ring=FFD700&fire=FF6B35&currStreakLabel=B8860B&sideLabels=8A7A6A&currStreakNum=1A110D&sideNums=1A110D&dates=8A7A6A" />
-  <img alt="GitHub streak stats" src="https://streak-stats.demolab.com?user=manu-brighter&theme=transparent&hide_border=true&ring=FFD700&fire=FF6B35&currStreakLabel=FFD700&sideLabels=A8988F&currStreakNum=F0E8DC&sideNums=F0E8DC&dates=A8988F" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com?user=manu-brighter&theme=transparent&hide_border=true&ring=FF6BA0&fire=FFC474&currStreakLabel=FF6BA0&sideLabels=B9A99E&currStreakNum=F0E8DC&sideNums=F0E8DC&dates=B9A99E" />
+  <source media="(prefers-color-scheme: light)" srcset="https://streak-stats.demolab.com?user=manu-brighter&theme=transparent&hide_border=true&ring=FF6BA0&fire=E0447E&currStreakLabel=E0447E&sideLabels=8A7A72&currStreakNum=1A0E12&sideNums=1A0E12&dates=8A7A72" />
+  <img alt="GitHub streak stats" src="https://streak-stats.demolab.com?user=manu-brighter&theme=transparent&hide_border=true&ring=FF6BA0&fire=FFC474&currStreakLabel=FF6BA0&sideLabels=B9A99E&currStreakNum=F0E8DC&sideNums=F0E8DC&dates=B9A99E" />
 </picture>
 
 <br><br>
 
-<img src="https://raw.githubusercontent.com/manu-brighter/manu-brighter/output/profile-gold.svg" alt="3D contribution graph" width="100%" />
+<img src="https://raw.githubusercontent.com/manu-brighter/manu-brighter/output/profile-riso.svg" alt="3D contribution graph" width="100%" />
 
 </div>
 
@@ -154,4 +154,4 @@ gitGraph TB:
 
 </div>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:ffd700,30:b8860b,65:1a0e12,100:0a0608&height=100&section=footer" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:3d1b2e,45:1a0e12,100:0a0608&height=100&section=footer" />
