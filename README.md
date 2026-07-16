@@ -84,6 +84,7 @@ Some people write bios. I keep a changelog.
 %%{init: { 'theme': 'base', 'themeVariables': {
   'git0': '#ffd700', 'git1': '#ff6b35', 'git2': '#ff6ba0', 'git3': '#ffc474', 'git4': '#b89aff',
   'gitBranchLabel0': '#0a0608', 'gitBranchLabel1': '#0a0608', 'gitBranchLabel2': '#0a0608', 'gitBranchLabel3': '#0a0608', 'gitBranchLabel4': '#0a0608',
+  'gitInv0': '#ffd700',
   'commitLabelColor': '#f0e8dc', 'commitLabelBackground': '#1a110d',
   'tagLabelColor': '#0a0608', 'tagLabelBackground': '#ffd700', 'tagLabelBorder': '#b8860b'
 }, 'gitGraph': { 'mainBranchName': 'life' } } }%%
@@ -125,7 +126,11 @@ gitGraph TB:
 
 <div align="center">
 
-<img src="https://streak-stats.demolab.com?user=manu-brighter&theme=transparent&hide_border=true&ring=FFD700&fire=FF6B35&currStreakLabel=FFD700&sideLabels=A8988F&currStreakNum=F0E8DC&sideNums=F0E8DC&dates=A8988F" />
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com?user=manu-brighter&theme=transparent&hide_border=true&ring=FFD700&fire=FF6B35&currStreakLabel=FFD700&sideLabels=A8988F&currStreakNum=F0E8DC&sideNums=F0E8DC&dates=A8988F" />
+  <source media="(prefers-color-scheme: light)" srcset="https://streak-stats.demolab.com?user=manu-brighter&theme=transparent&hide_border=true&ring=FFD700&fire=FF6B35&currStreakLabel=B8860B&sideLabels=8A7A6A&currStreakNum=1A110D&sideNums=1A110D&dates=8A7A6A" />
+  <img alt="GitHub streak stats" src="https://streak-stats.demolab.com?user=manu-brighter&theme=transparent&hide_border=true&ring=FFD700&fire=FF6B35&currStreakLabel=FFD700&sideLabels=A8988F&currStreakNum=F0E8DC&sideNums=F0E8DC&dates=A8988F" />
+</picture>
 
 <br><br>
 
