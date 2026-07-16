@@ -21,21 +21,21 @@
 
 <img src="assets/divider.svg" width="100%" alt="" />
 
-## Tech Stack
+<picture><source media="(prefers-color-scheme: light)" srcset="assets/text/h-tech-stack-light.svg" /><img src="assets/text/h-tech-stack.svg" alt="Tech Stack" /></picture>
 
 <div align="center">
 
-<sub><b>DAILY&nbsp;DRIVER</b></sub><br>
+<picture><source media="(prefers-color-scheme: light)" srcset="assets/text/t-daily-driver-light.svg" /><img src="assets/text/t-daily-driver.svg" alt="Daily Driver" /></picture><br>
 <img src="https://skillicons.dev/icons?i=php,vue,js,html,css,mysql,tailwind,vite&theme=dark" /><br>
 <img src="https://skillicons.dev/icons?i=cypress,docker,git,gitlab,nginx,linux,bash,powershell&theme=dark" />
 <br><br>
-<sub><b>VIBECODED&nbsp;(AI-ASSISTED)</b></sub><br>
+<picture><source media="(prefers-color-scheme: light)" srcset="assets/text/t-vibecoded-light.svg" /><img src="assets/text/t-vibecoded.svg" alt="Vibecoded (AI-assisted)" /></picture><br>
 <img src="https://skillicons.dev/icons?i=ts,react,nextjs,threejs&theme=dark" />
 <br><br>
-<sub><b>CREATIVE</b></sub><br>
+<picture><source media="(prefers-color-scheme: light)" srcset="assets/text/t-creative-light.svg" /><img src="assets/text/t-creative.svg" alt="Creative" /></picture><br>
 <img src="assets/chips-creative.svg" alt="Lightroom, Photoshop, DaVinci Resolve" height="28" />
 <br><br>
-<sub><b>AI&nbsp;WORKFLOW</b></sub><br>
+<picture><source media="(prefers-color-scheme: light)" srcset="assets/text/t-ai-workflow-light.svg" /><img src="assets/text/t-ai-workflow.svg" alt="AI Workflow" /></picture><br>
 <img src="assets/chips-ai.svg" alt="Claude Code, Prompt Engineering, Custom Agents and Skills, MCP" height="28" />
 
 </div>
@@ -44,7 +44,7 @@
 
 <img src="assets/divider.svg" width="100%" alt="" />
 
-## Projects
+<picture><source media="(prefers-color-scheme: light)" srcset="assets/text/h-projects-light.svg" /><img src="assets/text/h-projects.svg" alt="Projects" /></picture>
 
 <div align="center">
 
@@ -66,16 +66,16 @@
 
 <img src="assets/divider.svg" width="100%" alt="" />
 
-## Life, versioned
+<picture><source media="(prefers-color-scheme: light)" srcset="assets/text/h-life-versioned-light.svg" /><img src="assets/text/h-life-versioned.svg" alt="Life, versioned" /></picture>
 
-Some people write bios. I keep a changelog.
+<picture><source media="(prefers-color-scheme: light)" srcset="assets/text/l-changelog-light.svg" /><img src="assets/text/l-changelog.svg" alt="Some people write bios. I keep a changelog." /></picture>
 
 ```mermaid
 %%{init: { 'theme': 'base', 'themeVariables': {
   'git0': '#ff6ba0', 'git1': '#3fc39a', 'git2': '#8a3157', 'git3': '#e8983a', 'git4': '#8b6fd8',
   'gitBranchLabel0': '#f0e8dc', 'gitBranchLabel1': '#f0e8dc', 'gitBranchLabel2': '#f0e8dc', 'gitBranchLabel3': '#f0e8dc', 'gitBranchLabel4': '#f0e8dc',
   'gitInv0': '#ff6ba0',
-  'commitLabelColor': '#f0e8dc', 'commitLabelBackground': '#1a0e12',
+  'commitLabelColor': '#f0e8dc', 'commitLabelBackground': '#1a0e12', 'commitLabelFontSize': '10px', 'tagLabelFontSize': '10px',
   'tagLabelColor': '#f0e8dc', 'tagLabelBackground': '#1a0e12', 'tagLabelBorder': '#ff6ba0'
 }, 'gitGraph': { 'mainBranchName': 'life', 'rotateCommitLabel': true } } }%%
 gitGraph
@@ -93,9 +93,9 @@ gitGraph
     commit id: "2022 · feat / jogge di balla : co-founder, vice president"
     checkout life
     commit id: "2023 · hotfix / life : motorcycle accident"
-    commit id: "2023 · fix / recovery : came back stronger"
+    commit id: "2023 · fix : came back stronger"
     checkout garage
-    commit id: "2023 · refactor / garage : two wheels to four"
+    commit id: "2023 · refactor : two wheels to four"
     commit id: "2023 · feat / garage : Audi TT RS"
     checkout career
     commit id: "2023 · feat / zvoove : Cypress testing lead"
@@ -107,13 +107,13 @@ gitGraph
     checkout photo
     commit id: "2024 · feat / wildlife : Costa Rica solo"
     checkout career
-    commit id: "2025 · feat / zvoove : interfaces and API main"
-    commit id: "2025 · feat / ai : specializing in AI coding"
+    commit id: "2025 · feat : interfaces and API main"
+    commit id: "2025 · feat : specializing in AI coding"
     checkout photo
     commit id: "2025 · feat / cars : The ICE, Koenigsegg shoot"
     checkout club
     commit id: "2026 · feat / jogge di balla : club platform deployed"
-    commit id: "2026 · feat / jogge di balla : 1000 Instagram followers"
+    commit id: "2026 · feat : 1000 Instagram followers"
     checkout career
     commit id: "2026 · feat / zvoove : joined the next team"
     checkout garage
@@ -131,7 +131,7 @@ gitGraph
 
 <img src="assets/divider.svg" width="100%" alt="" />
 
-## GitHub Stats
+<picture><source media="(prefers-color-scheme: light)" srcset="assets/text/h-github-stats-light.svg" /><img src="assets/text/h-github-stats.svg" alt="GitHub Stats" /></picture>
 
 <div align="center">
 
@@ -151,7 +151,7 @@ gitGraph
 
 <img src="assets/divider.svg" width="100%" alt="" />
 
-## Contributions
+<picture><source media="(prefers-color-scheme: light)" srcset="assets/text/h-contributions-light.svg" /><img src="assets/text/h-contributions.svg" alt="Contributions" /></picture>
 
 <div align="center">
 
@@ -161,7 +161,7 @@ gitGraph
   <img alt="contribution snake" src="https://raw.githubusercontent.com/manu-brighter/manu-brighter/output/github-snake-dark.svg" />
 </picture>
 
-<sub>Eats one commit every 12 hours. Nobody has the heart to tell it the graph grows back.</sub>
+<picture><source media="(prefers-color-scheme: light)" srcset="assets/text/l-snake-light.svg" /><img src="assets/text/l-snake.svg" alt="Eats one commit every 12 hours. Nobody has the heart to tell it the graph grows back." /></picture>
 
 </div>
 
