@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0a0608,25:1a0e12,50:4a2447,70:8a3157,85:c9538f,100:b89aff&height=220&section=header&text=Manuel%20Heller&fontSize=54&fontColor=ffc474&fontAlignY=38&desc=Full%20Stack%20Developer%20%C2%B7%20Photographer%20%C2%B7%20AI%20Specialist&descAlignY=56&descColor=f0e8dc&animation=twinkling" />
+<img src="assets/header.svg" alt="Manuel Heller, Full Stack Developer, Photographer, AI Specialist" width="100%" />
 
 <img src="assets/terminal.svg" alt="animated terminal: whoami, Manuel Heller, Full Stack Developer, Switzerland" width="760" />
 
@@ -25,27 +25,17 @@
 
 <div align="center">
 
-<sub><b>DAILY&nbsp;DRIVER</b></sub>
-
+<sub><b>DAILY&nbsp;DRIVER</b></sub><br>
 <img src="https://skillicons.dev/icons?i=php,vue,js,html,css,mysql,tailwind,vite&theme=dark" /><br>
 <img src="https://skillicons.dev/icons?i=cypress,docker,git,gitlab,nginx,linux,bash,powershell&theme=dark" />
-
 <br><br>
-
-<sub><b>VIBECODED&nbsp;(AI-ASSISTED)</b></sub>
-
+<sub><b>VIBECODED&nbsp;(AI-ASSISTED)</b></sub><br>
 <img src="https://skillicons.dev/icons?i=ts,react,nextjs,threejs&theme=dark" />
-
 <br><br>
-
-<sub><b>CREATIVE</b></sub>
-
+<sub><b>CREATIVE</b></sub><br>
 <img src="https://img.shields.io/badge/Lightroom-1a0e12?style=for-the-badge" alt="Lightroom" />&nbsp;<img src="https://img.shields.io/badge/Photoshop-1a0e12?style=for-the-badge" alt="Photoshop" />&nbsp;<img src="https://img.shields.io/badge/DaVinci%20Resolve-1a0e12?style=for-the-badge" alt="DaVinci Resolve" />
-
 <br><br>
-
-<sub><b>AI&nbsp;WORKFLOW</b></sub>
-
+<sub><b>AI&nbsp;WORKFLOW</b></sub><br>
 <img src="https://img.shields.io/badge/Claude%20Code-1a0e12?style=for-the-badge&logo=claude&logoColor=ff6ba0" alt="Claude Code" />&nbsp;<img src="https://img.shields.io/badge/Cursor-1a0e12?style=for-the-badge" alt="Cursor" />&nbsp;<img src="https://img.shields.io/badge/Prompt%20Engineering-1a0e12?style=for-the-badge" alt="Prompt Engineering" />&nbsp;<img src="https://img.shields.io/badge/Custom%20Agents%20%2B%20Skills-1a0e12?style=for-the-badge" alt="Custom Agents and Skills" />&nbsp;<img src="https://img.shields.io/badge/MCP-1a0e12?style=for-the-badge" alt="MCP" />
 
 </div>
@@ -60,11 +50,11 @@
 
 | &nbsp; | Project | Description | Stack |
 |:---:|---|---|---|
-| 🎨 | [**manuelheller.dev**](https://manuelheller.dev) | Creative developer portfolio: WebGL fluid simulation, Risograph aesthetics, GLSL shaders | Next.js · Three.js · GSAP |
-| 📷 | [**photography**](https://manuelheller.myportfolio.com) | Wildlife, cars and events: Costa Rica, Thailand, The ICE St. Moritz | Lightroom · Photoshop |
-| 🎯 | [**joggediballa.ch**](https://joggediballa.ch) | Club platform: events, members, permissions, sponsors, live Twitch overlay | React · tRPC · Drizzle · MySQL |
-| 🥃 | [**shot-counter**](https://github.com/manu-brighter/shot-counter) | Party scoreboard: live SSE sync, QR join by phone, desktop app | Vue 3 · Express 5 · SQLite · Electron |
-| 🤖 | [**full-project-rework**](https://github.com/manu-brighter/full-project-rework) | Claude Code skill for autonomous multi-agent codebase overhauls | Claude Code · Multi-Agent |
+| 🎨 | [**manuelheller.dev**](https://manuelheller.dev) | Creative developer portfolio: WebGL fluid simulation, Risograph aesthetics, GLSL shaders | <img src="https://img.shields.io/badge/Next.js-ff6ba0?style=flat-square" alt="Next.js" /> <img src="https://img.shields.io/badge/Three.js-ffc474?style=flat-square" alt="Three.js" /> <img src="https://img.shields.io/badge/GSAP-7ce8c4?style=flat-square" alt="GSAP" /> |
+| 📷 | [**photography**](https://manuelheller.myportfolio.com) | Wildlife, cars and events: Costa Rica, Thailand, The ICE St. Moritz | <img src="https://img.shields.io/badge/Lightroom-b89aff?style=flat-square" alt="Lightroom" /> <img src="https://img.shields.io/badge/Photoshop-ff6ba0?style=flat-square" alt="Photoshop" /> |
+| 🎯 | [**joggediballa.ch**](https://joggediballa.ch) | Club platform: events, members, permissions, sponsors, live Twitch overlay | <img src="https://img.shields.io/badge/React-ffc474?style=flat-square" alt="React" /> <img src="https://img.shields.io/badge/tRPC-7ce8c4?style=flat-square" alt="tRPC" /> <img src="https://img.shields.io/badge/Drizzle-b89aff?style=flat-square" alt="Drizzle" /> <img src="https://img.shields.io/badge/MySQL-ff6ba0?style=flat-square" alt="MySQL" /> |
+| 🥃 | [**shot-counter**](https://github.com/manu-brighter/shot-counter) | Party scoreboard: live SSE sync, QR join by phone, desktop app | <img src="https://img.shields.io/badge/Vue%203-7ce8c4?style=flat-square" alt="Vue 3" /> <img src="https://img.shields.io/badge/Express%205-b89aff?style=flat-square" alt="Express 5" /> <img src="https://img.shields.io/badge/SQLite-ff6ba0?style=flat-square" alt="SQLite" /> <img src="https://img.shields.io/badge/Electron-ffc474?style=flat-square" alt="Electron" /> |
+| 🤖 | [**full-project-rework**](https://github.com/manu-brighter/full-project-rework) | Claude Code skill for autonomous multi-agent codebase overhauls | <img src="https://img.shields.io/badge/Claude%20Code-ffc474?style=flat-square" alt="Claude Code" /> <img src="https://img.shields.io/badge/Multi--Agent-7ce8c4?style=flat-square" alt="Multi-Agent" /> |
 
 <br>
 
@@ -185,4 +175,4 @@ legacy_encoding     = ISO-8859-1 ; it bites
 
 </details>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:b89aff,15:c9538f,30:8a3157,50:4a2447,75:1a0e12,100:0a0608&height=100&section=footer&animation=twinkling" />
+<img src="assets/footer.svg" alt="" width="100%" />

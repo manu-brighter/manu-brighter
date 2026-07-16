@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" width="1200" height="120" role="presentation">
+  <defs>
+    <linearGradient id="fg" x1="1" y1="0" x2="0" y2="0">
+      <stop offset="0">
+        <animate attributeName="stop-color" values="#a83d68;#6d54b0;#2f8a6b;#b8862e;#a83d68" dur="16s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="0.33">
+        <animate attributeName="stop-color" values="#6d54b0;#2f8a6b;#b8862e;#a83d68;#6d54b0" dur="16s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="0.66">
+        <animate attributeName="stop-color" values="#2f8a6b;#b8862e;#a83d68;#6d54b0;#2f8a6b" dur="16s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="1">
+        <animate attributeName="stop-color" values="#b8862e;#a83d68;#6d54b0;#2f8a6b;#b8862e" dur="16s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+  </defs>
+
+  <path fill="url(#fg)">
+    <animate attributeName="d" dur="9s" repeatCount="indefinite"
+      values="M0,120 L0,55 C200,15 420,85 620,50 C820,15 1020,75 1200,45 L1200,120 Z;
+              M0,120 L0,45 C220,80 400,20 640,60 C860,95 1040,30 1200,60 L1200,120 Z;
+              M0,120 L0,55 C200,15 420,85 620,50 C820,15 1020,75 1200,45 L1200,120 Z"/>
+  </path>
+</svg>

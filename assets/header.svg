@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 250" width="1200" height="250" role="img" aria-label="Manuel Heller, Full Stack Developer, Photographer, AI Specialist">
+  <defs>
+    <linearGradient id="hg" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0">
+        <animate attributeName="stop-color" values="#a83d68;#6d54b0;#2f8a6b;#b8862e;#a83d68" dur="16s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="0.33">
+        <animate attributeName="stop-color" values="#6d54b0;#2f8a6b;#b8862e;#a83d68;#6d54b0" dur="16s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="0.66">
+        <animate attributeName="stop-color" values="#2f8a6b;#b8862e;#a83d68;#6d54b0;#2f8a6b" dur="16s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="1">
+        <animate attributeName="stop-color" values="#b8862e;#a83d68;#6d54b0;#2f8a6b;#b8862e" dur="16s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+  </defs>
+
+  <path fill="url(#hg)">
+    <animate attributeName="d" dur="9s" repeatCount="indefinite"
+      values="M0,0 H1200 V190 C900,240 700,150 500,190 C300,230 150,160 0,200 Z;
+              M0,0 H1200 V200 C950,150 650,230 480,180 C280,150 140,220 0,190 Z;
+              M0,0 H1200 V190 C900,240 700,150 500,190 C300,230 150,160 0,200 Z"/>
+  </path>
+
+  <path d="M40,44 H56 M48,36 V52" stroke="#f0e8dc" stroke-width="2" opacity="0.65"/>
+  <path d="M1144,44 H1160 M1152,36 V52" stroke="#f0e8dc" stroke-width="2" opacity="0.65"/>
+
+  <g font-family="'Cascadia Code', ui-monospace, Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-weight="700" paint-order="stroke" stroke="#1a0e12" text-anchor="start">
+    <text font-size="58" stroke-width="2" y="118"><tspan x="373.8" fill="#ff6ba0">M</tspan><tspan x="408.6" fill="#ffc474">a</tspan><tspan x="443.4" fill="#7ce8c4">n</tspan><tspan x="478.2" fill="#b89aff">u</tspan><tspan x="513" fill="#ff6ba0">e</tspan><tspan x="547.8" fill="#ffc474">l</tspan><tspan x="617.4" fill="#7ce8c4">H</tspan><tspan x="652.2" fill="#b89aff">e</tspan><tspan x="687" fill="#ff6ba0">l</tspan><tspan x="721.8" fill="#ffc474">l</tspan><tspan x="756.6" fill="#7ce8c4">e</tspan><tspan x="791.4" fill="#b89aff">r</tspan></text>
+    <text font-size="20" stroke-width="0.8" y="158"><tspan x="294" fill="#7ce8c4" textLength="240" lengthAdjust="spacingAndGlyphs">Full Stack Developer</tspan><tspan x="534" fill="#f0e8dc" textLength="36" lengthAdjust="spacingAndGlyphs"> · </tspan><tspan x="570" fill="#ffc474" textLength="144" lengthAdjust="spacingAndGlyphs">Photographer</tspan><tspan x="714" fill="#f0e8dc" textLength="36" lengthAdjust="spacingAndGlyphs"> · </tspan><tspan x="750" fill="#b89aff" textLength="156" lengthAdjust="spacingAndGlyphs">AI Specialist</tspan></text>
+  </g>
+</svg>
