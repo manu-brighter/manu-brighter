@@ -2,31 +2,19 @@
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,40:0f1b35,100:0d2137&height=220&section=header&text=Manuel%20Heller&fontSize=54&fontColor=64ffda&fontAlignY=38&desc=Full%20Stack%20Developer%20%C2%B7%20Craftsman%20%C2%B7%20Vibecoder&descAlignY=56&descColor=8892b0&animation=fadeIn" />
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=18&duration=3000&pause=1200&color=64FFDA&center=true&vCenter=true&width=440&lines=PHP+%C2%B7+Vue.js+%C2%B7+TypeScript+%C2%B7+React;Full+Stack+Dev+%C2%B7+Switzerland+%F0%9F%87%A8%F0%9F%87%AD;Craft+first+%E2%80%94+always.)](https://git.io/typing-svg)
+<img src="assets/terminal.svg" alt="animated terminal — whoami: Manuel Heller, Full Stack Developer, Switzerland" width="760" />
 
-</div>
-
-<br>
-
-```js
-const manuel = {
-  location:  "Switzerland 🇨🇭",
-  work:      "Full Stack Developer @ zvoove",
-  stack:     ["PHP", "Vue.js", "TypeScript", "React", "MySQL / MariaDB"],
-  creative:  ["Photography", "Video Editing", "UI/UX Design"],
-  currently: "Vibecoding production-grade apps with Claude Code",
-  portfolio: "manuelheller.dev",
-}
-```
-
-<br>
-
-<div align="center">
+<br><br>
 
 [![Portfolio](https://img.shields.io/badge/manuelheller.dev-0d1117?style=for-the-badge&logo=vercel&logoColor=64ffda&labelColor=0f1b35)](https://manuelheller.dev)&nbsp;
 [![Jogge di Balla](https://img.shields.io/badge/joggediballa.ch-0d1117?style=for-the-badge&logo=vercel&logoColor=64ffda&labelColor=0f1b35)](https://joggediballa.ch)
 
 </div>
+
+<br>
+
+> [!WARNING]
+> This profile uses trailing commas,
 
 <br>
 
@@ -45,19 +33,6 @@ const manuel = {
 
 ---
 
-## GitHub Stats
-
-<div align="center">
-
-<img src="https://streak-stats.demolab.com?user=manu-brighter&theme=transparent&hide_border=true&ring=64FFDA&fire=64FFDA&currStreakLabel=64FFDA&sideLabels=8892b0&currStreakNum=ccd6f6&sideNums=ccd6f6&dates=8892b0" />
-
-</div>
-
-
-<br>
-
----
-
 ## Projects
 
 <div align="center">
@@ -65,8 +40,54 @@ const manuel = {
 | &nbsp; | Project | Description | Stack |
 |:---:|---|---|---|
 | 🎨 | [**manuelheller.dev**](https://manuelheller.dev) | Creative portfolio — WebGL fluid simulation, Risograph aesthetics, GLSL shaders | Next.js · Three.js · GSAP |
-| 🎯 | [**joggediballa.ch**](https://joggediballa.ch) | Full-stack club platform — events, members, shot counter | React · tRPC · Drizzle · MySQL |
+| 🎯 | [**joggediballa.ch**](https://joggediballa.ch) | Full-stack club platform — events, members & Beam Mode | React · tRPC · Drizzle · MySQL |
+| 🥃 | [**shot-counter**](https://github.com/manu-brighter/shot-counter) | Multi-team party scoreboard — live SSE sync, QR join by phone, bilingual, desktop app for Windows & Linux | Vue 3 · Express 5 · SQLite · Electron |
 | 🤖 | [**full-project-rework**](https://github.com/manu-brighter/full-project-rework) | Claude Code skill — autonomous multi-agent codebase overhaul | Claude Code · Multi-Agent |
+
+<sub>🥃 needs zero dev setup — grab the installer and count responsibly:</sub>&nbsp;<a href="https://github.com/manu-brighter/shot-counter/releases/latest"><img src="https://img.shields.io/github/v/release/manu-brighter/shot-counter?style=flat-square&label=shot-counter&labelColor=0f1b35&color=64ffda" alt="latest shot-counter release" /></a>
+
+</div>
+
+<br>
+
+---
+
+## Life, versioned
+
+Some people write bios. I keep a changelog.
+
+```mermaid
+%%{init: { 'gitGraph': { 'mainBranchName': 'life' } } }%%
+gitGraph
+    commit id: "feat / life : init"
+    commit id: "feat / school : learn to break things"
+    branch career
+    commit id: "feat / zvoove : full stack developer"
+    commit id: "fix / legacy : survive ISO-8859-1"
+    checkout life
+    branch creative
+    commit id: "feat / photo : shoot everything"
+    commit id: "feat / video : cut everything"
+    checkout life
+    merge career
+    merge creative
+    commit id: "feat / ai : vibecode entire apps"
+    commit id: "chore / now : this README" type: HIGHLIGHT
+```
+
+<br>
+
+---
+
+## GitHub Stats
+
+<div align="center">
+
+<img src="https://streak-stats.demolab.com?user=manu-brighter&theme=transparent&hide_border=true&ring=64FFDA&fire=64FFDA&currStreakLabel=64FFDA&sideLabels=8892b0&currStreakNum=ccd6f6&sideNums=ccd6f6&dates=8892b0" />
+
+<br><br>
+
+<img src="https://raw.githubusercontent.com/manu-brighter/manu-brighter/output/profile-night-green.svg" alt="3D contribution graph" width="100%" />
 
 </div>
 
@@ -75,6 +96,9 @@ const manuel = {
 ---
 
 ## Contributions
+
+> [!TIP]
+> The snake below eats one commit every 12 hours. Nobody has the heart to tell it the graph grows back.
 
 <div align="center">
 
@@ -87,5 +111,27 @@ const manuel = {
 </div>
 
 <br>
+
+<details>
+<summary><b>🍫 Swiss confidential — do not open</b></summary>
+
+<br>
+
+You opened it. Bold move. Since you're here — the official **Swiss Developer Emergency Kit**:
+
+| Item | Purpose |
+|---|---|
+| 🍫 Chocolate | Morale, applied hourly |
+| 🔪 Swiss Army knife | Dependency management for the physical world |
+| 🕰️ Punctuality | Deploys happen at 09:00. Sharp. |
+| 🧀 Cheese | The holes are where my semicolons went |
+
+And because you scrolled all the way down, you get the render nobody else sees — my contributions in **Minecraft mode**:
+
+<img src="https://raw.githubusercontent.com/manu-brighter/manu-brighter/output/profile-gitblock.svg" alt="contributions, minecraft edition" width="100%" />
+
+<sub>↑ ↑ ↓ ↓ ← → ← → B A — unlocks nothing here. I just respect that you tried.</sub>
+
+</details>
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d2137,60:0f1b35,100:0d1117&height=100&section=footer" />
