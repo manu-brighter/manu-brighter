@@ -46,7 +46,7 @@
 
 <sub><b>AI&nbsp;WORKFLOW</b></sub>
 
-<img src="https://img.shields.io/badge/Claude%20Code-1a0e12?style=for-the-badge&logo=claude&logoColor=ff6ba0" alt="Claude Code" />&nbsp;<img src="https://img.shields.io/badge/Cursor-1a0e12?style=for-the-badge" alt="Cursor" />
+<img src="https://img.shields.io/badge/Claude%20Code-1a0e12?style=for-the-badge&logo=claude&logoColor=ff6ba0" alt="Claude Code" />&nbsp;<img src="https://img.shields.io/badge/Cursor-1a0e12?style=for-the-badge" alt="Cursor" />&nbsp;<img src="https://img.shields.io/badge/Prompt%20Engineering-1a0e12?style=for-the-badge" alt="Prompt Engineering" />&nbsp;<img src="https://img.shields.io/badge/Custom%20Agents%20%2B%20Skills-1a0e12?style=for-the-badge" alt="Custom Agents and Skills" />&nbsp;<img src="https://img.shields.io/badge/MCP-1a0e12?style=for-the-badge" alt="MCP" />
 
 </div>
 
