@@ -2,16 +2,13 @@
   <defs>
     <linearGradient id="fg" x1="1" y1="0" x2="0" y2="0">
       <stop offset="0">
-        <animate attributeName="stop-color" values="#a83d68;#6d54b0;#2f8a6b;#b8862e;#a83d68" dur="16s" repeatCount="indefinite"/>
+        <animate attributeName="stop-color" values="#a83d68;#6d54b0;#8a3157;#a83d68" dur="14s" repeatCount="indefinite"/>
       </stop>
-      <stop offset="0.33">
-        <animate attributeName="stop-color" values="#6d54b0;#2f8a6b;#b8862e;#a83d68;#6d54b0" dur="16s" repeatCount="indefinite"/>
-      </stop>
-      <stop offset="0.66">
-        <animate attributeName="stop-color" values="#2f8a6b;#b8862e;#a83d68;#6d54b0;#2f8a6b" dur="16s" repeatCount="indefinite"/>
+      <stop offset="0.5">
+        <animate attributeName="stop-color" values="#6d54b0;#8a3157;#a83d68;#6d54b0" dur="14s" repeatCount="indefinite"/>
       </stop>
       <stop offset="1">
-        <animate attributeName="stop-color" values="#b8862e;#a83d68;#6d54b0;#2f8a6b;#b8862e" dur="16s" repeatCount="indefinite"/>
+        <animate attributeName="stop-color" values="#8a3157;#a83d68;#6d54b0;#8a3157" dur="14s" repeatCount="indefinite"/>
       </stop>
     </linearGradient>
   </defs>
@@ -22,4 +19,11 @@
               M0,120 L0,45 C220,80 400,20 640,60 C860,95 1040,30 1200,60 L1200,120 Z;
               M0,120 L0,55 C200,15 420,85 620,50 C820,15 1020,75 1200,45 L1200,120 Z"/>
   </path>
+
+  <g font-family="'Cascadia Code', ui-monospace, Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="18" font-weight="600" paint-order="stroke" stroke="#1a0e12" stroke-width="0.8">
+    <text x="1052" y="84" text-anchor="end" fill="#f0e8dc">$ exit 0</text>
+    <rect x="1062" y="70" width="9" height="17" fill="#f0e8dc" stroke="none">
+      <animate attributeName="opacity" values="1;0" calcMode="discrete" dur="1.2s" repeatCount="indefinite"/>
+    </rect>
+  </g>
 </svg>

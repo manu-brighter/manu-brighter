@@ -2,16 +2,13 @@
   <defs>
     <linearGradient id="hg" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0">
-        <animate attributeName="stop-color" values="#a83d68;#6d54b0;#2f8a6b;#b8862e;#a83d68" dur="16s" repeatCount="indefinite"/>
+        <animate attributeName="stop-color" values="#a83d68;#6d54b0;#8a3157;#a83d68" dur="14s" repeatCount="indefinite"/>
       </stop>
-      <stop offset="0.33">
-        <animate attributeName="stop-color" values="#6d54b0;#2f8a6b;#b8862e;#a83d68;#6d54b0" dur="16s" repeatCount="indefinite"/>
-      </stop>
-      <stop offset="0.66">
-        <animate attributeName="stop-color" values="#2f8a6b;#b8862e;#a83d68;#6d54b0;#2f8a6b" dur="16s" repeatCount="indefinite"/>
+      <stop offset="0.5">
+        <animate attributeName="stop-color" values="#6d54b0;#8a3157;#a83d68;#6d54b0" dur="14s" repeatCount="indefinite"/>
       </stop>
       <stop offset="1">
-        <animate attributeName="stop-color" values="#b8862e;#a83d68;#6d54b0;#2f8a6b;#b8862e" dur="16s" repeatCount="indefinite"/>
+        <animate attributeName="stop-color" values="#8a3157;#a83d68;#6d54b0;#8a3157" dur="14s" repeatCount="indefinite"/>
       </stop>
     </linearGradient>
   </defs>
@@ -26,8 +23,49 @@
   <path d="M40,44 H56 M48,36 V52" stroke="#f0e8dc" stroke-width="2" opacity="0.65"/>
   <path d="M1144,44 H1160 M1152,36 V52" stroke="#f0e8dc" stroke-width="2" opacity="0.65"/>
 
-  <g font-family="'Cascadia Code', ui-monospace, Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-weight="700" paint-order="stroke" stroke="#1a0e12" text-anchor="start">
-    <text font-size="58" stroke-width="2" y="118"><tspan x="373.8" fill="#ff6ba0">M</tspan><tspan x="408.6" fill="#ffc474">a</tspan><tspan x="443.4" fill="#7ce8c4">n</tspan><tspan x="478.2" fill="#b89aff">u</tspan><tspan x="513" fill="#ff6ba0">e</tspan><tspan x="547.8" fill="#ffc474">l</tspan><tspan x="617.4" fill="#7ce8c4">H</tspan><tspan x="652.2" fill="#b89aff">e</tspan><tspan x="687" fill="#ff6ba0">l</tspan><tspan x="721.8" fill="#ffc474">l</tspan><tspan x="756.6" fill="#7ce8c4">e</tspan><tspan x="791.4" fill="#b89aff">r</tspan></text>
-    <text font-size="20" stroke-width="0.8" y="158"><tspan x="294" fill="#7ce8c4" textLength="240" lengthAdjust="spacingAndGlyphs">Full Stack Developer</tspan><tspan x="534" fill="#f0e8dc" textLength="36" lengthAdjust="spacingAndGlyphs"> · </tspan><tspan x="570" fill="#ffc474" textLength="144" lengthAdjust="spacingAndGlyphs">Photographer</tspan><tspan x="714" fill="#f0e8dc" textLength="36" lengthAdjust="spacingAndGlyphs"> · </tspan><tspan x="750" fill="#b89aff" textLength="156" lengthAdjust="spacingAndGlyphs">AI Specialist</tspan></text>
+  <text x="150" y="86" font-family="'Cascadia Code', ui-monospace, Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="22" font-weight="700" fill="#f0e8dc" opacity="0.85">&lt;/&gt;<animateTransform attributeName="transform" type="translate" values="0 0;0 -7;0 0" dur="5s" repeatCount="indefinite"/></text>
+
+  <g transform="translate(1000,58)" stroke="#f0e8dc" stroke-width="2" fill="none" opacity="0.9">
+    <rect x="0" y="6" width="40" height="26" rx="5"/>
+    <rect x="14" y="0" width="12" height="8" rx="2"/>
+    <circle cx="20" cy="19" r="8"/>
+    <circle cx="20" cy="19" r="3.5"/>
+    <path d="M46,2 L49,9 L56,12 L49,15 L46,22 L43,15 L36,12 L43,9 Z" fill="#ffc474" stroke="none">
+      <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0;0.52;0.58;0.64;1" dur="7s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <g font-family="'Cascadia Code', ui-monospace, Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-weight="700" paint-order="stroke" stroke="#1a0e12">
+    <text font-size="58" stroke-width="2" y="118"><tspan x="373.8" fill="#ff6ba0">M</tspan><tspan x="408.6" fill="#ffc474">a</tspan><tspan x="443.4" fill="#b89aff">n</tspan><tspan x="478.2" fill="#ff6ba0">u</tspan><tspan x="513" fill="#ffc474">e</tspan><tspan x="547.8" fill="#b89aff">l</tspan><tspan x="617.4" fill="#ff6ba0">H</tspan><tspan x="652.2" fill="#ffc474">e</tspan><tspan x="687" fill="#b89aff">l</tspan><tspan x="721.8" fill="#ff6ba0">l</tspan><tspan x="756.6" fill="#ffc474">e</tspan><tspan x="791.4" fill="#b89aff">r</tspan></text>
+    <text font-size="20" stroke-width="0.8" y="158"><tspan x="294" fill="#ff6ba0" textLength="240" lengthAdjust="spacingAndGlyphs">Full Stack Developer</tspan><tspan x="534" fill="#f0e8dc" textLength="36" lengthAdjust="spacingAndGlyphs"> · </tspan><tspan x="570" fill="#ffc474" textLength="144" lengthAdjust="spacingAndGlyphs">Photographer</tspan><tspan x="714" fill="#f0e8dc" textLength="36" lengthAdjust="spacingAndGlyphs"> · </tspan><tspan x="750" fill="#b89aff" textLength="156" lengthAdjust="spacingAndGlyphs">AI Specialist</tspan></text>
+  </g>
+
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="-140 180; 1340 180" dur="16s" repeatCount="indefinite"/>
+    <g stroke="#f0e8dc" stroke-width="2" opacity="0.55" stroke-linecap="round">
+      <line x1="-18" y1="8" x2="-2" y2="8"/>
+      <line x1="-24" y1="14" x2="-6" y2="14"/>
+      <line x1="-16" y1="20" x2="-4" y2="20"/>
+    </g>
+    <path d="M22,13 C24,5 32,3 40,3 L56,3 C64,3 68,7 72,13 Z" fill="#1a0e12"/>
+    <path d="M27,12 C29,7 34,5 40,5 L54,5 C59,5 62,8 65,12 Z" fill="#f0e8dc" opacity="0.85"/>
+    <rect x="0" y="12" width="88" height="13" rx="6" fill="#1a0e12"/>
+    <circle cx="86" cy="17" r="2.5" fill="#ffc474"/>
+    <g>
+      <circle cx="22" cy="26" r="7" fill="#1a0e12" stroke="#f0e8dc" stroke-width="2"/>
+      <g stroke="#f0e8dc" stroke-width="1.5">
+        <line x1="22" y1="20.5" x2="22" y2="31.5"/>
+        <line x1="16.5" y1="26" x2="27.5" y2="26"/>
+        <animateTransform attributeName="transform" type="rotate" from="0 22 26" to="360 22 26" dur="0.7s" repeatCount="indefinite"/>
+      </g>
+    </g>
+    <g>
+      <circle cx="68" cy="26" r="7" fill="#1a0e12" stroke="#f0e8dc" stroke-width="2"/>
+      <g stroke="#f0e8dc" stroke-width="1.5">
+        <line x1="68" y1="20.5" x2="68" y2="31.5"/>
+        <line x1="62.5" y1="26" x2="73.5" y2="26"/>
+        <animateTransform attributeName="transform" type="rotate" from="0 68 26" to="360 68 26" dur="0.7s" repeatCount="indefinite"/>
+      </g>
+    </g>
   </g>
 </svg>
