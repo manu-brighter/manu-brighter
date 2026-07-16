@@ -1,4 +1,4 @@
-name: Generate Snake
+name: Generate Profile Graphics
 
 on:
   schedule:
@@ -12,12 +12,22 @@ jobs:
     permissions:
       contents: write
     steps:
+      - uses: actions/checkout@v4
+
       - uses: Platane/snk@v3
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
             dist/github-snake.svg
             dist/github-snake-dark.svg?palette=github-dark
+
+      - uses: yoshi389111/github-profile-3d-contrib@0.9.3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          USERNAME: ${{ github.repository_owner }}
+
+      - name: Collect SVGs
+        run: cp profile-3d-contrib/*.svg dist/
 
       - uses: crazy-max/ghaction-github-pages@v3.1.0
         with:
