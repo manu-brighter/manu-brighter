@@ -54,7 +54,7 @@
 | 📷 | [**photography**](https://manuelheller.myportfolio.com) | Wildlife, cars and events: Costa Rica, Thailand, The ICE St. Moritz | <img src="https://img.shields.io/badge/Lightroom-8b6fd8?style=flat-square" alt="Lightroom" /> <img src="https://img.shields.io/badge/Photoshop-e0447e?style=flat-square" alt="Photoshop" /> |
 | 🎯 | [**joggediballa.ch**](https://joggediballa.ch) | Club platform: events, members, permissions, sponsors, live Twitch overlay | <img src="https://img.shields.io/badge/React-e0447e?style=flat-square" alt="React" /> <img src="https://img.shields.io/badge/tRPC-8b6fd8?style=flat-square" alt="tRPC" /> <img src="https://img.shields.io/badge/Drizzle-e0447e?style=flat-square" alt="Drizzle" /> <img src="https://img.shields.io/badge/MySQL-8b6fd8?style=flat-square" alt="MySQL" /> |
 | 🥃 | [**shot-counter**](https://github.com/manu-brighter/shot-counter) | Party scoreboard: live SSE sync, QR join by phone, desktop app | <img src="https://img.shields.io/badge/Vue%203-8b6fd8?style=flat-square" alt="Vue 3" /> <img src="https://img.shields.io/badge/Express%205-e0447e?style=flat-square" alt="Express 5" /> <img src="https://img.shields.io/badge/SQLite-8b6fd8?style=flat-square" alt="SQLite" /> <img src="https://img.shields.io/badge/Electron-e0447e?style=flat-square" alt="Electron" /> |
-| 🤖 | [**full-project-rework**](https://github.com/manu-brighter/full-project-rework) | Claude Code skill for autonomous multi-agent codebase overhauls | <img src="https://img.shields.io/badge/Claude%20Code-e0447e?style=flat-square" alt="Claude Code" /> <img src="https://img.shields.io/badge/Multi--Agent-8b6fd8?style=flat-square" alt="Multi-Agent" /> |
+| 🤖 | [**claude-code-kit**](https://github.com/manu-brighter/claude-code-kit) | Claude Code plugin marketplace: 5 workflow skills (autonomous multi-agent codebase overhaul, docs and i18n sync, publishing prep) and 5 specialist agents for GPU-heavy frontends | <img src="https://img.shields.io/badge/Claude%20Code-e0447e?style=flat-square" alt="Claude Code" /> <img src="https://img.shields.io/badge/Multi--Agent-8b6fd8?style=flat-square" alt="Multi-Agent" /> <img src="https://img.shields.io/badge/GLSL-e0447e?style=flat-square" alt="GLSL" /> |
 
 <br>
 
@@ -116,6 +116,7 @@ gitGraph
     commit id: "2026 · feat : 1000 Instagram followers"
     checkout career
     commit id: "2026 · feat / zvoove : joined the next team"
+    commit id: "2026 · feat / oss : published my Claude Code toolkit"
     checkout garage
     commit id: "2026 · feat / power : supercharger" tag: "v440hp"
     checkout life
