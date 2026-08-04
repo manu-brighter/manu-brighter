@@ -137,9 +137,9 @@ gitGraph
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com?user=manu-brighter&theme=transparent&hide_border=true&ring=B89AFF&fire=FF6BA0&currStreakLabel=B89AFF&sideLabels=B9A99E&currStreakNum=F0E8DC&sideNums=F0E8DC&dates=B9A99E" />
-  <source media="(prefers-color-scheme: light)" srcset="https://streak-stats.demolab.com?user=manu-brighter&theme=transparent&hide_border=true&ring=8B6FD8&fire=E0447E&currStreakLabel=8B6FD8&sideLabels=8A7A72&currStreakNum=1A0E12&sideNums=1A0E12&dates=8A7A72" />
-  <img alt="GitHub streak stats" src="https://streak-stats.demolab.com?user=manu-brighter&theme=transparent&hide_border=true&ring=B89AFF&fire=FF6BA0&currStreakLabel=B89AFF&sideLabels=B9A99E&currStreakNum=F0E8DC&sideNums=F0E8DC&dates=B9A99E" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/manu-brighter/manu-brighter/output/streak-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/manu-brighter/manu-brighter/output/streak.svg" />
+  <img alt="GitHub streak stats" src="https://raw.githubusercontent.com/manu-brighter/manu-brighter/output/streak-dark.svg" width="495" />
 </picture>
 
 <br><br>
