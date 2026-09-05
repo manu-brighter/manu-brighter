@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 495 185" width="495" height="185" role="img" aria-label="GitHub streak: 3 day current streak, 13 day longest streak, 886 total contributions">
+<g><text x="82.5" y="75" text-anchor="middle" font-family="'Cascadia Code', ui-monospace, Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="28" font-weight="700" fill="#f0e8dc">886</text><text x="82.5" y="103" text-anchor="middle" font-family="'Cascadia Code', ui-monospace, Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="13" font-weight="700" fill="#b9a99e">Total Contributions</text><text x="82.5" y="123" text-anchor="middle" font-family="'Cascadia Code', ui-monospace, Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="11" font-weight="400" fill="#b9a99e">Nov 15, 2021 - Present</text></g>
+  <g>
+    <path transform="translate(235.5 4)" d="M12 23 C 6.5 23 3 19.5 3 15.5 C 3 9.5 9 7 10 0 C 12 3.5 12.5 7 11.5 10.5 C 13 8.5 14 6.5 14 4 C 18 8 21 12 21 16 C 21 20 17.5 23 12 23 Z" fill="#ff6ba0" />
+    <circle cx="247.5" cy="80" r="38" fill="none" stroke="#b89aff" stroke-width="4" />
+    <text x="247.5" y="91" text-anchor="middle" font-family="'Cascadia Code', ui-monospace, Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="32" font-weight="700" fill="#f0e8dc">3</text>
+    <text x="247.5" y="141" text-anchor="middle" font-family="'Cascadia Code', ui-monospace, Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="13" font-weight="700" fill="#b89aff">Current Streak</text>
+    <text x="247.5" y="161" text-anchor="middle" font-family="'Cascadia Code', ui-monospace, Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="11" font-weight="400" fill="#b9a99e">Sep 3 - Sep 5, 2026</text>
+  </g>
+<g><text x="412.5" y="75" text-anchor="middle" font-family="'Cascadia Code', ui-monospace, Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="28" font-weight="700" fill="#f0e8dc">13</text><text x="412.5" y="103" text-anchor="middle" font-family="'Cascadia Code', ui-monospace, Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="13" font-weight="700" fill="#b9a99e">Longest Streak</text><text x="412.5" y="123" text-anchor="middle" font-family="'Cascadia Code', ui-monospace, Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="11" font-weight="400" fill="#b9a99e">Aug 8 - Aug 20, 2026</text></g>
+</svg>
