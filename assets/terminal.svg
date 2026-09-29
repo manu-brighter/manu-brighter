@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 250" width="760" height="250" role="img" aria-label="Animated terminal introducing Manuel Heller: PHP, Vue, SQL, APIs and release testing">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 250" width="760" height="250" role="img" aria-label="Animated terminal: whoami, Manuel Heller, Full Stack Developer, Switzerland">
   <style>
     text {
       font-family: 'Cascadia Code', ui-monospace, 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
@@ -67,14 +67,14 @@
       <rect class="curtain c3" x="26" y="100" width="113" height="18"/>
     </g>
     <g class="l4">
-      <text y="139" xml:space="preserve"><tspan x="28" class="dir" textLength="453.6" lengthAdjust="spacingAndGlyphs">php/  vue/  sql/  apis/  cypress/  release-testing/</tspan></text>
+      <text y="139" xml:space="preserve"><tspan x="28" class="dir" textLength="453.6" lengthAdjust="spacingAndGlyphs">php/  vue/  typescript/  mysql/  cypress/  vibecoding/</tspan></text>
     </g>
     <g class="l5">
       <text y="164"><tspan x="28" class="p" textLength="8.4" lengthAdjust="spacingAndGlyphs">$</tspan><tspan x="44.8" class="t" textLength="109.2" lengthAdjust="spacingAndGlyphs">git commit -m</tspan><tspan x="162.4" class="str" textLength="193.2" lengthAdjust="spacingAndGlyphs">"feat / life : ship it"</tspan></text>
       <rect class="curtain c5" x="26" y="150" width="331" height="18"/>
     </g>
     <g class="l6">
-      <text y="189"><tspan x="28" class="ok" textLength="8.4" lengthAdjust="spacingAndGlyphs">✔</tspan><tspan x="44.8" class="o" textLength="310.8" lengthAdjust="spacingAndGlyphs">build, test, review, improve, repeat,</tspan></text>
+      <text y="189"><tspan x="28" class="ok" textLength="8.4" lengthAdjust="spacingAndGlyphs">✔</tspan><tspan x="44.8" class="o" textLength="310.8" lengthAdjust="spacingAndGlyphs">works on my machine, deploying anyway</tspan></text>
     </g>
     <g class="l7">
       <text y="214"><tspan x="28" class="p" textLength="8.4" lengthAdjust="spacingAndGlyphs">$</tspan></text>
