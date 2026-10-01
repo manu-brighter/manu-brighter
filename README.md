@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/header.svg" alt="Manuel Heller, Full Stack Developer, Photographer, AI Specialist" width="100%" />
+<img src="assets/header.svg" alt="Manuel Heller, Full Stack Developer, Photographer, AI Enthusiast" width="100%" />
 
 <img src="assets/terminal.svg" alt="animated terminal: whoami, Manuel Heller, Full Stack Developer, Switzerland" width="760" />
 
@@ -52,9 +52,11 @@
 |:---:|---|---|---|
 | 🎨 | [**manuelheller.dev**](https://manuelheller.dev) | Creative developer portfolio: WebGL fluid simulation, Risograph aesthetics, GLSL shaders | <img src="https://img.shields.io/badge/Next.js-e0447e?style=flat-square" alt="Next.js" /> <img src="https://img.shields.io/badge/Three.js-8b6fd8?style=flat-square" alt="Three.js" /> <img src="https://img.shields.io/badge/GSAP-e0447e?style=flat-square" alt="GSAP" /> |
 | 📷 | [**photography**](https://manuelheller.myportfolio.com) | Wildlife, cars and events: Costa Rica, Thailand, The ICE St. Moritz | <img src="https://img.shields.io/badge/Lightroom-8b6fd8?style=flat-square" alt="Lightroom" /> <img src="https://img.shields.io/badge/Photoshop-e0447e?style=flat-square" alt="Photoshop" /> |
-| 🎯 | [**joggediballa.ch**](https://joggediballa.ch) | Club platform: events, members, permissions, sponsors, live Twitch overlay | <img src="https://img.shields.io/badge/React-e0447e?style=flat-square" alt="React" /> <img src="https://img.shields.io/badge/tRPC-8b6fd8?style=flat-square" alt="tRPC" /> <img src="https://img.shields.io/badge/Drizzle-e0447e?style=flat-square" alt="Drizzle" /> <img src="https://img.shields.io/badge/MySQL-8b6fd8?style=flat-square" alt="MySQL" /> |
+| 🎯 | [**joggediballa.ch**](https://joggediballa.ch) | Months of evenings turned into our club's daily toolkit: members, events, a till for service, kitchen and bar, live slideshows and a streaming overlay | <img src="https://img.shields.io/badge/React-e0447e?style=flat-square" alt="React" /> <img src="https://img.shields.io/badge/tRPC-8b6fd8?style=flat-square" alt="tRPC" /> <img src="https://img.shields.io/badge/Drizzle-e0447e?style=flat-square" alt="Drizzle" /> <img src="https://img.shields.io/badge/MySQL-8b6fd8?style=flat-square" alt="MySQL" /> |
 | 🥃 | [**shot-counter**](https://github.com/manu-brighter/shot-counter) | Party scoreboard: live SSE sync, QR join by phone, desktop app | <img src="https://img.shields.io/badge/Vue%203-8b6fd8?style=flat-square" alt="Vue 3" /> <img src="https://img.shields.io/badge/Express%205-e0447e?style=flat-square" alt="Express 5" /> <img src="https://img.shields.io/badge/SQLite-8b6fd8?style=flat-square" alt="SQLite" /> <img src="https://img.shields.io/badge/Electron-e0447e?style=flat-square" alt="Electron" /> |
-| 🤖 | [**claude-code-kit**](https://github.com/manu-brighter/claude-code-kit) | Claude Code plugin marketplace: 5 workflow skills (autonomous multi-agent codebase overhaul, docs and i18n sync, publishing prep) and 5 specialist agents for GPU-heavy frontends | <img src="https://img.shields.io/badge/Claude%20Code-e0447e?style=flat-square" alt="Claude Code" /> <img src="https://img.shields.io/badge/Multi--Agent-8b6fd8?style=flat-square" alt="Multi-Agent" /> <img src="https://img.shields.io/badge/GLSL-e0447e?style=flat-square" alt="GLSL" /> |
+| 🤖 | [**claude-code-kit**](https://github.com/manu-brighter/claude-code-kit) | My AI toolbox: workflow skills, specialist agents for creative frontends and a security reviewer. The new home of full-project-rework | <img src="https://img.shields.io/badge/Claude%20Code-e0447e?style=flat-square" alt="Claude Code" /> <img src="https://img.shields.io/badge/Multi--Agent-8b6fd8?style=flat-square" alt="Multi-Agent" /> <img src="https://img.shields.io/badge/GLSL-e0447e?style=flat-square" alt="GLSL" /> |
+| 🧪 | [**mercurius-quant-bot**](https://github.com/manu-brighter/mercurius-quant-bot) | Could a trading idea survive its own backtests? Three hypotheses, none passed. Archived with the results; no real money used | <img src="https://img.shields.io/badge/Python-e0447e?style=flat-square" alt="Python" /> <img src="https://img.shields.io/badge/Backtesting-8b6fd8?style=flat-square" alt="Backtesting" /> |
+| 🪰 | [**fly-connectome-sim**](https://github.com/manu-brighter/fly-connectome-sim) | Work in progress: experimenting with a fruit-fly wiring graph and an LLM event planner. The simulation runs; learning results are still ahead | <img src="https://img.shields.io/badge/Python-8b6fd8?style=flat-square" alt="Python" /> <img src="https://img.shields.io/badge/C%2B%2B-e0447e?style=flat-square" alt="C++" /> |
 
 <br>
 
@@ -107,13 +109,13 @@ gitGraph
     checkout photo
     commit id: "2024 · feat / wildlife : Costa Rica solo"
     checkout career
-    commit id: "2025 · feat : interfaces and API main"
+    commit id: "2025 · feat : APIs and data sync"
     commit id: "2025 · feat : specializing in AI coding"
     checkout photo
     commit id: "2025 · feat / cars : The ICE, Koenigsegg shoot"
     checkout club
     commit id: "2026 · feat / jogge di balla : club platform deployed"
-    commit id: "2026 · feat : 1000 Instagram followers"
+    commit id: "2026 · feat / events : service, kitchen and bar connected"
     checkout career
     commit id: "2026 · feat / zvoove : joined the next team"
     commit id: "2026 · feat / oss : published my Claude Code toolkit"
