@@ -44,12 +44,16 @@
     </pattern>
     <clipPath id="hero-camera-mc-optics-clip"><circle cx="365" cy="282" r="110" /></clipPath>
     <clipPath id="hero-camera-mc-iris-clip"><circle r="88" /></clipPath>
+
+    <clipPath id="hero-camera-mc-iris-next-clearance" clipPathUnits="userSpaceOnUse" transform="rotate(45)">
+      <path class="mc-iris-clearance" d="M-200-32H200V200H-200Z" />
+    </clipPath>
     <path id="hero-camera-mc-letter-arc" d="M246 282a119 119 0 0 1 238 0" />
     <path id="hero-camera-mc-bottom-arc" d="M251 307a117 117 0 0 0 228 0" />
     <filter id="hero-camera-mc-shadow" x="-.2" y="-1" width="1.4" height="3"><feGaussianBlur stdDeviation="8" /></filter>
   </defs>
   <style>
-    .manual-camera .mc-iris-blade { animation: mc-iris-cycle 12s cubic-bezier(.42,0,.24,1) infinite; }
+    .manual-camera .mc-iris-blade, .manual-camera .mc-iris-clearance { animation: mc-iris-cycle 12s cubic-bezier(.42,0,.24,1) infinite; }
     .manual-camera .mc-focus { animation: mc-focus-cycle 12s linear infinite; opacity: .16; }
     .manual-camera .mc-shutter-glint { animation: mc-shutter-cycle 12s linear infinite; opacity: 0; }
     @keyframes mc-iris-cycle {
@@ -68,8 +72,8 @@
       49% { opacity: .1; }
     }
     @media (prefers-reduced-motion: reduce) {
-      .manual-camera .mc-iris-blade, .manual-camera .mc-focus, .manual-camera .mc-shutter-glint { animation: none; }
-      .manual-camera .mc-iris-blade { transform: translateY(-12px); }
+      .manual-camera .mc-iris-blade, .manual-camera .mc-iris-clearance, .manual-camera .mc-focus, .manual-camera .mc-shutter-glint { animation: none; }
+      .manual-camera .mc-iris-blade, .manual-camera .mc-iris-clearance { transform: translateY(-12px); }
       .manual-camera .mc-focus { opacity: .65; }
       .manual-camera .mc-shutter-glint { opacity: 0; }
     }
@@ -314,14 +318,78 @@
 
 
   <g transform="translate(365 282)" clip-path="url(#hero-camera-mc-iris-clip)" stroke-linejoin="round">
-      <g transform="rotate(0)"><g class="mc-iris-blade"><path d="M-122-132H138V-32H-18Z" fill="url(#hero-camera-mc-blade)" stroke="#536b80" stroke-width=".75" /><path d="M-18-32H138" stroke="#a3bfcb" stroke-width=".8" opacity=".48" /></g></g>
-      <g transform="rotate(45)"><g class="mc-iris-blade"><path d="M-122-132H138V-32H-18Z" fill="url(#hero-camera-mc-blade)" stroke="#536b80" stroke-width=".75" /><path d="M-18-32H138" stroke="#a3bfcb" stroke-width=".8" opacity=".48" /></g></g>
-      <g transform="rotate(90)"><g class="mc-iris-blade"><path d="M-122-132H138V-32H-18Z" fill="url(#hero-camera-mc-blade)" stroke="#536b80" stroke-width=".75" /><path d="M-18-32H138" stroke="#a3bfcb" stroke-width=".8" opacity=".48" /></g></g>
-      <g transform="rotate(135)"><g class="mc-iris-blade"><path d="M-122-132H138V-32H-18Z" fill="url(#hero-camera-mc-blade)" stroke="#536b80" stroke-width=".75" /><path d="M-18-32H138" stroke="#a3bfcb" stroke-width=".8" opacity=".48" /></g></g>
-      <g transform="rotate(180)"><g class="mc-iris-blade"><path d="M-122-132H138V-32H-18Z" fill="url(#hero-camera-mc-blade)" stroke="#536b80" stroke-width=".75" /><path d="M-18-32H138" stroke="#a3bfcb" stroke-width=".8" opacity=".48" /></g></g>
-      <g transform="rotate(225)"><g class="mc-iris-blade"><path d="M-122-132H138V-32H-18Z" fill="url(#hero-camera-mc-blade)" stroke="#536b80" stroke-width=".75" /><path d="M-18-32H138" stroke="#a3bfcb" stroke-width=".8" opacity=".48" /></g></g>
-      <g transform="rotate(270)"><g class="mc-iris-blade"><path d="M-122-132H138V-32H-18Z" fill="url(#hero-camera-mc-blade)" stroke="#536b80" stroke-width=".75" /><path d="M-18-32H138" stroke="#a3bfcb" stroke-width=".8" opacity=".48" /></g></g>
-      <g transform="rotate(315)"><g class="mc-iris-blade"><path d="M-122-132H138V-32H-18Z" fill="url(#hero-camera-mc-blade)" stroke="#536b80" stroke-width=".75" /><path d="M-18-32H138" stroke="#a3bfcb" stroke-width=".8" opacity=".48" /></g></g>
+    <g transform="rotate(0)">
+      <g clip-path="url(#hero-camera-mc-iris-next-clearance)">
+        <g class="mc-iris-blade">
+          <path d="M-200-200H200V-32H-200Z" fill="url(#hero-camera-mc-blade)" />
+          <path d="M-200-32H200" fill="none" stroke="#536b80" stroke-width=".75" />
+          <path d="M-200-32H200" fill="none" stroke="#a3bfcb" stroke-width=".8" opacity=".48" />
+        </g>
+      </g>
+    </g>
+    <g transform="rotate(45)">
+      <g clip-path="url(#hero-camera-mc-iris-next-clearance)">
+        <g class="mc-iris-blade">
+          <path d="M-200-200H200V-32H-200Z" fill="url(#hero-camera-mc-blade)" />
+          <path d="M-200-32H200" fill="none" stroke="#536b80" stroke-width=".75" />
+          <path d="M-200-32H200" fill="none" stroke="#a3bfcb" stroke-width=".8" opacity=".48" />
+        </g>
+      </g>
+    </g>
+    <g transform="rotate(90)">
+      <g clip-path="url(#hero-camera-mc-iris-next-clearance)">
+        <g class="mc-iris-blade">
+          <path d="M-200-200H200V-32H-200Z" fill="url(#hero-camera-mc-blade)" />
+          <path d="M-200-32H200" fill="none" stroke="#536b80" stroke-width=".75" />
+          <path d="M-200-32H200" fill="none" stroke="#a3bfcb" stroke-width=".8" opacity=".48" />
+        </g>
+      </g>
+    </g>
+    <g transform="rotate(135)">
+      <g clip-path="url(#hero-camera-mc-iris-next-clearance)">
+        <g class="mc-iris-blade">
+          <path d="M-200-200H200V-32H-200Z" fill="url(#hero-camera-mc-blade)" />
+          <path d="M-200-32H200" fill="none" stroke="#536b80" stroke-width=".75" />
+          <path d="M-200-32H200" fill="none" stroke="#a3bfcb" stroke-width=".8" opacity=".48" />
+        </g>
+      </g>
+    </g>
+    <g transform="rotate(180)">
+      <g clip-path="url(#hero-camera-mc-iris-next-clearance)">
+        <g class="mc-iris-blade">
+          <path d="M-200-200H200V-32H-200Z" fill="url(#hero-camera-mc-blade)" />
+          <path d="M-200-32H200" fill="none" stroke="#536b80" stroke-width=".75" />
+          <path d="M-200-32H200" fill="none" stroke="#a3bfcb" stroke-width=".8" opacity=".48" />
+        </g>
+      </g>
+    </g>
+    <g transform="rotate(225)">
+      <g clip-path="url(#hero-camera-mc-iris-next-clearance)">
+        <g class="mc-iris-blade">
+          <path d="M-200-200H200V-32H-200Z" fill="url(#hero-camera-mc-blade)" />
+          <path d="M-200-32H200" fill="none" stroke="#536b80" stroke-width=".75" />
+          <path d="M-200-32H200" fill="none" stroke="#a3bfcb" stroke-width=".8" opacity=".48" />
+        </g>
+      </g>
+    </g>
+    <g transform="rotate(270)">
+      <g clip-path="url(#hero-camera-mc-iris-next-clearance)">
+        <g class="mc-iris-blade">
+          <path d="M-200-200H200V-32H-200Z" fill="url(#hero-camera-mc-blade)" />
+          <path d="M-200-32H200" fill="none" stroke="#536b80" stroke-width=".75" />
+          <path d="M-200-32H200" fill="none" stroke="#a3bfcb" stroke-width=".8" opacity=".48" />
+        </g>
+      </g>
+    </g>
+    <g transform="rotate(315)">
+      <g clip-path="url(#hero-camera-mc-iris-next-clearance)">
+        <g class="mc-iris-blade">
+          <path d="M-200-200H200V-32H-200Z" fill="url(#hero-camera-mc-blade)" />
+          <path d="M-200-32H200" fill="none" stroke="#536b80" stroke-width=".75" />
+          <path d="M-200-32H200" fill="none" stroke="#a3bfcb" stroke-width=".8" opacity=".48" />
+        </g>
+      </g>
+    </g>
   </g>
 
 

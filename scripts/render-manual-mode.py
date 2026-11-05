@@ -4,6 +4,8 @@
 from __future__ import annotations
 
 import argparse
+from datetime import date, datetime, timedelta
+import json
 import math
 from pathlib import Path
 import re
@@ -289,11 +291,80 @@ def hero(c):
     return 600 if c.mobile else 510
 
 
+def activity(c):
+    data = c.activity
+    start, finish = date.fromisoformat(data["from"]), date.fromisoformat(data["to"])
+    expected = [(start + timedelta(days=i)).isoformat() for i in range(84)]
+    if finish != start + timedelta(days=83) or len(data["repositories"]) != 4:
+        raise ValueError("Activity must contain four projects and 84 complete UTC days")
+    labels = {
+        "joggediballa-mainpage": "Jogge di Balla",
+        "shot-counter": "Shot-Counter",
+        "claude-code-kit": "Claude Code Kit",
+        "manus-portfolio": "Portfolio",
+    }
+    if {repo["name"] for repo in data["repositories"]} != set(labels):
+        raise ValueError("Unexpected activity repositories")
+    totals = [0] * 84
+    series = []
+    for repo in data["repositories"]:
+        days = repo["daily"]
+        if [day["date"] for day in days] != expected or any(type(day["count"]) is not int or day["count"] < 0 for day in days):
+            raise ValueError("Invalid daily activity data")
+        values = [day["count"] for day in days]
+        if sum(values) != repo["total"]:
+            raise ValueError("Repository activity total does not match its days")
+        totals = [a + b for a, b in zip(totals, values)]
+        series.append((repo, [sum(values[i:i + 7]) for i in range(0, 84, 7)]))
+    if data["daily"] != [{"date": day, "count": total} for day, total in zip(expected, totals)] or sum(totals) != data["total"]:
+        raise ValueError("Activity totals do not match the repository data")
+    peak = max((max(weeks) for _, weeks in series), default=0)
+    scale = max(1, peak)
+    c.line(c.pad, 1, c.width - c.pad, 1)
+    c.text("In the making.", c.pad, 49, 31 if c.mobile else 35, LIGHT, True, -1)
+    y = c.paragraph("A rolling log of my public project commits.", c.pad, 80, c.inner, 14, 23, MUTED)
+    count_width = c.text(f'{data["total"]:,}', c.pad, y + 43, 46, ACCENT, True, -1.8)
+    c.text("commits / 12 weeks", c.pad + count_width + 15, y + 41, 12 if c.mobile else 14, LIGHT)
+    top = y + 79
+    c.text("7-day totals", c.pad, top, 11, MUTED)
+    c.text(f"Shared scale: 0–{scale}", c.width - c.pad, top, 11, MUTED, anchor="end")
+    chart_x = c.pad if c.mobile else c.pad + 179
+    chart_w = c.inner if c.mobile else c.inner - 179
+    bar_step = chart_w / 12
+    colors = [ACCENT, VIOLET, CYAN, "#e2bbdb"]
+    y = top + 26
+    for index, (repo, weeks) in enumerate(series):
+        color = colors[index]
+        c.text(labels[repo["name"]], c.pad, y + 12, 14, color, True)
+        if c.mobile:
+            c.text(str(repo["total"]), c.width - c.pad, y + 12, 13, LIGHT, anchor="end")
+            baseline = y + 75
+        else:
+            c.text(f'{repo["total"]:,} commits', c.pad, y + 35, 12, MUTED)
+            baseline = y + 47
+        c.line(chart_x, baseline, chart_x + chart_w, baseline)
+        for week, count in enumerate(weeks):
+            x = chart_x + week * bar_step + 2
+            height = count / scale * 45
+            if count:
+                c.add("rect", x=number(x), y=number(baseline - height), width=number(bar_step - 4), height=number(height), rx=1.5, fill=color, opacity=".88")
+            else:
+                c.add("circle", cx=number(x + (bar_step - 4) / 2), cy=baseline - 2, r=1.2, fill=LINE)
+        c.copy.append(f'{labels[repo["name"]]}: {repo["total"]} commits. Seven-day totals: {", ".join(str(count) for count in weeks)}.')
+        y = baseline + 30
+    c.text(start.strftime("%d %b"), chart_x, y - 8, 11, MUTED)
+    c.text(finish.strftime("%d %b %Y"), chart_x + chart_w, y - 8, 11, MUTED, anchor="end")
+    y = c.paragraph("My commits on four public default branches. Work repositories and unmerged branches are outside this view.", c.pad, y + 26, c.inner, 12, 20)
+    fetched = datetime.fromisoformat(data["fetched_at"].replace("Z", "+00:00"))
+    c.text(f'Snapshot · {fetched.strftime("%d %b %Y, %H:%M")} UTC', c.pad, y + 12, 11, MUTED)
+    return y + 43
+
+
 def club(c):
     p, w = c.pad, c.inner
     c.text("Jogge di Balla", p, 49, 31 if c.mobile else 35, bold=True, spacing=-1)
-    y = c.paragraph("A club website became the system behind an event.", p, 82, w, 16, 26, LIGHT)
-    y = c.paragraph("Co-founder, vice president and developer. From membership management to orders, live photos and the screens around the venue.", p, y + 8, w, leading=24)
+    y = c.paragraph("From a club website to running the whole night.", p, 82, w, 16, 26, LIGHT)
+    y = c.paragraph("Co-founder, vice president, developer. One platform for members, orders and the screens around the venue.", p, y + 8, w, leading=24)
     y += 22
     source_x, end_x = p + 12, p + w - (110 if c.mobile else 160)
     source_w, end_w = (103, 110) if c.mobile else (174, 160)
@@ -349,35 +420,26 @@ def projects(c):
     return y - 15
 
 
-def portfolio(c):
-    c.line(c.pad, 1, c.width - c.pad, 1)
-    c.text("manuelheller.dev", c.pad, 38, 23, CYAN, True, -.6)
-    y = c.paragraph("Photography, design and a real GPU fluid simulation. Four languages, with quality that adapts to the device.", c.pad, 72, c.inner, leading=25)
-    return y + 19
-
-
 SKILLS = [
-    ("At work", "PHP · Vue · MySQL", "Business interfaces, APIs and data synchronisation. Application development at zvoove since 2021."),
-    ("Making sure it works", "Cypress · E2E testing", "Around 30 substantial release tests, execution and failure analysis. Playwright migration in progress."),
-    ("My own products", "React · TypeScript · tRPC", "Built with AI support. I own the ideas, design and ongoing operation, alongside my PHP/Vue background."),
-    ("Keeping them running", "Linux · nginx · Docker", "My rented root server, my configurations. Codex, Claude Code and custom skills in the daily workflow."),
+    ("Daily work", "PHP · Vue · MySQL", "Business applications, APIs and data sync at zvoove since 2021."),
+    ("Quality", "Cypress · E2E", "Release tests and failure analysis. Playwright migration in progress."),
+    ("Personal builds", "React · TypeScript · tRPC", "Built with AI support; I own the ideas, design and ongoing operation."),
+    ("Operations", "Linux · nginx · Docker", "A rented root server with my own configurations. Tools I build, systems I run."),
 ]
 
 
 def stack(c):
-    c.heading("The tools behind it.", "At work, at home, behind the scenes.")
-    w = c.inner if c.mobile else (c.inner - 30) / 2
-    y, bottom, row_bottom = 107 if c.mobile else 100, 0, 0
-    for index, (title, tech, copy) in enumerate(SKILLS):
-        x = c.pad if c.mobile else c.pad + index % 2 * (w + 30)
-        c.text(title, x, y, 14, "#d0dce5")
-        c.text(tech, x, y + 29, 15, CYAN)
-        end = c.paragraph(copy, x, y + 59, w)
-        row_bottom, bottom = max(row_bottom, end), max(bottom, end)
-        if c.mobile or index % 2:
-            y = row_bottom + 27
-            row_bottom = 0
-    return bottom + 20
+    c.heading("Under the hood.")
+    y = 84
+    for title, tech, copy in SKILLS:
+        c.text(title, c.pad, y, 12, MUTED)
+        if c.mobile:
+            c.text(tech, c.pad, y + 27, 16, CYAN, True)
+            y = c.paragraph(copy, c.pad, y + 54, c.inner, 13, 22) + 23
+        else:
+            c.text(tech, c.pad + 147, y, 16, CYAN, True)
+            y = c.paragraph(copy, c.pad + 147, y + 27, c.inner - 147, 13, 22) + 24
+    return y + 3
 
 
 EXPERIMENTS = [
@@ -404,29 +466,14 @@ def experiments(c):
 
 def garage(c):
     c.line(c.pad, 1, c.width - c.pad, 1)
-    c.text("The S5 project.", c.pad, 52, 32 if c.mobile else 39, LIGHT, True, -1)
-    c.text("Audi S5 B8.5 / black / lowered", c.pad, 83, 14, ACCENT)
-    glow = element("radialGradient", id="mm-garage-light")
-    glow.append(element("stop", stop_color=VIOLET, stop_opacity=".24"))
-    glow.append(element("stop", offset="1", stop_color=VIOLET, stop_opacity="0"))
-    c.defs.append(glow)
-    art_height = c.width * 400 / 900
-    c.add("ellipse", cx=c.width * .65, cy=111 + art_height * .63, rx=c.width * .48, ry=art_height * .62, fill="url(#mm-garage-light)")
-    c.art("car", 0, 104, c.width, art_height)
-    y = 104 + art_height + 23
-    wheel_size = 186 if c.mobile else 210
-    wheel_x = (c.width - wheel_size) / 2 if c.mobile else c.pad
-    c.art("wheel", wheel_x, y - 10, wheel_size, wheel_size)
-    copy_x = c.pad if c.mobile else c.pad + 246
-    copy_y = y + wheel_size + 20 if c.mobile else y + 22
-    copy_width = c.inner if c.mobile else c.inner - 246
-    c.text('20" KC Forged.', copy_x, copy_y, 24, ACCENT, True, -.7)
-    end = c.paragraph("High-gloss polish. Split-Y spokes. Exposed hardware and a deep lip. The details are the point.", copy_x, copy_y + 32, copy_width)
-    end = c.paragraph("Dream garage: Mazda RX-7.", copy_x, end + 10, copy_width, 13, 23, CYAN)
-    y = max(end, y + wheel_size) + 27
-    c.line(c.pad, y, c.width - c.pad, y)
-    c.text("The other side of the lens.", c.pad, y + 34, 19, LIGHT, True, -.4)
-    end = c.paragraph("Wildlife, car photography and trips for a frame worth keeping. Sony α7 IV, Lightroom, Photoshop and DaVinci Resolve.", c.pad, y + 65, c.inner)
+    c.text("After the editor.", c.pad, 52, 32 if c.mobile else 39, LIGHT, True, -1)
+    c.text("My S5 B8.5. Black, low, polished 20s.", c.pad, 83, 13 if c.mobile else 14, ACCENT)
+    art_height = c.width * 610 / 1575
+    c.art("car", 0, 110, c.width, art_height)
+    y = 110 + art_height + 38
+    c.text("Chasing light.", c.pad, y, 24, VIOLET, True, -.6)
+    end = c.paragraph("Cars, wildlife and places worth getting up early for. Sony α7 IV in hand; Lightroom, Photoshop and DaVinci Resolve afterwards.", c.pad, y + 32, c.inner)
+    end = c.paragraph("My portfolio brings both sides together: photography, design and a GPU fluid simulation you can play with.", c.pad, end + 9, c.inner, 13, 23, CYAN)
     return end + 20
 
 
@@ -445,7 +492,7 @@ EVENTS = [
     ("2025", "photo", "The ICE, St. Moritz", "Cars, winter light and Koenigsegg."),
     ("2026", "club", "Club platform live", "Service, kitchen and bar connected."),
     ("2026", "career", "Publish AI toolkit", "Reusable skills and specialist agents."),
-    ("2026", "garage", "20-inch KC Forged", "Polished wheels for the S5."),
+    ("2026", "garage", "New 20-inch wheels", "Polished details for the S5."),
     ("now", "life", "Still in development", "Code, cameras, cars and club life."),
 ]
 
@@ -574,12 +621,12 @@ def footer(c):
 
 SECTIONS = [
     ("hero", "Manuel Heller, full-stack developer", "A detailed animated camera accompanies Manuel's introduction.", hero),
+    ("activity", "In the making", "Actual user-authored GitHub commits across four public project default branches, grouped into twelve seven-day periods by UTC committer date. This is a dated snapshot, not the complete GitHub contribution calendar.", activity),
     ("club", "Jogge di Balla", "Food and drink orders move from service to the kitchen and bar.", club),
     ("projects", "Personal software projects", "Shot-Counter and Claude Code Kit, with their purpose and technology.", projects),
-    ("portfolio", "Portfolio and photography", "A photography and developer portfolio with a GPU fluid simulation.", portfolio),
     ("stack", "Tools and experience", "Four areas of Manuel's daily development work.", stack),
     ("experiments", "Research and experiments", "Two public research projects, with their current status.", experiments),
-    ("garage", "The Audi S5 project", "Manuel's lowered black Audi S5 B8.5 and 20-inch polished KC Forged wheels, drawn from his photographs.", garage),
+    ("garage", "After the editor", "Manuel's black Audi S5 B8.5, traced from his own photograph, and his photography and design work.", garage),
     ("history", "Life, versioned", "Career, garage, photography and club branches connect the milestones in Manuel's life.", history),
     ("footer", "Manuel Heller", "Always something in development.", footer),
 ]
@@ -588,10 +635,12 @@ SECTIONS = [
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, default=ROOT / "assets" / "manual-mode")
+    parser.add_argument("--activity-data", type=Path, default=ROOT / "design" / "data" / "activity.json")
+    parser.add_argument("--only", choices=[section[0] for section in SECTIONS])
     args = parser.parse_args()
     artwork = {
         key: (ROOT / "design" / "art" / filename).read_text(encoding="utf-8-sig")
-        for key, filename in {"camera": "camera.svg", "car": "audi-s5.svg", "wheel": "kc-wheel.svg"}.items()
+        for key, filename in {"camera": "camera.svg", "car": "audi-s5.svg"}.items()
     }
     artwork["animationCss"] = "@media(prefers-reduced-motion:reduce){#manual-mode *{animation:none!important}}"
     fonts = {
@@ -600,8 +649,12 @@ def main():
     }
     args.output.mkdir(parents=True, exist_ok=True)
     for name, title, description, render in SECTIONS:
+        if args.only and name != args.only:
+            continue
         for mobile in (False, True):
             canvas = Canvas(name, mobile, title, description, fonts, artwork)
+            if name == "activity":
+                canvas.activity = json.loads(args.activity_data.read_text(encoding="utf-8"))
             canvas.save(render(canvas), args.output)
 
 

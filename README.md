@@ -3,14 +3,21 @@
   <img src="assets/manual-mode/hero.svg" width="100%" alt="Manuel Heller, full-stack developer from the Basel region, Switzerland. PHP and Vue. Code, light, and things worth taking apart. Usually in manual mode. An illustrated camera opens and closes its aperture." />
 </picture>
 
-I build **PHP & Vue applications at zvoove**. After hours, I turn ideas into tools people actually use, chase good light with a camera, and spend probably too much time thinking about cars.
+I build **PHP & Vue applications at zvoove**. After hours: tools for my club, experiments that don't always work, a camera and a lowered S5.
 
 [Portfolio](https://manuelheller.dev) · [Photography](https://manuelheller.myportfolio.com) · [Jogge di Balla](https://joggediballa.ch)
+
+<a href="https://github.com/manu-brighter/manu-brighter/tree/chore/profile-data">
+  <picture>
+    <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/manu-brighter/manu-brighter/refs/heads/chore/profile-data/activity-mobile.svg" />
+    <img src="https://raw.githubusercontent.com/manu-brighter/manu-brighter/refs/heads/chore/profile-data/activity.svg" width="100%" alt="In the making: a dated snapshot of my actual GitHub commits across Jogge di Balla, Shot-Counter, Claude Code Kit and my portfolio. Twelve seven-day totals per project, all on the same scale. Includes my commits on their public default branches; excludes work repositories and unmerged branches. Open the linked data branch for the current values and timestamp." />
+  </picture>
+</a>
 
 <a href="https://github.com/manu-brighter/joggediballa-mainpage">
   <picture>
     <source media="(max-width: 600px)" srcset="assets/manual-mode/club-mobile.svg" />
-    <img src="assets/manual-mode/club.svg" width="100%" alt="Jogge di Balla: a club website became the system behind an event. Co-founder, vice president and developer. Memberships, permissions, orders, live photos and streaming overlays. The animation routes food orders from service to the kitchen and drinks to the bar." />
+    <img src="assets/manual-mode/club.svg" width="100%" alt="Jogge di Balla: from a club website to running the whole night. Co-founder, vice president and developer. Memberships, permissions, orders, live photos and streaming overlays. The animation routes food orders from service to the kitchen and drinks to the bar." />
   </picture>
 </a>
 
@@ -21,16 +28,9 @@ I build **PHP & Vue applications at zvoove**. After hours, I turn ideas into too
 
 [Shot Counter](https://github.com/manu-brighter/shot-counter) · [Download Shot Counter](https://github.com/manu-brighter/shot-counter/releases/latest) · [Claude Code Kit](https://github.com/manu-brighter/claude-code-kit)
 
-<a href="https://manuelheller.dev">
-  <picture>
-    <source media="(max-width: 600px)" srcset="assets/manual-mode/portfolio-mobile.svg" />
-    <img src="assets/manual-mode/portfolio.svg" width="100%" alt="manuelheller.dev: photography, design and a real GPU fluid simulation. Four languages, with quality that adapts to the device." />
-  </picture>
-</a>
-
 <picture>
   <source media="(max-width: 600px)" srcset="assets/manual-mode/stack-mobile.svg" />
-  <img src="assets/manual-mode/stack.svg" width="100%" alt="The tools behind it. At work: PHP, Vue and MySQL for business interfaces, APIs and data synchronisation; application development at zvoove since 2021. Making sure it works: Cypress and E2E testing, around 30 substantial release tests, execution and failure analysis; Playwright migration in progress. My own products: React, TypeScript and tRPC, built with AI support; I own the ideas, design and ongoing operation alongside my PHP and Vue background. Keeping them running: Linux, nginx and Docker; a rented root server with my own configurations. Codex, Claude Code and custom skills in the daily workflow." />
+  <img src="assets/manual-mode/stack.svg" width="100%" alt="Under the hood. Daily work: PHP, Vue and MySQL for business applications, APIs and data sync at zvoove since 2021. Quality: Cypress release tests and failure analysis, with Playwright migration in progress. Personal builds: React, TypeScript and tRPC with AI support; I own the ideas, design and ongoing operation. Operations: a rented Linux root server, nginx and Docker, with my own configurations." />
 </picture>
 
 <picture>
@@ -42,12 +42,14 @@ I build **PHP & Vue applications at zvoove**. After hours, I turn ideas into too
 
 <picture>
   <source media="(max-width: 600px)" srcset="assets/manual-mode/garage-mobile.svg" />
-  <img src="assets/manual-mode/garage.svg" width="100%" alt="The S5 project: my lowered black Audi S5 B8.5, illustrated from my photographs, with 20-inch high-gloss polished KC Forged wheels. Split-Y spokes, exposed hardware and a deep lip. The headlights and reflections move while the car stays parked. Dream garage: Mazda RX-7. Behind the lens: wildlife and car photography with a Sony α7 IV, Lightroom, Photoshop and DaVinci Resolve." />
+  <img src="assets/manual-mode/garage.svg" width="100%" alt="After the editor. My lowered black Audi S5 B8.5 on polished 20-inch wheels, with its actual silhouette, reflections and wheels traced from my photograph. A light travels along the body contour. Cars, wildlife and travel photography with a Sony α7 IV; Lightroom, Photoshop and DaVinci Resolve afterwards. My portfolio combines photography, design and an interactive GPU fluid simulation." />
 </picture>
+
+[Explore my portfolio](https://manuelheller.dev) · [View my photography](https://manuelheller.myportfolio.com)
 
 <picture>
   <source media="(max-width: 600px)" srcset="assets/manual-mode/history-mobile.svg" />
-  <img src="assets/manual-mode/history.svg" width="100%" alt="Life, versioned as a Git branch graph. A life spine branches into career, garage, photo and club, then merges at now. Career: Novartis apprenticeship in 2016, EFZ in 2020, zvoove in 2021, APIs and data sync in 2025, AI toolkit in 2026. Garage: KTM Duke 390 in 2019, Audi TT RS in 2023, S5 in 2024, polished 20-inch KC Forged wheels in 2026. Photo: Sony α7 IV in 2023, Costa Rica in 2024, The ICE in 2025. Club: co-founder of Jogge di Balla in 2022, platform live in 2026." />
+  <img src="assets/manual-mode/history.svg" width="100%" alt="Life, versioned as a Git branch graph. A life spine branches into career, garage, photo and club, then merges at now. Career: Novartis apprenticeship in 2016, EFZ in 2020, zvoove in 2021, APIs and data sync in 2025, AI toolkit in 2026. Garage: KTM Duke 390 in 2019, Audi TT RS in 2023, S5 in 2024, polished 20-inch wheels in 2026. Photo: Sony α7 IV in 2023, Costa Rica in 2024, The ICE in 2025. Club: co-founder of Jogge di Balla in 2022, platform live in 2026." />
 </picture>
 
 <details>
