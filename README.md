@@ -10,13 +10,13 @@ I build **PHP & Vue applications at zvoove**. After hours, I turn ideas into too
 <a href="https://github.com/manu-brighter/joggediballa-mainpage">
   <picture>
     <source media="(max-width: 600px)" srcset="assets/manual-mode/club-mobile.svg" />
-    <img src="assets/manual-mode/club.svg" width="100%" alt="Made to be used. Jogge di Balla: a club website grew into our everyday toolkit for memberships, events, orders connecting service, kitchen and bar, live photos and streaming overlays. Co-founder and vice president; responsible for concept, design, development and operation. The illustration follows an order from the service screen to the kitchen." />
+    <img src="assets/manual-mode/club.svg" width="100%" alt="Jogge di Balla: a club website became the system behind an event. Co-founder, vice president and developer. Memberships, permissions, orders, live photos and streaming overlays. The animation routes food orders from service to the kitchen and drinks to the bar." />
   </picture>
 </a>
 
 <picture>
   <source media="(max-width: 600px)" srcset="assets/manual-mode/projects-mobile.svg" />
-  <img src="assets/manual-mode/projects.svg" width="100%" alt="One tap. Every screen. Shot Counter connects phones and a shared scoreboard through QR joining and live sync, with a desktop app. Vue 3, Express, SQLite and Electron. A workflow, packaged. Claude Code Kit provides reusable skills and specialist agents for project upkeep, creative frontends and security reviews. Animations show a synchronised score and a code review progressing through its checks." />
+  <img src="assets/manual-mode/projects.svg" width="100%" alt="Shot-Counter: one score, everywhere. QR joining, live updates across phones and a shared screen, plus a desktop app. Vue 3, Express, SQLite and Electron. Claude Code Kit: reusable skills and specialist agents for project upkeep, creative frontends and security reviews." />
 </picture>
 
 [Shot Counter](https://github.com/manu-brighter/shot-counter) · [Download Shot Counter](https://github.com/manu-brighter/shot-counter/releases/latest) · [Claude Code Kit](https://github.com/manu-brighter/claude-code-kit)
@@ -24,7 +24,7 @@ I build **PHP & Vue applications at zvoove**. After hours, I turn ideas into too
 <a href="https://manuelheller.dev">
   <picture>
     <source media="(max-width: 600px)" srcset="assets/manual-mode/portfolio-mobile.svg" />
-    <img src="assets/manual-mode/portfolio.svg" width="100%" alt="A website with a little fluid dynamics. My portfolio brings photography and design together with a real GPU fluid simulation, four languages and device-aware quality settings." />
+    <img src="assets/manual-mode/portfolio.svg" width="100%" alt="manuelheller.dev: photography, design and a real GPU fluid simulation. Four languages, with quality that adapts to the device." />
   </picture>
 </a>
 
@@ -42,12 +42,12 @@ I build **PHP & Vue applications at zvoove**. After hours, I turn ideas into too
 
 <picture>
   <source media="(max-width: 600px)" srcset="assets/manual-mode/garage-mobile.svg" />
-  <img src="assets/manual-mode/garage.svg" width="100%" alt="After the last commit. A different kind of manual: wildlife and car photography, and the occasional trip for a frame worth keeping. Sony α7 IV, Lightroom, Photoshop and DaVinci Resolve. Still taking things apart: the Audi S5 project, design experiments and events with the club. Different interests, the same need to understand how things work. An illustrated coupé switches on its headlights." />
+  <img src="assets/manual-mode/garage.svg" width="100%" alt="The S5 project: my lowered black Audi S5 B8.5, illustrated from my photographs, with 20-inch high-gloss polished KC Forged wheels. Split-Y spokes, exposed hardware and a deep lip. The headlights and reflections move while the car stays parked. Dream garage: Mazda RX-7. Behind the lens: wildlife and car photography with a Sony α7 IV, Lightroom, Photoshop and DaVinci Resolve." />
 </picture>
 
 <picture>
   <source media="(max-width: 600px)" srcset="assets/manual-mode/history-mobile.svg" />
-  <img src="assets/manual-mode/history.svg" width="100%" alt="Life, versioned. 2016–2020: IT apprenticeship at Novartis, Betriebsinformatiker EFZ. 2021: zvoove, PHP, Vue and integrations. 2022: Jogge di Balla, co-founder and vice president. 2023: a camera joins in, wildlife, cars and better light. 2026: building and operating the club platform, apps and tools." />
+  <img src="assets/manual-mode/history.svg" width="100%" alt="Life, versioned as a Git branch graph. A life spine branches into career, garage, photo and club, then merges at now. Career: Novartis apprenticeship in 2016, EFZ in 2020, zvoove in 2021, APIs and data sync in 2025, AI toolkit in 2026. Garage: KTM Duke 390 in 2019, Audi TT RS in 2023, S5 in 2024, polished 20-inch KC Forged wheels in 2026. Photo: Sony α7 IV in 2023, Costa Rica in 2024, The ICE in 2025. Club: co-founder of Jogge di Balla in 2022, platform live in 2026." />
 </picture>
 
 <details>

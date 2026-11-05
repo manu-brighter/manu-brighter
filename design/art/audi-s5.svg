@@ -1,0 +1,168 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" width="900" height="400" class="audi-s5" role="img" aria-labelledby="as5-title as5-desc">
+<title id="as5-title">Manuel's Audi S5 B8.5 — low, black, polished.</title>
+<desc id="as5-desc">A lowered black Audi S5 B8.5 coupe, viewed from a low front three-quarter angle. The full car is visible, with silver mirror caps, facelift LED headlights, four grille rings and an S5 badge. Twenty-inch polished KC Forged wheels have five split-Y spoke pairs, a deep lip and exposed perimeter bolts. The car is parked while reflected studio light travels over the black paint and chrome.</desc>
+<defs>
+<linearGradient id="as5-paint" x1=".12" y1="0" x2=".6" y2="1"><stop stop-color="#272c3b"/><stop offset=".22" stop-color="#131a28"/><stop offset=".38" stop-color="#252d40"/><stop offset=".46" stop-color="#101824"/><stop offset=".68" stop-color="#04080e"/><stop offset=".83" stop-color="#080e16"/><stop offset="1" stop-color="#151d2b"/></linearGradient>
+<linearGradient id="as5-bonnet" x1=".1" y1="0" x2=".45" y2="1"><stop stop-color="#343545"/><stop offset=".2" stop-color="#242a3c"/><stop offset=".52" stop-color="#131b29"/><stop offset=".8" stop-color="#090f18"/><stop offset="1" stop-color="#050b12"/></linearGradient>
+<linearGradient id="as5-windshield" x1="0" y1="0" x2=".7" y2="1"><stop stop-color="#4f536b"/><stop offset=".26" stop-color="#293345"/><stop offset=".58" stop-color="#172434"/><stop offset="1" stop-color="#0d1724"/></linearGradient>
+<linearGradient id="as5-side-glass" x1=".15" y1="0" x2=".7" y2="1"><stop stop-color="#29384a"/><stop offset=".4" stop-color="#111d2b"/><stop offset="1" stop-color="#030a12"/></linearGradient>
+<linearGradient id="as5-silver" x1="0" y1="0" x2=".25" y2="1"><stop stop-color="#dde2ed"/><stop offset=".3" stop-color="#a3afc1"/><stop offset=".55" stop-color="#5e718b"/><stop offset=".75" stop-color="#a3b3c7"/><stop offset="1" stop-color="#26364b"/></linearGradient>
+<linearGradient id="as5-grille-metal" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d6e0ec"/><stop offset=".3" stop-color="#55677e"/><stop offset=".58" stop-color="#172739"/><stop offset=".78" stop-color="#a9bacf"/><stop offset="1" stop-color="#445973"/></linearGradient>
+<linearGradient id="as5-sweep"><stop stop-color="#9b78ff" stop-opacity="0"/><stop offset=".36" stop-color="#9b78ff" stop-opacity=".08"/><stop offset=".48" stop-color="#d6d4ff" stop-opacity=".24"/><stop offset=".53" stop-color="#e7f5c8" stop-opacity=".18"/><stop offset=".64" stop-color="#dcff6b" stop-opacity=".04"/><stop offset="1" stop-color="#dcff6b" stop-opacity="0"/></linearGradient>
+<linearGradient id="as5-beam"><stop stop-color="#dbeaff" stop-opacity=".16"/><stop offset="1" stop-color="#dbeaff" stop-opacity="0"/></linearGradient>
+<radialGradient id="as5-floor"><stop stop-color="#00060d" stop-opacity=".75"/><stop offset="1" stop-color="#00060d" stop-opacity="0"/></radialGradient>
+<clipPath id="as5-body-clip"><path d="M94 212Q96 193 113 184L199 168 271 111Q295 92 330 88L389 86Q423 86 449 104L529 162 716 179Q777 185 806 208L834 241 832 290Q830 312 813 323L680 339 614 331Q621 295 607 262 592 230 566 227 531 222 512 248 496 270 497 326L252 316Q257 281 242 253 229 231 204 231 177 231 164 253 152 276 157 313L116 306 99 288 90 244Z"/></clipPath>
+<clipPath id="as5-front-grille"><path d="M711 225Q750 221 784 226L808 237 806 287Q803 307 792 312L728 315Q720 314 717 303L701 244Q698 231 711 225Z"/></clipPath>
+<filter id="as5-lamp-glow" x="-.5" y="-1" width="2" height="3"><feGaussianBlur stdDeviation="2.6"/></filter>
+<linearGradient id="as5-wheel-chrome" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d9e3eb"/><stop offset=".12" stop-color="#4d5869"/><stop offset=".23" stop-color="#eef3f7"/><stop offset=".37" stop-color="#6b788a"/><stop offset=".48" stop-color="#2c3547"/><stop offset=".57" stop-color="#d8e2ec"/><stop offset=".69" stop-color="#78889c"/><stop offset=".83" stop-color="#edf3f9"/><stop offset=".91" stop-color="#4d596c"/><stop offset="1" stop-color="#9aaac0"/></linearGradient>
+<radialGradient id="as5-wheel-dish"><stop offset=".66" stop-color="#030810"/><stop offset=".73" stop-color="#2b3748"/><stop offset=".8" stop-color="#4f5d75"/><stop offset=".87" stop-color="#bcc9d8"/><stop offset=".91" stop-color="#5c687e"/><stop offset=".97" stop-color="#0b1420"/><stop offset="1" stop-color="#c9d9e4"/></radialGradient>
+<radialGradient id="as5-wheel-rubber" cx=".34" cy=".25" r=".8"><stop offset=".5" stop-color="#1b2330"/><stop offset=".84" stop-color="#0c121b"/><stop offset=".96" stop-color="#04070c"/><stop offset="1" stop-color="#121a24"/></radialGradient>
+<linearGradient id="as5-wheel-rotor" x1="0" y1="0" x2="1" y2=".8"><stop stop-color="#788491"/><stop offset=".3" stop-color="#263342"/><stop offset=".57" stop-color="#546271"/><stop offset="1" stop-color="#101a27"/></linearGradient>
+<linearGradient id="as5-wheel-rim-reflect" x1="0" y1="0" x2="1" y2=".8"><stop stop-color="#9b78ff" stop-opacity=".03"/><stop offset=".35" stop-color="#9b78ff" stop-opacity=".4"/><stop offset=".6" stop-color="#edf4ff" stop-opacity=".07"/><stop offset=".8" stop-color="#dcff6b" stop-opacity=".22"/><stop offset="1" stop-color="#dcff6b" stop-opacity="0"/></linearGradient>
+<g id="as5-wheel-split-spoke">
+<path d="M-8-16C-12-23-14-37-19-52L-33-97-29-99-10-61Q-5-50 0-45 5-50 10-61L29-99 33-97 19-52C14-37 12-23 8-16L5-12H-5Z" fill="url(#as5-wheel-chrome)" stroke="#263142" stroke-width=".65" stroke-linejoin="round"/>
+<path d="M-5-20C-9-28-11-42-16-54L-30-95M5-20C9-28 11-42 16-54L30-95" fill="none" stroke="#e5edf5" stroke-width="1" opacity=".85"/>
+<path d="M-8-43Q-4-38 0-37 4-38 8-43L3-24Q0-20-3-24Z" fill="#162230" stroke="#a0b0c4" stroke-width=".6"/>
+<path d="m-14-54-14-40m42 40 14-40" stroke="#39485d" stroke-width="1.1" opacity=".9"/>
+<path d="M0-45v22" stroke="#bac8d9" stroke-width=".75" opacity=".6"/>
+</g>
+<g id="as5-wheel-wheel">
+<circle r="116" fill="url(#as5-wheel-rubber)" stroke="#080d15" stroke-width="1.8"/>
+<circle r="112.8" fill="none" stroke="#283343" stroke-width=".8"/>
+<circle r="108.5" fill="none" stroke="#04080e" stroke-width="1.3"/>
+<path d="M-82-78A113 113 0 0 1 30-109" fill="none" stroke="#667388" stroke-width=".65" opacity=".4"/>
+<path d="M-96 55A111 111 0 0 0 76 81" fill="none" stroke="#0c141e" stroke-width="1.2"/>
+<circle r="104.5" fill="url(#as5-wheel-chrome)" stroke="#d2e0ec" stroke-width="1"/>
+<circle r="101.5" fill="url(#as5-wheel-dish)" stroke="#091321" stroke-width="1.2"/>
+<circle r="99.1" fill="none" stroke="#c3d1e2" stroke-width="1.05"/>
+<circle r="95.8" fill="none" stroke="#1e2d41" stroke-width="1.7"/>
+<circle r="91.1" fill="none" stroke="#afbdd0" stroke-width="6.7"/>
+<circle r="86.7" fill="#040a12" stroke="#2d3f54" stroke-width="1.3"/>
+<circle r="77" fill="url(#as5-wheel-rotor)" stroke="#142233" stroke-width="1"/>
+<circle r="74" fill="none" stroke="#a1adbc" stroke-width=".45" opacity=".55"/>
+<circle r="68" fill="none" stroke="#151f2d" stroke-width=".65"/>
+<circle r="61" fill="none" stroke="#9babbc" stroke-width=".45" opacity=".35"/>
+<path d="M0-75v4" transform="rotate(0)" stroke="#1c2532" stroke-width=".8"/><path d="M0-75v4" transform="rotate(7.5)" stroke="#1c2532" stroke-width=".8"/><path d="M0-75v4" transform="rotate(15)" stroke="#1c2532" stroke-width=".8"/><path d="M0-75v4" transform="rotate(22.5)" stroke="#1c2532" stroke-width=".8"/><path d="M0-75v4" transform="rotate(30)" stroke="#1c2532" stroke-width=".8"/><path d="M0-75v4" transform="rotate(37.5)" stroke="#1c2532" stroke-width=".8"/><path d="M0-75v4" transform="rotate(45)" stroke="#1c2532" stroke-width=".8"/><path d="M0-75v4" transform="rotate(52.5)" stroke="#1c2532" stroke-width=".8"/><path d="M0-75v4" transform="rotate(60)" stroke="#1c2532" stroke-width=".8"/><path d="M0-75v4" transform="rotate(67.5)" stroke="#1c2532" stroke-width=".8"/><path d="M0-75v4" transform="rotate(75)" stroke="#1c2532" stroke-width=".8"/><path d="M0-75v4" transform="rotate(82.5)" stroke="#1c2532" stroke-width=".8"/><path d="M0-75v4" transform="rotate(90)" stroke="#1c2532" stroke-width=".8"/><path d="M0-75v4" transform="rotate(97.5)" stroke="#1c2532" stroke-width=".8"/><path d="M0-75v4" transform="rotate(105)" stroke="#1c2532" stroke-width=".8"/><path d="M0-75v4" transform="rotate(112.5)" stroke="#1c2532" stroke-width=".8"/><path d="M0-75v4" transform="rotate(120)" stroke="#1c2532" stroke-width=".8"/><path d="M0-75v4" transform="rotate(127.5)" stroke="#1c2532" stroke-width=".8"/><path d="M0-75v4" transform="rotate(135)" stroke="#1c2532" stroke-width=".8"/><path d="M0-75v4" transform="rotate(142.5)" stroke="#1c2532" stroke-width=".8"/><path d="M0-75v4" transform="rotate(150)" stroke="#1c2532" stroke-width=".8"/><path d="M0-75v4" transform="rotate(157.5)" stroke="#1c2532" stroke-width=".8"/><path d="M0-75v4" transform="rotate(165)" stroke="#1c2532" stroke-width=".8"/><path d="M0-75v4" transform="rotate(172.5)" stroke="#1c2532" stroke-width=".8"/><path d="M0-75v4" transform="rotate(180)" stroke="#1c2532" stroke-width=".8"/><path d="M0-75v4" transform="rotate(187.5)" stroke="#1c2532" stroke-width=".8"/><path d="M0-75v4" transform="rotate(195)" stroke="#1c2532" stroke-width=".8"/><path d="M0-75v4" transform="rotate(202.5)" stroke="#1c2532" stroke-width=".8"/><path d="M0-75v4" transform="rotate(210)" stroke="#1c2532" stroke-width=".8"/><path d="M0-75v4" transform="rotate(217.5)" stroke="#1c2532" stroke-width=".8"/><path d="M0-75v4" transform="rotate(225)" stroke="#1c2532" stroke-width=".8"/><path d="M0-75v4" transform="rotate(232.5)" stroke="#1c2532" stroke-width=".8"/><path d="M0-75v4" transform="rotate(240)" stroke="#1c2532" stroke-width=".8"/><path d="M0-75v4" transform="rotate(247.5)" stroke="#1c2532" stroke-width=".8"/><path d="M0-75v4" transform="rotate(255)" stroke="#1c2532" stroke-width=".8"/><path d="M0-75v4" transform="rotate(262.5)" stroke="#1c2532" stroke-width=".8"/><path d="M0-75v4" transform="rotate(270)" stroke="#1c2532" stroke-width=".8"/><path d="M0-75v4" transform="rotate(277.5)" stroke="#1c2532" stroke-width=".8"/><path d="M0-75v4" transform="rotate(285)" stroke="#1c2532" stroke-width=".8"/><path d="M0-75v4" transform="rotate(292.5)" stroke="#1c2532" stroke-width=".8"/><path d="M0-75v4" transform="rotate(300)" stroke="#1c2532" stroke-width=".8"/><path d="M0-75v4" transform="rotate(307.5)" stroke="#1c2532" stroke-width=".8"/><path d="M0-75v4" transform="rotate(315)" stroke="#1c2532" stroke-width=".8"/><path d="M0-75v4" transform="rotate(322.5)" stroke="#1c2532" stroke-width=".8"/><path d="M0-75v4" transform="rotate(330)" stroke="#1c2532" stroke-width=".8"/><path d="M0-75v4" transform="rotate(337.5)" stroke="#1c2532" stroke-width=".8"/><path d="M0-75v4" transform="rotate(345)" stroke="#1c2532" stroke-width=".8"/><path d="M0-75v4" transform="rotate(352.5)" stroke="#1c2532" stroke-width=".8"/>
+<path d="M-73-41Q-66-49-57-45L-43-33-45 28-57 44-71 38-79 12Z" fill="#080e18" stroke="#34465a" stroke-width="1.4"/>
+<path d="M-68-29-57-28-54 23-66 27Z" fill="#293546"/>
+<path d="m-66-11 6-1 1 6-6 1Z" fill="#8b4055"/>
+<text x="-66" y="13" fill="#d2dbe8" font-family="Manrope, sans-serif" font-size="10" font-weight="700" transform="rotate(-2 -66 13)">S5</text>
+<g transform="rotate(0)"><circle cy="-91" r="2.15" fill="#d9dfe7" stroke="#333d4d" stroke-width=".7"/><circle cy="-91" r=".9" fill="#586371"/><path d="m-.6-91.6 1.1 1.1" stroke="#f2f5fa" stroke-width=".45"/></g><g transform="rotate(10)"><circle cy="-91" r="2.15" fill="#d9dfe7" stroke="#333d4d" stroke-width=".7"/><circle cy="-91" r=".9" fill="#586371"/><path d="m-.6-91.6 1.1 1.1" stroke="#f2f5fa" stroke-width=".45"/></g><g transform="rotate(20)"><circle cy="-91" r="2.15" fill="#d9dfe7" stroke="#333d4d" stroke-width=".7"/><circle cy="-91" r=".9" fill="#586371"/><path d="m-.6-91.6 1.1 1.1" stroke="#f2f5fa" stroke-width=".45"/></g><g transform="rotate(30)"><circle cy="-91" r="2.15" fill="#d9dfe7" stroke="#333d4d" stroke-width=".7"/><circle cy="-91" r=".9" fill="#586371"/><path d="m-.6-91.6 1.1 1.1" stroke="#f2f5fa" stroke-width=".45"/></g><g transform="rotate(40)"><circle cy="-91" r="2.15" fill="#d9dfe7" stroke="#333d4d" stroke-width=".7"/><circle cy="-91" r=".9" fill="#586371"/><path d="m-.6-91.6 1.1 1.1" stroke="#f2f5fa" stroke-width=".45"/></g><g transform="rotate(50)"><circle cy="-91" r="2.15" fill="#d9dfe7" stroke="#333d4d" stroke-width=".7"/><circle cy="-91" r=".9" fill="#586371"/><path d="m-.6-91.6 1.1 1.1" stroke="#f2f5fa" stroke-width=".45"/></g><g transform="rotate(60)"><circle cy="-91" r="2.15" fill="#d9dfe7" stroke="#333d4d" stroke-width=".7"/><circle cy="-91" r=".9" fill="#586371"/><path d="m-.6-91.6 1.1 1.1" stroke="#f2f5fa" stroke-width=".45"/></g><g transform="rotate(70)"><circle cy="-91" r="2.15" fill="#d9dfe7" stroke="#333d4d" stroke-width=".7"/><circle cy="-91" r=".9" fill="#586371"/><path d="m-.6-91.6 1.1 1.1" stroke="#f2f5fa" stroke-width=".45"/></g><g transform="rotate(80)"><circle cy="-91" r="2.15" fill="#d9dfe7" stroke="#333d4d" stroke-width=".7"/><circle cy="-91" r=".9" fill="#586371"/><path d="m-.6-91.6 1.1 1.1" stroke="#f2f5fa" stroke-width=".45"/></g><g transform="rotate(90)"><circle cy="-91" r="2.15" fill="#d9dfe7" stroke="#333d4d" stroke-width=".7"/><circle cy="-91" r=".9" fill="#586371"/><path d="m-.6-91.6 1.1 1.1" stroke="#f2f5fa" stroke-width=".45"/></g><g transform="rotate(100)"><circle cy="-91" r="2.15" fill="#d9dfe7" stroke="#333d4d" stroke-width=".7"/><circle cy="-91" r=".9" fill="#586371"/><path d="m-.6-91.6 1.1 1.1" stroke="#f2f5fa" stroke-width=".45"/></g><g transform="rotate(110)"><circle cy="-91" r="2.15" fill="#d9dfe7" stroke="#333d4d" stroke-width=".7"/><circle cy="-91" r=".9" fill="#586371"/><path d="m-.6-91.6 1.1 1.1" stroke="#f2f5fa" stroke-width=".45"/></g><g transform="rotate(120)"><circle cy="-91" r="2.15" fill="#d9dfe7" stroke="#333d4d" stroke-width=".7"/><circle cy="-91" r=".9" fill="#586371"/><path d="m-.6-91.6 1.1 1.1" stroke="#f2f5fa" stroke-width=".45"/></g><g transform="rotate(130)"><circle cy="-91" r="2.15" fill="#d9dfe7" stroke="#333d4d" stroke-width=".7"/><circle cy="-91" r=".9" fill="#586371"/><path d="m-.6-91.6 1.1 1.1" stroke="#f2f5fa" stroke-width=".45"/></g><g transform="rotate(140)"><circle cy="-91" r="2.15" fill="#d9dfe7" stroke="#333d4d" stroke-width=".7"/><circle cy="-91" r=".9" fill="#586371"/><path d="m-.6-91.6 1.1 1.1" stroke="#f2f5fa" stroke-width=".45"/></g><g transform="rotate(150)"><circle cy="-91" r="2.15" fill="#d9dfe7" stroke="#333d4d" stroke-width=".7"/><circle cy="-91" r=".9" fill="#586371"/><path d="m-.6-91.6 1.1 1.1" stroke="#f2f5fa" stroke-width=".45"/></g><g transform="rotate(160)"><circle cy="-91" r="2.15" fill="#d9dfe7" stroke="#333d4d" stroke-width=".7"/><circle cy="-91" r=".9" fill="#586371"/><path d="m-.6-91.6 1.1 1.1" stroke="#f2f5fa" stroke-width=".45"/></g><g transform="rotate(170)"><circle cy="-91" r="2.15" fill="#d9dfe7" stroke="#333d4d" stroke-width=".7"/><circle cy="-91" r=".9" fill="#586371"/><path d="m-.6-91.6 1.1 1.1" stroke="#f2f5fa" stroke-width=".45"/></g><g transform="rotate(180)"><circle cy="-91" r="2.15" fill="#d9dfe7" stroke="#333d4d" stroke-width=".7"/><circle cy="-91" r=".9" fill="#586371"/><path d="m-.6-91.6 1.1 1.1" stroke="#f2f5fa" stroke-width=".45"/></g><g transform="rotate(190)"><circle cy="-91" r="2.15" fill="#d9dfe7" stroke="#333d4d" stroke-width=".7"/><circle cy="-91" r=".9" fill="#586371"/><path d="m-.6-91.6 1.1 1.1" stroke="#f2f5fa" stroke-width=".45"/></g><g transform="rotate(200)"><circle cy="-91" r="2.15" fill="#d9dfe7" stroke="#333d4d" stroke-width=".7"/><circle cy="-91" r=".9" fill="#586371"/><path d="m-.6-91.6 1.1 1.1" stroke="#f2f5fa" stroke-width=".45"/></g><g transform="rotate(210)"><circle cy="-91" r="2.15" fill="#d9dfe7" stroke="#333d4d" stroke-width=".7"/><circle cy="-91" r=".9" fill="#586371"/><path d="m-.6-91.6 1.1 1.1" stroke="#f2f5fa" stroke-width=".45"/></g><g transform="rotate(220)"><circle cy="-91" r="2.15" fill="#d9dfe7" stroke="#333d4d" stroke-width=".7"/><circle cy="-91" r=".9" fill="#586371"/><path d="m-.6-91.6 1.1 1.1" stroke="#f2f5fa" stroke-width=".45"/></g><g transform="rotate(230)"><circle cy="-91" r="2.15" fill="#d9dfe7" stroke="#333d4d" stroke-width=".7"/><circle cy="-91" r=".9" fill="#586371"/><path d="m-.6-91.6 1.1 1.1" stroke="#f2f5fa" stroke-width=".45"/></g><g transform="rotate(240)"><circle cy="-91" r="2.15" fill="#d9dfe7" stroke="#333d4d" stroke-width=".7"/><circle cy="-91" r=".9" fill="#586371"/><path d="m-.6-91.6 1.1 1.1" stroke="#f2f5fa" stroke-width=".45"/></g><g transform="rotate(250)"><circle cy="-91" r="2.15" fill="#d9dfe7" stroke="#333d4d" stroke-width=".7"/><circle cy="-91" r=".9" fill="#586371"/><path d="m-.6-91.6 1.1 1.1" stroke="#f2f5fa" stroke-width=".45"/></g><g transform="rotate(260)"><circle cy="-91" r="2.15" fill="#d9dfe7" stroke="#333d4d" stroke-width=".7"/><circle cy="-91" r=".9" fill="#586371"/><path d="m-.6-91.6 1.1 1.1" stroke="#f2f5fa" stroke-width=".45"/></g><g transform="rotate(270)"><circle cy="-91" r="2.15" fill="#d9dfe7" stroke="#333d4d" stroke-width=".7"/><circle cy="-91" r=".9" fill="#586371"/><path d="m-.6-91.6 1.1 1.1" stroke="#f2f5fa" stroke-width=".45"/></g><g transform="rotate(280)"><circle cy="-91" r="2.15" fill="#d9dfe7" stroke="#333d4d" stroke-width=".7"/><circle cy="-91" r=".9" fill="#586371"/><path d="m-.6-91.6 1.1 1.1" stroke="#f2f5fa" stroke-width=".45"/></g><g transform="rotate(290)"><circle cy="-91" r="2.15" fill="#d9dfe7" stroke="#333d4d" stroke-width=".7"/><circle cy="-91" r=".9" fill="#586371"/><path d="m-.6-91.6 1.1 1.1" stroke="#f2f5fa" stroke-width=".45"/></g><g transform="rotate(300)"><circle cy="-91" r="2.15" fill="#d9dfe7" stroke="#333d4d" stroke-width=".7"/><circle cy="-91" r=".9" fill="#586371"/><path d="m-.6-91.6 1.1 1.1" stroke="#f2f5fa" stroke-width=".45"/></g><g transform="rotate(310)"><circle cy="-91" r="2.15" fill="#d9dfe7" stroke="#333d4d" stroke-width=".7"/><circle cy="-91" r=".9" fill="#586371"/><path d="m-.6-91.6 1.1 1.1" stroke="#f2f5fa" stroke-width=".45"/></g><g transform="rotate(320)"><circle cy="-91" r="2.15" fill="#d9dfe7" stroke="#333d4d" stroke-width=".7"/><circle cy="-91" r=".9" fill="#586371"/><path d="m-.6-91.6 1.1 1.1" stroke="#f2f5fa" stroke-width=".45"/></g><g transform="rotate(330)"><circle cy="-91" r="2.15" fill="#d9dfe7" stroke="#333d4d" stroke-width=".7"/><circle cy="-91" r=".9" fill="#586371"/><path d="m-.6-91.6 1.1 1.1" stroke="#f2f5fa" stroke-width=".45"/></g><g transform="rotate(340)"><circle cy="-91" r="2.15" fill="#d9dfe7" stroke="#333d4d" stroke-width=".7"/><circle cy="-91" r=".9" fill="#586371"/><path d="m-.6-91.6 1.1 1.1" stroke="#f2f5fa" stroke-width=".45"/></g><g transform="rotate(350)"><circle cy="-91" r="2.15" fill="#d9dfe7" stroke="#333d4d" stroke-width=".7"/><circle cy="-91" r=".9" fill="#586371"/><path d="m-.6-91.6 1.1 1.1" stroke="#f2f5fa" stroke-width=".45"/></g><use href="#as5-wheel-split-spoke" transform="rotate(0)"/><use href="#as5-wheel-split-spoke" transform="rotate(72)"/><use href="#as5-wheel-split-spoke" transform="rotate(144)"/><use href="#as5-wheel-split-spoke" transform="rotate(216)"/><use href="#as5-wheel-split-spoke" transform="rotate(288)"/>
+<circle r="26" fill="url(#as5-wheel-chrome)" stroke="#303e50" stroke-width=".8"/>
+<g transform="rotate(36)"><circle cy="-21" r="5.1" fill="#111a27" stroke="#a9b8c8" stroke-width="1.2"/><circle cy="-21" r="2.9" fill="url(#as5-wheel-chrome)" stroke="#202a38" stroke-width=".6"/></g><g transform="rotate(108)"><circle cy="-21" r="5.1" fill="#111a27" stroke="#a9b8c8" stroke-width="1.2"/><circle cy="-21" r="2.9" fill="url(#as5-wheel-chrome)" stroke="#202a38" stroke-width=".6"/></g><g transform="rotate(180)"><circle cy="-21" r="5.1" fill="#111a27" stroke="#a9b8c8" stroke-width="1.2"/><circle cy="-21" r="2.9" fill="url(#as5-wheel-chrome)" stroke="#202a38" stroke-width=".6"/></g><g transform="rotate(252)"><circle cy="-21" r="5.1" fill="#111a27" stroke="#a9b8c8" stroke-width="1.2"/><circle cy="-21" r="2.9" fill="url(#as5-wheel-chrome)" stroke="#202a38" stroke-width=".6"/></g><g transform="rotate(324)"><circle cy="-21" r="5.1" fill="#111a27" stroke="#a9b8c8" stroke-width="1.2"/><circle cy="-21" r="2.9" fill="url(#as5-wheel-chrome)" stroke="#202a38" stroke-width=".6"/></g>
+<circle r="14" fill="#64758c" stroke="#dce7ef" stroke-width="1.5"/>
+<circle r="11.8" fill="#46586f" stroke="#1c2e44" stroke-width=".9"/>
+<path d="M-7-6V6M-7 1l6-7M-7 1l6 5M8-5Q1-8 1 0T8 5" fill="none" stroke="#dce9f2" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+<circle r="103" fill="none" stroke="url(#as5-wheel-rim-reflect)" stroke-width="3"/>
+<path d="M-78-65A102 102 0 0 1-8-102M13 101A102 102 0 0 0 76 68" fill="none" stroke="#f0f6fd" stroke-width="1.15" opacity=".85"/>
+<path d="m39 91 2-9q1-3 3-2l-1 11Z" fill="#101926" stroke="#71849b" stroke-width=".5"/>
+</g>
+</defs>
+<style>
+.audi-s5 .as5-lamps{animation:as5-awaken 12s ease-in-out infinite}
+.audi-s5 .as5-paint-reflection{animation:as5-reflect 12s ease-in-out infinite}
+.audi-s5 .as5-rear-glint{animation:as5-rear-shine 12s ease-in-out infinite}
+.audi-s5 .as5-front-glint{animation:as5-front-shine 12s ease-in-out infinite}
+@keyframes as5-awaken{0%,8%,92%,100%{opacity:.2}18%,77%{opacity:1}}
+@keyframes as5-reflect{0%,16%{transform:translateX(-250px);opacity:0}22%{opacity:.8}69%{transform:translateX(1030px);opacity:.65}75%,100%{transform:translateX(1030px);opacity:0}}
+@keyframes as5-rear-shine{0%,24%,48%,100%{opacity:0}33%,37%{opacity:.8}}
+@keyframes as5-front-shine{0%,43%,69%,100%{opacity:0}53%,57%{opacity:.8}}
+@media(prefers-reduced-motion:reduce){.audi-s5 .as5-lamps,.audi-s5 .as5-paint-reflection,.audi-s5 .as5-rear-glint,.audi-s5 .as5-front-glint{animation:none}.audi-s5 .as5-lamps{opacity:1}.audi-s5 .as5-paint-reflection,.audi-s5 .as5-rear-glint,.audi-s5 .as5-front-glint{opacity:0}}
+</style>
+<ellipse cx="462" cy="349" rx="391" ry="35" fill="url(#as5-floor)"/>
+<path d="m127 319 33 14 347 18 215-7 80-21-224-20Z" fill="#01050a" opacity=".8"/>
+<!-- Both polished wheels stay stationary. Their wide lips and slim tyres carry the stance. -->
+<g transform="translate(204 286) scale(.395 .52) rotate(-7)"><use href="#as5-wheel-wheel"/></g>
+<g transform="translate(555 294) scale(.477 .565) rotate(-7)"><use href="#as5-wheel-wheel"/></g>
+<g class="as5-rear-glint" transform="translate(204 286) scale(.395 .52)"><path d="M-95-37A103 103 0 0 1 22-100M-82 62A103 103 0 0 0 68 77" fill="none" stroke="#eff4ff" stroke-width="3"/></g>
+<g class="as5-front-glint" transform="translate(555 294) scale(.477 .565)"><path d="M-95-37A103 103 0 0 1 22-100M-82 62A103 103 0 0 0 68 77" fill="none" stroke="#f3f4e8" stroke-width="3"/></g>
+<path d="M94 212Q96 193 113 184L199 168 271 111Q295 92 330 88L389 86Q423 86 449 104L529 162 716 179Q777 185 806 208L834 241 832 290Q830 312 813 323L680 339 614 331Q621 295 607 262 592 230 566 227 531 222 512 248 496 270 497 326L252 316Q257 281 242 253 229 231 204 231 177 231 164 253 152 276 157 313L116 306 99 288 90 244Z" fill="url(#as5-paint)" stroke="#334152" stroke-width="1.2" stroke-linejoin="round"/>
+<!-- Broad, broken environmental reflections describe black paint rather than decorative striping. -->
+<g clip-path="url(#as5-body-clip)">
+<path d="m94 201 103-22 80-59q27-23 61-25l49-1q31 0 54 18l80 58 203 18 70 24-196-22-131-6-245-7-125 38Z" fill="#8890ad" opacity=".16"/>
+<path d="M92 223q35-14 76-13l292 7q36-1 62-16l54-11 38 13-26 14-29 9q-37 22-71 24l-207-4-42-12-110 4Z" fill="#02070d" opacity=".63"/>
+<path d="m239 259 76-2 108 11 62 11-1 16-93-13-102-5-50-4Z" fill="#75839d" opacity=".12"/>
+<path d="m257 302 65-5 72 6 91 9 9 14-242-12Z" fill="#69819a" opacity=".14"/>
+<path d="m117 184 75-13 66-51 66-27-38 22-66 57-51 19Z" fill="#9b78ff" opacity=".12"/>
+<path d="m493 169 123 13 87 11 58 18-106-17-96-9Z" fill="#dcff6b" opacity=".035"/>
+<path d="m273 190 24 59 9 43m65-95 17 64 5 39m60-102 12 67" fill="none" stroke="#acbbd2" stroke-width="3" opacity=".035"/>
+<rect class="as5-paint-reflection" x="-220" y="78" width="230" height="266" fill="url(#as5-sweep)" transform="skewX(-17)"/>
+</g>
+<!-- The unbroken coupe roof and a long single door distinguish the B8.5 side profile. -->
+<path d="m216 165 64-51q20-14 50-15l51 1q22 1 39 18l36 53Z" fill="#060c14" stroke="#9eacc0" stroke-width="1.8" stroke-linejoin="round"/>
+<path d="m230 160 56-43q18-11 43-12h21l-16 58Z" fill="url(#as5-side-glass)"/>
+<path d="m345 163 14-58 22 1q20 2 34 17l28 43Z" fill="url(#as5-side-glass)"/>
+<path d="m234 159 52-40q17-11 40-12l-31 15-32 38Z" fill="#b0b5d1" opacity=".1"/>
+<path d="m357 110-13 52" stroke="#627992" stroke-width=".8" opacity=".7"/>
+<path d="m215 168 240 6" stroke="#c5d1e1" stroke-width="1.1" opacity=".75"/>
+<path d="m212 165 62-51q23-18 57-19l54 1q28 2 46 20" fill="none" stroke="#b9b5cf" stroke-width="1.1" opacity=".65"/>
+<!-- Windscreen and bonnet form two separate planes, preserving the long nose. -->
+<path d="m413 104 40 5q26 6 51 24l79 44-126-8-37-53Z" fill="url(#as5-windshield)" stroke="#465366" stroke-width="1"/>
+<path d="m425 109 28 5q25 7 46 23l66 35-100-7Z" fill="#626780" opacity=".13"/>
+<path d="m430 110 21 3q37 12 78 42l-34-18-50-14Z" fill="#b0a8d2" opacity=".15"/>
+<path d="m464 165 104 8" stroke="#0a111c" stroke-width="3"/>
+<path d="m474 165 33-1m20 7 27-1" stroke="#627083" stroke-width="1"/>
+<path d="m458 175 126 8 133 7q57 10 87 29l-93 1-73-18-118-13Z" fill="url(#as5-bonnet)" stroke="#283747" stroke-width=".8"/>
+<path d="m470 176 111 11 108 15 42 13" fill="none" stroke="#777789" stroke-width="1.2" opacity=".65"/>
+<path d="m593 183 99 9q52 7 91 22" fill="none" stroke="#9491a5" stroke-width="1.2" opacity=".4"/>
+<path d="m493 180 84 9 87 15-102-9Z" fill="#9592ba" opacity=".1"/>
+<path d="m460 179 17 3" stroke="#aeb8c5" stroke-width="1.5"/>
+<!-- Silver mirror caps, dark bases, one coupe door, flush handle and rear fuel flap. -->
+<path d="m436 173 11-11 25 4-2 14-24 3Z" fill="#030a12" stroke="#132130"/>
+<path d="m430 159q15-10 29-4l15 9-3 10-38-3Z" fill="url(#as5-silver)" stroke="#5b6d84" stroke-width=".9"/>
+<path d="m435 159q14-6 25-1l10 7" fill="none" stroke="#e1e5ed" stroke-width="1" opacity=".7"/>
+<path d="m434 170 35 3" stroke="#d2d8e2" stroke-width=".7"/>
+<path d="m580 163q9-5 17 1l5 9-13-1Z" fill="#596c84" stroke="#18283b"/>
+<path d="m343 177-10 31-1 91q1 8 11 9l133 12q10 0 10-10l-5-83-22-49" fill="none" stroke="#030a12" stroke-width="1.8"/>
+<path d="m335 298 139 14" fill="none" stroke="#73829a" stroke-width=".65" opacity=".4"/>
+<path d="m346 192 21 1q5 1 3 5l-22 1q-5-1-2-7Z" fill="#050b13" stroke="#293a4d" stroke-width=".7"/>
+<path d="m349 193 17 1" stroke="#8291a8" stroke-width=".8"/>
+<path d="m197 181 26-2q6 0 6 5l-1 10q-1 4-6 4l-26 1q-5-1-5-5v-7q0-5 6-6Z" fill="none" stroke="#050c14" stroke-width="1.2"/>
+<!-- Tucked arches and a low sill follow the reference car's suspension height. -->
+<path d="M154 285q1-44 25-60 27-18 51-2 24 13 29 51" fill="none" stroke="#18293b" stroke-width="4"/>
+<path d="M499 279q7-47 37-58 39-13 62 22 12 17 15 45" fill="none" stroke="#192a3b" stroke-width="5"/>
+<path d="M157 277q5-39 28-51 24-12 45 3m273 41q12-43 43-48 30-5 49 21" fill="none" stroke="#5d6b80" stroke-width=".9" opacity=".55"/>
+<path d="m255 316 237 13 6 7-247-14Z" fill="#050a11" stroke="#34475c" stroke-width=".7"/>
+<path d="m263 318 219 13" stroke="#a3b3c5" stroke-width=".7" opacity=".5"/>
+<!-- Facelift lamps sit above the shoulders of the characteristic single-frame grille. -->
+<path d="m620 201 59 10 28 23-53-1-22-8Z" fill="#060d16" stroke="#5e6d83" stroke-width="1"/>
+<path d="m630 209 38 6 22 13-34-1-17-7Z" fill="#223143"/>
+<ellipse cx="652" cy="219" rx="9.5" ry="7.4" transform="rotate(13 652 219)" fill="#0a1420" stroke="#6d839f" stroke-width=".9"/>
+<ellipse cx="653" cy="219" rx="5.6" ry="5" fill="#4b6584" stroke="#becbdc" stroke-width=".55"/>
+<path d="m794 209 21 8 13 19-19-5-15-13Z" fill="#0a1420" stroke="#596b81" stroke-width=".8"/>
+<path d="m799 215 14 5 9 11-12-3Z" fill="#32455d"/>
+<g class="as5-lamps">
+<path d="M627 207 639 223q5 6 11 4l4-5m-27-15q30 3 61 12l7 8-27-2M798 214l16 8 9 9-12-3" fill="none" stroke="#dceaff" stroke-width="5" stroke-linejoin="round" filter="url(#as5-lamp-glow)" opacity=".75"/>
+<path d="M627 207 639 223q5 6 11 4l4-5m-27-15q30 3 61 12l7 8-27-2M798 214l16 8 9 9-12-3" fill="none" stroke="#eff5ff" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="m825 227 64-16v50l-60-25Z" fill="url(#as5-beam)"/>
+</g>
+<!-- Chrome perimeter, fine horizontal bars, four rings, and the small S5 grille badge. -->
+<path d="M711 225Q750 221 784 226L808 237 806 287Q803 307 792 312L728 315Q720 314 717 303L701 244Q698 231 711 225Z" fill="#050b12" stroke="url(#as5-grille-metal)" stroke-width="3"/>
+<g clip-path="url(#as5-front-grille)">
+<path d="M707 235 805 241M707 248 810 254M712 262 811 267M714 277 810 281M718 290 805 294M721 303 799 305" stroke="#7f93aa" stroke-width="1.8"/>
+<path d="M707 237 805 243M707 250 810 256M712 264 811 269M714 279 810 283M718 292 805 296M721 305 799 307" stroke="#25384e" stroke-width="1"/>
+<path d="m723 227 7 88m10-90 5 89m12-88 1 87m14-86-2 85m16-84-5 81m17-76-8 72" stroke="#172637" stroke-width=".9"/>
+</g>
+<g fill="none" stroke="url(#as5-silver)" stroke-width="1.7">
+<ellipse cx="745" cy="245" rx="7" ry="8.5" transform="rotate(-8 745 245)"/>
+<ellipse cx="755" cy="245.5" rx="7" ry="8.5" transform="rotate(-8 755 245.5)"/>
+<ellipse cx="765" cy="246" rx="7" ry="8.5" transform="rotate(-8 765 246)"/>
+<ellipse cx="775" cy="246.5" rx="7" ry="8.5" transform="rotate(-8 775 246.5)"/>
+</g>
+<path d="m712 250 7 .4-1 5-7-.4Z" fill="#9e3e56"/>
+<text x="720" y="256" font-family="Manrope, sans-serif" font-size="7" font-weight="700" fill="#bdcbdc">S5</text>
+<!-- Sculpted bumper intake, glossy splitter and discreet parking sensors. -->
+<path d="m630 267 63 8 10 27-72-4-16-11Z" fill="#020810" stroke="#263a50" stroke-width="1.1"/>
+<path d="m633 273 47 5 9 16-54-3-10-6Z" fill="#091421"/>
+<path d="m634 279 48 5m-47 3 53 4" stroke="#314860" stroke-width="1.1"/>
+<path d="m632 275 19 2 5 9-23-2Z" fill="#0e1b29" stroke="#6a7f97" stroke-width=".7"/>
+<path d="m636 280 12 1.5" stroke="#d8e3ef" stroke-width="1.2" opacity=".6"/>
+<path d="m815 267 13-7-1 26-15 12Z" fill="#030b13" stroke="#263b51" stroke-width=".8"/>
+<path d="m816 277 10-5m-12 13 12-5" stroke="#354e67" stroke-width="1"/>
+<path d="m615 315 79 12 34-5 64-3 29-14-2 13-28 13-107 12-73-13Z" fill="#050b12" stroke="#273b51" stroke-width="1"/>
+<path d="m620 326 62 11 106-12 29-13" fill="none" stroke="#8397b0" stroke-width=".85" opacity=".6"/>
+<path d="m112 191-8 16-10 5 3-15Z" fill="#632d46" stroke="#171426" stroke-width=".7"/>
+<path d="m107 192-6 16" stroke="#c8819c" stroke-width="1" opacity=".65"/>
+<circle cx="613" cy="248" r="2" fill="#0b1624" stroke="#4b5e74" stroke-width=".6"/>
+<circle cx="818" cy="249" r="1.5" fill="#0b1624" stroke="#4b5e74" stroke-width=".5"/>
+</svg>

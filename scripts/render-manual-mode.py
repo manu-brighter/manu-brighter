@@ -4,7 +4,6 @@
 from __future__ import annotations
 
 import argparse
-import json
 import math
 from pathlib import Path
 import re
@@ -20,7 +19,8 @@ from fontTools.ttLib import TTFont
 
 NS = "http://www.w3.org/2000/svg"
 ET.register_namespace("", NS)
-BG, LIGHT, MUTED, CYAN, LINE = "#0d1117", "#e9f1f5", "#94a7b6", "#a0e8e8", "#27343f"
+BG, LIGHT, MUTED, CYAN, LINE = "#0d1117", "#f1edf8", "#aaa3bc", "#acbfff", "#302c42"
+ACCENT, VIOLET = "#dcff6b", "#9b78ff"
 
 
 def number(value):
@@ -213,8 +213,20 @@ class Canvas:
 
     def art(self, key, x, y, width, height):
         node = ET.fromstring(self.artwork[key])
+        ids = {child.get("id"): f"{self.name}-{key}-{child.get('id')}" for child in node.iter() if child.get("id")}
         for child in node.iter():
             child.tag = f"{{{NS}}}{child.tag.rsplit('}', 1)[-1]}"
+            if child.get("id"):
+                child.set("id", ids[child.get("id")])
+            for attribute, value in list(child.attrib.items()):
+                if attribute.rsplit("}", 1)[-1] == "href" and value.startswith("#"):
+                    child.set(attribute, "#" + ids[value[1:]])
+                elif attribute in {"aria-labelledby", "aria-describedby"}:
+                    child.set(attribute, " ".join(ids.get(part, part) for part in value.split()))
+                else:
+                    child.set(attribute, re.sub(r"url\(#([^)]+)\)", lambda match: f"url(#{ids[match[1]]})", value))
+            if child.tag == f"{{{NS}}}style" and child.text:
+                child.text = re.sub(r"url\(#([^)]+)\)", lambda match: f"url(#{ids[match[1]]})", child.text)
         node.set("x", number(x))
         node.set("y", number(y))
         node.set("width", number(width))
@@ -247,74 +259,101 @@ class Canvas:
 
 def hero(c):
     p = c.pad
-    c.text("mh,", p, 48 if c.mobile else 55, 20, CYAN, True, -.8)
+    glow = element("radialGradient", id="mm-violet-light", cx=".5", cy=".5", r=".5")
+    glow.append(element("stop", stop_color="#7951ee", stop_opacity=".38"))
+    glow.append(element("stop", offset="1", stop_color="#7951ee", stop_opacity="0"))
+    c.defs.append(glow)
+    light = element("linearGradient", id="mm-light-trace", x1="0", y1="1", x2="1", y2="0")
+    for offset, color, opacity in [("0", VIOLET, ".08"), (".3", VIOLET, ".9"), (".67", "#c8a6ff", ".8"), ("1", ACCENT, ".12")]:
+        light.append(element("stop", offset=offset, stop_color=color, stop_opacity=opacity))
+    c.defs.append(light)
+    c.add("ellipse", cx=235 if c.mobile else 570, cy=450 if c.mobile else 302, rx=270 if c.mobile else 350, ry=215, fill="url(#mm-violet-light)")
+    trace = "M-25 557C108 537 47 350 221 342S401 455 351 504" if c.mobile else "M210 488C374 443 292 100 574 118S866 371 646 453"
+    c.add("path", d=trace, fill="none", stroke="url(#mm-light-trace)", stroke_width="20", opacity=".055")
+    c.add("path", d=trace, fill="none", stroke="url(#mm-light-trace)", stroke_width="4", opacity=".32")
+    c.add("path", d=trace, fill="none", stroke="url(#mm-light-trace)", stroke_width="1.1", opacity=".85")
+    c.text("mh,", p, 48 if c.mobile else 55, 20, ACCENT, True, -.8)
     c.text("Basel region, Switzerland", c.width - p, 46 if c.mobile else 53, 12, MUTED, anchor="end")
     size, first, second = (62, 126, 190) if c.mobile else (77, 163, 241)
-    c.text("Manuel", p, first, size, bold=True, spacing=-3 if c.mobile else -4)
-    width = c.text("Heller", p, second, size, bold=True, spacing=-3 if c.mobile else -4)
-    c.text(",", p + width - 1, second, size, CYAN, True)
+    c.text("Manuel", p, first, size, fill=ACCENT, bold=True, spacing=-3 if c.mobile else -4)
+    width = c.text("Heller", p, second, size, fill=ACCENT, bold=True, spacing=-3 if c.mobile else -4)
+    c.text(",", p + width - 1, second, size, ACCENT, True)
     role = 231 if c.mobile else 302
     c.text("Full-stack developer.", p, role, 18, bold=True, spacing=-.3)
-    c.text("PHP & Vue at zvoove.", p, role + 28, 14, CYAN)
+    c.text("PHP & Vue at zvoove.", p, role + 28, 14, ACCENT)
     c.paragraph("Code, light, and things\nworth taking apart.", p, role + 55, c.inner if c.mobile else 260, leading=23)
     c.art("camera", -12 if c.mobile else 278, 302 if c.mobile else 80, 388 if c.mobile else 516, 303.125 if c.mobile else 403.125)
     note = 584 if c.mobile else 468
-    c.line(p, note - 5, p + 25, note - 5, CYAN)
+    c.line(p, note - 5, p + 25, note - 5, ACCENT)
     c.text("Usually in manual mode.", p + 36, note, 14, MUTED)
     return 600 if c.mobile else 510
 
 
 def club(c):
-    c.heading("Made to be used.", "Personal projects, out in the world.")
     p, w = c.pad, c.inner
-    panel = c.add("rect", x=p, y=88, width=w, rx=12, fill="#111b24", stroke=LINE)
-    art_height = 150 if c.mobile else 208
-    c.art("club", p, 89, w, art_height)
-    divider = 89 + art_height
-    c.line(p, divider, p + w, divider)
-    x, y = p + (19 if c.mobile else 25), divider + 39
-    c.text("Jogge di Balla", x, y, 22 if c.mobile else 23, bold=True, spacing=-.6)
-    if c.mobile:
-        y = c.paragraph("Co-founder & vice president.\nConcept, design, development, operation.", x, y + 30, w - 38, leading=23)
-        y = c.paragraph("A club website grew into our everyday toolkit: memberships, events, orders connecting service, kitchen and bar, live photos and streaming overlays.", x, y + 17, w - 38)
-    else:
-        c.paragraph("Co-founder & vice president.\nConcept, design, development, operation.", x, y + 32, 275, leading=23)
-        y = c.paragraph("A club website grew into our everyday toolkit: memberships, events, orders connecting service, kitchen and bar, live photos and streaming overlays.", p + 351, divider + 34, w - 376)
-    panel.set("height", number(y - 88 + 6))
-    return y + 26
-
-
-PROJECTS = [
-    ("shot", "One tap. Every screen.", "Shot-Counter connects phones and a shared scoreboard. QR joining, live sync and a desktop app.", "Vue 3 / Express / SQLite / Electron"),
-    ("toolkit", "A workflow, packaged.", "Claude Code Kit: reusable skills and specialist agents for project upkeep, creative frontends and security reviews.", "Custom skills / Agents / AI workflows"),
-]
+    c.text("Jogge di Balla", p, 49, 31 if c.mobile else 35, bold=True, spacing=-1)
+    y = c.paragraph("A club website became the system behind an event.", p, 82, w, 16, 26, LIGHT)
+    y = c.paragraph("Co-founder, vice president and developer. From membership management to orders, live photos and the screens around the venue.", p, y + 8, w, leading=24)
+    y += 22
+    source_x, end_x = p + 12, p + w - (110 if c.mobile else 160)
+    source_w, end_w = (103, 110) if c.mobile else (174, 160)
+    mid_y = y + 75
+    start = source_x + source_w
+    c.add("rect", x=source_x, y=mid_y - 28, width=source_w, height=56, rx=8, fill="#1c2030", stroke="#4f4666")
+    c.text("Service", source_x + source_w / 2, mid_y + 5, 16, LIGHT, True, anchor="middle")
+    for index, (label, detail, color) in enumerate([("Kitchen", "Food orders", ACCENT), ("Bar", "Drinks", VIOLET)]):
+        row_y = y + index * 114
+        wire = f"M{start} {mid_y}H{start + 19}C{start + 45} {mid_y} {end_x - 45} {row_y + 18} {end_x - 17} {row_y + 18}H{end_x}"
+        c.add("path", d=wire, fill="none", stroke="#40374f", stroke_width="1.5")
+        c.add("path", d=wire, fill="none", stroke=color, stroke_width="3", stroke_linecap="round", pathLength="100", **{"class": f"mm-order-route {'b' if index else 'a'}"})
+        c.add("rect", x=end_x, y=row_y - 9, width=end_w, height=54, rx=8, fill="#1b2020" if not index else "#211a36", stroke="#5d7040" if not index else "#7554a9")
+        c.text(label, end_x + end_w / 2, row_y + 14, 16, color, True, anchor="middle")
+        c.text(detail, end_x + end_w / 2, row_y + 32, 12, MUTED, anchor="middle")
+    c.add("style").text = """
+      #manual-mode .mm-order-route{stroke-dasharray:9 110;animation:mm-order-route 8s ease-in-out infinite}
+      #manual-mode .mm-order-route.b{animation-delay:1.6s}
+      @keyframes mm-order-route{0%,12%{stroke-dashoffset:10;opacity:0}17%{opacity:1}65%{stroke-dashoffset:-104;opacity:1}72%,100%{stroke-dashoffset:-104;opacity:0}}
+      @media(prefers-reduced-motion:reduce){#manual-mode .mm-order-route{animation:none;opacity:0}}
+    """
+    y += 197
+    items = [("Run the club", "Members, permissions and attendance."), ("Run the event", "Orders and a till for service, kitchen and bar."), ("Share the night", "Moderated photos and streaming overlays.")]
+    col_width = w if c.mobile else (w - 40) / 3
+    bottom = y
+    for index, (title, copy) in enumerate(items):
+        x = p if c.mobile else p + index * (col_width + 20)
+        c.text(title, x, y, 14, LIGHT, True)
+        end = c.paragraph(copy, x, y + 25, col_width, leading=23)
+        bottom = max(bottom, end)
+        if c.mobile:
+            y = end + 17
+    return bottom + 22
 
 
 def projects(c):
-    w = c.inner if c.mobile else (c.inner - 22) / 2
-    bottom, y = 0, 12
-    for index, (art, title, copy, tech) in enumerate(PROJECTS):
-        x = c.pad if c.mobile else c.pad + index * (w + 22)
-        c.art(art, x, y, w, 150)
-        c.line(x, y + 154, x + w, y + 154)
-        c.text(title, x, y + 188, 19, bold=True, spacing=-.5)
-        end = c.paragraph(copy, x, y + 218, w)
-        end = c.paragraph(tech, x, end + 12, w, leading=23, fill="#91a8b8")
-        bottom = max(bottom, end)
+    y = 45
+    entries = [
+        ("Shot-Counter", "One score, everywhere.", "QR joining, live updates across phones and a shared screen, plus a desktop app.", "Vue 3 / Express / SQLite / Electron", ACCENT),
+        ("Claude Code Kit", "My workflow, made reusable.", "Skills and specialist agents for project upkeep, creative frontends and security reviews.", "Skills / Agents / AI workflows", VIOLET),
+    ]
+    for title, subtitle, copy, tech, color in entries:
+        c.line(c.pad, y - 34, c.width - c.pad, y - 34)
+        c.text(title, c.pad, y, 23, color, True, -.6)
         if c.mobile:
-            y = end + 20
-    return bottom + 25
+            end = c.paragraph(subtitle, c.pad, y + 29, c.inner, fill=LIGHT)
+            end = c.paragraph(copy, c.pad, end + 8, c.inner)
+        else:
+            c.paragraph(subtitle, c.pad, y + 30, 245, fill=LIGHT)
+            end = c.paragraph(copy, c.pad + 288, y, c.inner - 288)
+        end = c.paragraph(tech, c.pad, max(end + 7, y + 69), c.inner, 12, 22)
+        y = end + 46
+    return y - 15
 
 
 def portfolio(c):
     c.line(c.pad, 1, c.width - c.pad, 1)
-    x = c.pad + (67 if c.mobile else 94)
-    width = c.width - c.pad - x
-    c.art("portfolio", c.pad, 28, 50 if c.mobile else 72, 80)
-    y = c.paragraph("A website with a little fluid dynamics.", x, 43, width, 18, 25, LIGHT, True)
-    y = c.paragraph("My portfolio brings photography and design together with a real GPU fluid simulation, four languages and device-aware quality.", x, y + 9, width)
-    c.line(c.pad, y + 8, c.width - c.pad, y + 8)
-    return y + 24
+    c.text("manuelheller.dev", c.pad, 38, 23, CYAN, True, -.6)
+    y = c.paragraph("Photography, design and a real GPU fluid simulation. Four languages, with quality that adapts to the device.", c.pad, 72, c.inner, leading=25)
+    return y + 19
 
 
 SKILLS = [
@@ -365,64 +404,167 @@ def experiments(c):
 
 def garage(c):
     c.line(c.pad, 1, c.width - c.pad, 1)
-    c.heading("After the last commit.")
-    art_height = c.inner * 205 / 650
-    c.art("car", c.pad, 61, c.inner, art_height)
-    y = 61 + art_height + 32
-    w = c.inner if c.mobile else (c.inner - 26) / 2
-    bottom = 0
-    sections = [
-        ("A different kind of manual.", "Wildlife, car photography and the occasional trip for a frame worth keeping. Sony α7 IV, Lightroom, Photoshop and DaVinci Resolve."),
-        ("Still taking things apart.", "The Audi S5 project. Design experiments. Events with the club. Different interests, the same need to understand how things work."),
-    ]
-    for index, (title, copy) in enumerate(sections):
-        x = c.pad if c.mobile else c.pad + index * (w + 26)
-        c.text(title, x, y, 15, bold=True)
-        end = c.paragraph(copy, x, y + 29, w)
-        bottom = max(bottom, end)
-        if c.mobile:
-            y = end + 27
-    return bottom + 20
+    c.text("The S5 project.", c.pad, 52, 32 if c.mobile else 39, LIGHT, True, -1)
+    c.text("Audi S5 B8.5 / black / lowered", c.pad, 83, 14, ACCENT)
+    glow = element("radialGradient", id="mm-garage-light")
+    glow.append(element("stop", stop_color=VIOLET, stop_opacity=".24"))
+    glow.append(element("stop", offset="1", stop_color=VIOLET, stop_opacity="0"))
+    c.defs.append(glow)
+    art_height = c.width * 400 / 900
+    c.add("ellipse", cx=c.width * .65, cy=111 + art_height * .63, rx=c.width * .48, ry=art_height * .62, fill="url(#mm-garage-light)")
+    c.art("car", 0, 104, c.width, art_height)
+    y = 104 + art_height + 23
+    wheel_size = 186 if c.mobile else 210
+    wheel_x = (c.width - wheel_size) / 2 if c.mobile else c.pad
+    c.art("wheel", wheel_x, y - 10, wheel_size, wheel_size)
+    copy_x = c.pad if c.mobile else c.pad + 246
+    copy_y = y + wheel_size + 20 if c.mobile else y + 22
+    copy_width = c.inner if c.mobile else c.inner - 246
+    c.text('20" KC Forged.', copy_x, copy_y, 24, ACCENT, True, -.7)
+    end = c.paragraph("High-gloss polish. Split-Y spokes. Exposed hardware and a deep lip. The details are the point.", copy_x, copy_y + 32, copy_width)
+    end = c.paragraph("Dream garage: Mazda RX-7.", copy_x, end + 10, copy_width, 13, 23, CYAN)
+    y = max(end, y + wheel_size) + 27
+    c.line(c.pad, y, c.width - c.pad, y)
+    c.text("The other side of the lens.", c.pad, y + 34, 19, LIGHT, True, -.4)
+    end = c.paragraph("Wildlife, car photography and trips for a frame worth keeping. Sony α7 IV, Lightroom, Photoshop and DaVinci Resolve.", c.pad, y + 65, c.inner)
+    return end + 20
 
 
 EVENTS = [
-    ("2016–20", "Novartis", "IT apprenticeship", "Betriebsinformatiker EFZ"),
-    ("2021", "zvoove", "PHP, Vue", "and integrations"),
-    ("2022", "Jogge di Balla", "Co-founder", "& vice president"),
-    ("2023", "A camera joins in", "Wildlife, cars", "and better light"),
-    ("2026", "Built & operated", "Club platform,", "apps and tools"),
+    ("2014", "life", "Minecraft + Lua", "Mining turtles on my own server."),
+    ("2016", "career", "Start at Novartis", "Betriebsinformatiker apprenticeship."),
+    ("2019", "garage", "KTM Duke 390", "The garage starts on two wheels."),
+    ("2020", "career", "Finish the EFZ", "Four years of IT foundations."),
+    ("2021", "career", "Join zvoove", "PHP, Vue and business applications."),
+    ("2022", "club", "Found Jogge di Balla", "Co-founder and vice president."),
+    ("2023", "photo", "A camera joins in", "Sony α7 IV."),
+    ("2023", "garage", "Audi TT RS", "A new chapter on four wheels."),
+    ("2024", "garage", "The S5 project", "Audi S5 B8.5."),
+    ("2024", "photo", "Costa Rica, solo", "Wildlife through the lens."),
+    ("2025", "career", "APIs + data sync", "Interfaces and integrations."),
+    ("2025", "photo", "The ICE, St. Moritz", "Cars, winter light and Koenigsegg."),
+    ("2026", "club", "Club platform live", "Service, kitchen and bar connected."),
+    ("2026", "career", "Publish AI toolkit", "Reusable skills and specialist agents."),
+    ("2026", "garage", "20-inch KC Forged", "Polished wheels for the S5."),
+    ("now", "life", "Still in development", "Code, cameras, cars and club life."),
 ]
 
 
 def history(c):
     c.line(c.pad, 1, c.width - c.pad, 1)
     c.heading("Life, versioned.")
-    # A vertical timeline keeps every event legible at the same 14px body size.
-    y = 93
-    if c.mobile:
-        c.line(c.pad + 3, y - 5, c.pad + 3, y + 4 * 111 - 5, "#3b5362")
-        for date, title, line1, line2 in EVENTS:
-            c.add("circle", cx=c.pad + 3, cy=y - 5, r=3, fill=CYAN)
-            x = c.pad + 24
-            c.text(date, x, y, 14, CYAN)
-            c.text(title, x, y + 26, 16, bold=True)
-            c.paragraph(f"{line1}\n{line2}", x, y + 51, c.inner - 24, leading=22)
-            y += 111
-        return y - 13
-    c.line(c.pad + 77, y - 5, c.pad + 77, y + 4 * 79 - 5, "#3b5362")
-    for date, title, line1, line2 in EVENTS:
-        c.text(date, c.pad, y, 14, CYAN)
-        c.add("circle", cx=c.pad + 77, cy=y - 5, r=3, fill=CYAN)
-        c.text(title, c.pad + 100, y, 16, bold=True)
-        c.text(f"{line1} · {line2}", c.pad + 100, y + 26, 14, MUTED)
-        y += 79
-    return y - 17
+    c.text("One life. A few branches.", c.pad, 73, 14, MUTED)
+    c.root.find(f"{{{NS}}}desc").text = (
+        "A Git-style life graph. Career, garage, photography and club branches "
+        "split from a shared life spine. Dated milestones sit on their own "
+        "branches, which merge back together at now."
+    )
+    colors = {
+        "life": "#f1edf8",
+        "career": "#dcff6b",
+        "garage": "#9b78ff",
+        "photo": "#82d9e4",
+        "club": "#f0adcb",
+    }
+    lanes = {branch: c.pad + index * (20 if c.mobile else 40) for index, branch in enumerate(colors)}
+    label_x = 135 if c.mobile else 245
+    label_width = c.width - c.pad - label_x
+
+    # Legend labels stay outside the lanes, leaving room for the actual forks.
+    legend_x, legend_y = c.pad, 105
+    for branch, color in colors.items():
+        label_width_px = c.fonts[False].width(branch, 12)
+        item_width = 25 + label_width_px
+        if legend_x + item_width > c.width - c.pad:
+            legend_x, legend_y = c.pad, legend_y + 26
+        c.line(legend_x, legend_y - 4, legend_x + 15, legend_y - 4, color)
+        c.add("circle", cx=legend_x + 7.5, cy=legend_y - 4, r=2.5, fill=color)
+        c.text(branch, legend_x + 23, legend_y, 12, color)
+        legend_x += item_width + (22 if c.mobile else 32)
+
+    c.add("style").text = """
+#manual-mode .mm-history-flow {
+  stroke-dasharray: .04 .96;
+  stroke-dashoffset: 1;
+  opacity: 0;
+  animation: mm-history-travel 14s ease-in-out infinite;
+}
+#manual-mode .mm-history-now { animation: mm-history-arrival 14s ease-in-out infinite; }
+@keyframes mm-history-travel {
+  0%, 10% { stroke-dashoffset: 1; opacity: 0; }
+  14% { opacity: .95; }
+  77% { stroke-dashoffset: 0; opacity: .95; }
+  83%, 100% { stroke-dashoffset: 0; opacity: 0; }
+}
+@keyframes mm-history-arrival {
+  0%, 77%, 100% { opacity: .18; }
+  86% { opacity: .8; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #manual-mode .mm-history-flow { animation: none; opacity: 0; }
+  #manual-mode .mm-history-now { animation: none; opacity: .3; }
+}
+"""
+
+    # Size rows from wrapped copy before drawing any edges. A node always
+    # belongs to its colored lane; adjacent events never become its parents.
+    rows = []
+    y = legend_y + 40
+    for date, branch, title, context in EVENTS[:-1]:
+        heading = f"{date} · {title}"
+        heading_lines = c.wrap(heading, label_width, 14, True)
+        context_lines = c.wrap(context, label_width, 12)
+        rows.append((branch, y - 5, y, heading, context))
+        y += len(heading_lines) * 21 + len(context_lines) * 19 + 12
+
+    merge_start = y + 4
+    merge_step = 20
+    merge_positions = {branch: merge_start + index * merge_step for index, branch in enumerate(list(colors)[1:])}
+    final_y = merge_start + 3 * merge_step + 40
+    life_x = lanes["life"]
+    first_y = rows[0][1]
+    final_node_y = final_y - 5
+    c.add("path", d=f"M{life_x} {first_y}V{final_node_y}", fill="none", stroke=colors["life"], stroke_width=1.5, opacity=".55")
+
+    for branch in list(colors)[1:]:
+        branch_rows = [row for row in rows if row[0] == branch]
+        start_y = branch_rows[0][1] - 31
+        end_y = merge_positions[branch]
+        branch_x = lanes[branch]
+        # Each branch forks from life, keeps its own history and merges back.
+        # Inner lanes merge first, so the return curves do not cross live lanes.
+        path = (
+            f"M{life_x} {start_y} "
+            f"C{life_x} {start_y + 17} {branch_x} {start_y + 13} {branch_x} {start_y + 30} "
+            f"V{end_y - 28} "
+            f"C{branch_x} {end_y - 11} {life_x} {end_y - 17} {life_x} {end_y}"
+        )
+        # Background casing makes a crossed lane distinct from a joined node.
+        c.add("path", d=path, fill="none", stroke=BG, stroke_width=6, stroke_linecap="round")
+        c.add("path", d=path, fill="none", stroke=colors[branch], stroke_width=1.6, stroke_linecap="round", opacity=".65")
+        c.add("path", d=path, fill="none", stroke=colors[branch], stroke_width=2.6, stroke_linecap="round", pathLength=1, **{"class": "mm-history-flow"})
+        c.add("circle", cx=life_x, cy=start_y, r=3, fill=BG, stroke=colors[branch], stroke_width=1.5)
+        c.add("circle", cx=life_x, cy=end_y, r=3.5, fill=BG, stroke=colors[branch], stroke_width=1.5)
+
+    for branch, node_y, baseline, heading, context in rows:
+        color = colors[branch]
+        c.add("circle", cx=lanes[branch], cy=node_y, r=7, fill=color, opacity=".09")
+        c.add("circle", cx=lanes[branch], cy=node_y, r=3.5, fill=BG, stroke=color, stroke_width=1.8)
+        context_y = c.paragraph(heading, label_x, baseline, label_width, size=14, leading=21, fill=LIGHT, bold=True)
+        c.paragraph(context, label_x, context_y + 2, label_width, size=12, leading=19)
+
+    c.add("circle", cx=life_x, cy=final_node_y, r=11, fill="none", stroke=colors["life"], stroke_width=1.2, **{"class": "mm-history-now"})
+    c.add("circle", cx=life_x, cy=final_node_y, r=4.5, fill=colors["life"])
+    date, branch, title, context = EVENTS[-1]
+    end_y = c.paragraph(f"{date} · {title}", label_x, final_y, label_width, size=14, leading=21, fill=LIGHT, bold=True)
+    end_y = c.paragraph(context, label_x, end_y + 2, label_width, size=12, leading=19)
+    return end_y + 29
 
 
 def footer(c):
     c.line(c.pad, 1, c.width - c.pad, 1)
     w = c.text("manuel heller", c.pad, 47, 22, bold=True, spacing=-1)
-    c.text(",", c.pad + w, 47, 22, CYAN, True)
+    c.text(",", c.pad + w, 47, 22, ACCENT, True)
     if c.mobile:
         c.text("Always something in development.", c.pad, 77, 14, MUTED)
         return 105
@@ -432,13 +574,13 @@ def footer(c):
 
 SECTIONS = [
     ("hero", "Manuel Heller, full-stack developer", "A detailed animated camera accompanies Manuel's introduction.", hero),
-    ("club", "Jogge di Balla", "A service order travels to a kitchen screen and receipt printer.", club),
-    ("projects", "Personal software projects", "Shot-Counter synchronises devices; Claude Code Kit checks a code change.", projects),
-    ("portfolio", "Portfolio and photography", "Animated light lines reference the portfolio's GPU fluid simulation.", portfolio),
+    ("club", "Jogge di Balla", "Food and drink orders move from service to the kitchen and bar.", club),
+    ("projects", "Personal software projects", "Shot-Counter and Claude Code Kit, with their purpose and technology.", projects),
+    ("portfolio", "Portfolio and photography", "A photography and developer portfolio with a GPU fluid simulation.", portfolio),
     ("stack", "Tools and experience", "Four areas of Manuel's daily development work.", stack),
     ("experiments", "Research and experiments", "Two public research projects, with their current status.", experiments),
-    ("garage", "Outside the editor", "A silver-blue coupe, photography and hands-on interests.", garage),
-    ("history", "Life, versioned", "Five milestones in work, personal projects and photography.", history),
+    ("garage", "The Audi S5 project", "Manuel's lowered black Audi S5 B8.5 and 20-inch polished KC Forged wheels, drawn from his photographs.", garage),
+    ("history", "Life, versioned", "Career, garage, photography and club branches connect the milestones in Manuel's life.", history),
     ("footer", "Manuel Heller", "Always something in development.", footer),
 ]
 
@@ -447,7 +589,11 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, default=ROOT / "assets" / "manual-mode")
     args = parser.parse_args()
-    artwork = json.loads((ROOT / "design" / "manual-mode-art.json").read_text(encoding="utf-8-sig"))
+    artwork = {
+        key: (ROOT / "design" / "art" / filename).read_text(encoding="utf-8-sig")
+        for key, filename in {"camera": "camera.svg", "car": "audi-s5.svg", "wheel": "kc-wheel.svg"}.items()
+    }
+    artwork["animationCss"] = "@media(prefers-reduced-motion:reduce){#manual-mode *{animation:none!important}}"
     fonts = {
         False: Typeface(ROOT / "design" / "fonts" / "manrope-regular.ttf", "regular"),
         True: Typeface(ROOT / "design" / "fonts" / "manrope-bold.ttf", "bold"),
