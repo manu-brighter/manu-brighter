@@ -6,6 +6,7 @@ Skills are grouped by domain immediately after the introduction, with AI-assiste
 
 - `manual-mode.html` previews the actual generated SVGs. Open it directly to inspect the current desktop or mobile design.
 - `art/` contains the editable camera and S5 vectors and their animation CSS. The S5 follows the supplied side-profile line drawing, mirrored to face right. Its lowered body, polished five-split-Y wheels, slim tyres and boot-lip spoiler are drawn as editable vector paths. The moving polish is masked to the metal; the wheels remain stationary. The DRL brow, outer hook and separated inner return follow the supplied B8.5 headlight photograph, with a restrained animated glow.
+- `art/fly-experiment.svg` is a schematic stimulus-response loop beside the Connectome project. It illustrates a cue, signal propagation and orientation, not a real replay or learned behaviour. `art/mining-turtle.svg` adds a small voxel robot to the 2014 milestone. It advances, mines one block and returns before a code-brace trail appears. Both use 16-second CSS cycles with rest phases and static reduced-motion states.
 - `data/activity.json` is the checked-in public activity snapshot used for local previews and reproducible builds.
 - `fonts/` contains Manrope Regular and Bold, distributed under the SIL Open Font License in `fonts/OFL.txt`.
 - `../scripts/render-manual-mode.py` lays out the GitHub image sections and outlines their typography.

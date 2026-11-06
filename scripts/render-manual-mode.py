@@ -437,6 +437,13 @@ def project(c, entry):
     width = c.inner if c.mobile else c.inner - 269
     y = c.paragraph(copy, x, 94 if c.mobile else 36, width, 13, 22)
     y = c.paragraph(tech, x, y + 10, width, 12, 21, CYAN)
+    if slug == "fly":
+        art_width = min(width, 380)
+        art_height = art_width * 140 / 380
+        c.art("fly", x, y + 6, art_width, art_height)
+        y = y + 6 + art_height
+        c.text("Stimulus / response · schematic", x, y + 13, 12, MUTED)
+        return y + 35
     return max(y + 17, 99)
 
 
@@ -509,7 +516,8 @@ def history(c):
     c.root.find(f"{{{NS}}}desc").text = (
         "A Git-style life graph. Career, garage, photography and club branches "
         "split from a shared life spine. Dated milestones sit on their own "
-        "branches, which merge back together at now."
+        "branches, which merge back together at now. A small mining turtle "
+        "at the 2014 milestone mines a block, returns and reveals code braces."
     )
     colors = {
         "life": "#f1edf8",
@@ -521,6 +529,8 @@ def history(c):
     lanes = {branch: c.pad + index * (20 if c.mobile else 40) for index, branch in enumerate(colors)}
     label_x = 135 if c.mobile else 245
     label_width = c.width - c.pad - label_x
+    turtle_width = min(200, label_width)
+    turtle_height = turtle_width * 72 / 200
 
     # Legend labels stay outside the lanes, leaving room for the actual forks.
     legend_x, legend_y = c.pad, 105
@@ -562,12 +572,14 @@ def history(c):
     # belongs to its colored lane; adjacent events never become its parents.
     rows = []
     y = legend_y + 40
-    for date, branch, title, context in EVENTS[:-1]:
+    for index, (date, branch, title, context) in enumerate(EVENTS[:-1]):
         heading = f"{date} · {title}"
         heading_lines = c.wrap(heading, label_width, 14, True)
         context_lines = c.wrap(context, label_width, 12)
         rows.append((branch, y - 5, y, heading, context))
         y += len(heading_lines) * 21 + len(context_lines) * 19 + 12
+        if index == 0:
+            y += turtle_height + 16
 
     merge_start = y + 4
     merge_step = 20
@@ -598,12 +610,14 @@ def history(c):
         c.add("circle", cx=life_x, cy=start_y, r=3, fill=BG, stroke=colors[branch], stroke_width=1.5)
         c.add("circle", cx=life_x, cy=end_y, r=3.5, fill=BG, stroke=colors[branch], stroke_width=1.5)
 
-    for branch, node_y, baseline, heading, context in rows:
+    for index, (branch, node_y, baseline, heading, context) in enumerate(rows):
         color = colors[branch]
         c.add("circle", cx=lanes[branch], cy=node_y, r=7, fill=color, opacity=".09")
         c.add("circle", cx=lanes[branch], cy=node_y, r=3.5, fill=BG, stroke=color, stroke_width=1.8)
         context_y = c.paragraph(heading, label_x, baseline, label_width, size=14, leading=21, fill=LIGHT, bold=True)
-        c.paragraph(context, label_x, context_y + 2, label_width, size=12, leading=19)
+        context_end = c.paragraph(context, label_x, context_y + 2, label_width, size=12, leading=19)
+        if index == 0:
+            c.art("turtle", label_x, context_end + 1, turtle_width, turtle_height)
 
     c.add("circle", cx=life_x, cy=final_node_y, r=11, fill="none", stroke=colors["life"], stroke_width=1.2, **{"class": "mm-history-now"})
     c.add("circle", cx=life_x, cy=final_node_y, r=4.5, fill=colors["life"])
@@ -640,7 +654,12 @@ def main():
     args = parser.parse_args()
     artwork = {
         key: (ROOT / "design" / "art" / filename).read_text(encoding="utf-8-sig")
-        for key, filename in {"camera": "camera.svg", "car": "audi-s5.svg"}.items()
+        for key, filename in {
+            "camera": "camera.svg",
+            "car": "audi-s5.svg",
+            "fly": "fly-experiment.svg",
+            "turtle": "mining-turtle.svg",
+        }.items()
     }
     artwork["animationCss"] = "@media(prefers-reduced-motion:reduce){#manual-mode *{animation:none!important}}"
     fonts = {
