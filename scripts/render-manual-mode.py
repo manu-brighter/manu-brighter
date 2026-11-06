@@ -516,8 +516,9 @@ def history(c):
     c.root.find(f"{{{NS}}}desc").text = (
         "A Git-style life graph. Career, garage, photography and club branches "
         "split from a shared life spine. Dated milestones sit on their own "
-        "branches, which merge back together at now. A small mining turtle "
-        "at the 2014 milestone mines a block, returns and reveals code braces."
+        "branches, which merge back together at now. Small right-hand illustrations "
+        "show a mining turtle, a checked certificate, a first photograph and "
+        "a puzzled fly in a classroom. The fly is a playful metaphor, not a learning result."
     )
     colors = {
         "life": "#f1edf8",
@@ -526,11 +527,18 @@ def history(c):
         "photo": "#82d9e4",
         "club": "#f0adcb",
     }
-    lanes = {branch: c.pad + index * (20 if c.mobile else 40) for index, branch in enumerate(colors)}
-    label_x = 135 if c.mobile else 245
+    lanes = {branch: c.pad + index * (12 if c.mobile else 40) for index, branch in enumerate(colors)}
+    label_x = 90 if c.mobile else 245
     label_width = c.width - c.pad - label_x
-    turtle_width = min(200, label_width)
-    turtle_height = turtle_width * 72 / 200
+    illustrations = {
+        "Minecraft + Lua": "turtle",
+        "Earned the EFZ": "diploma",
+        "First camera": "first-photo",
+        "Trying to teach a fly": "fly-classroom",
+    }
+    art_width = 84 if c.mobile else 112
+    art_height = art_width * 64 / 120
+    art_x = c.width - c.pad - art_width
 
     # Legend labels stay outside the lanes, leaving room for the actual forks.
     legend_x, legend_y = c.pad, 105
@@ -572,14 +580,15 @@ def history(c):
     # belongs to its colored lane; adjacent events never become its parents.
     rows = []
     y = legend_y + 40
-    for index, (date, branch, title, context) in enumerate(EVENTS[:-1]):
+    for date, branch, title, context in EVENTS[:-1]:
         heading = f"{date} · {title}"
-        heading_lines = c.wrap(heading, label_width, 14, True)
-        context_lines = c.wrap(context, label_width, 12)
-        rows.append((branch, y - 5, y, heading, context))
-        y += len(heading_lines) * 21 + len(context_lines) * 19 + 12
-        if index == 0:
-            y += turtle_height + 16
+        art = illustrations.get(title)
+        text_width = label_width - art_width - (12 if c.mobile else 18) if art else label_width
+        heading_lines = c.wrap(heading, text_width, 14, True)
+        context_lines = c.wrap(context, text_width, 12)
+        row_height = max(len(heading_lines) * 21 + len(context_lines) * 19, art_height if art else 0)
+        rows.append((branch, y - 5, y, heading, context, text_width, art, row_height))
+        y += row_height + 12
 
     merge_start = y + 4
     merge_step = 20
@@ -610,14 +619,14 @@ def history(c):
         c.add("circle", cx=life_x, cy=start_y, r=3, fill=BG, stroke=colors[branch], stroke_width=1.5)
         c.add("circle", cx=life_x, cy=end_y, r=3.5, fill=BG, stroke=colors[branch], stroke_width=1.5)
 
-    for index, (branch, node_y, baseline, heading, context) in enumerate(rows):
+    for branch, node_y, baseline, heading, context, text_width, art, row_height in rows:
         color = colors[branch]
         c.add("circle", cx=lanes[branch], cy=node_y, r=7, fill=color, opacity=".09")
         c.add("circle", cx=lanes[branch], cy=node_y, r=3.5, fill=BG, stroke=color, stroke_width=1.8)
-        context_y = c.paragraph(heading, label_x, baseline, label_width, size=14, leading=21, fill=LIGHT, bold=True)
-        context_end = c.paragraph(context, label_x, context_y + 2, label_width, size=12, leading=19)
-        if index == 0:
-            c.art("turtle", label_x, context_end + 1, turtle_width, turtle_height)
+        context_y = c.paragraph(heading, label_x, baseline, text_width, size=14, leading=21, fill=LIGHT, bold=True)
+        c.paragraph(context, label_x, context_y + 2, text_width, size=12, leading=19)
+        if art:
+            c.art(art, art_x, baseline - 14 + (row_height - art_height) / 2, art_width, art_height)
 
     c.add("circle", cx=life_x, cy=final_node_y, r=11, fill="none", stroke=colors["life"], stroke_width=1.2, **{"class": "mm-history-now"})
     c.add("circle", cx=life_x, cy=final_node_y, r=4.5, fill=colors["life"])
@@ -659,6 +668,9 @@ def main():
             "car": "audi-s5.svg",
             "fly": "fly-experiment.svg",
             "turtle": "mining-turtle.svg",
+            "diploma": "efz-document.svg",
+            "first-photo": "first-photo.svg",
+            "fly-classroom": "fly-classroom.svg",
         }.items()
     }
     artwork["animationCss"] = "@media(prefers-reduced-motion:reduce){#manual-mode *{animation:none!important}}"

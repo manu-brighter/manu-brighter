@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 64" width="120" height="64" class="lf-classroom" role="img" aria-labelledby="lf-title lf-desc">
+  <title id="lf-title">Learning still pending</title>
+  <desc id="lf-desc">A playful classroom illustration: chalk writes a simple lesson, a fly at a desk tilts its head and a question mark appears. It does not represent a simulation result or successful learning.</desc>
+  <style>
+    .lf-classroom .lf-lesson { stroke-dasharray:1; stroke-dashoffset:1; animation:lf-write 18s ease-in-out infinite; }
+    .lf-classroom .lf-student { animation:lf-puzzle 18s ease-in-out infinite; }
+    .lf-classroom .lf-question { opacity:0; animation:lf-question 18s ease-in-out infinite; }
+    @keyframes lf-write { 0%,43% { stroke-dashoffset:1; opacity:1; } 57%,84% { stroke-dashoffset:0; opacity:1; } 91%,100% { stroke-dashoffset:0; opacity:0; } }
+    @keyframes lf-puzzle { 0%,58%,84%,100% { transform:rotate(0deg); } 65%,75% { transform:rotate(-12deg); } }
+    @keyframes lf-question { 0%,64%,93%,100% { opacity:0; } 71%,84% { opacity:1; } }
+    @media(prefers-reduced-motion:reduce) {
+      .lf-classroom * { animation:none!important; }
+      .lf-classroom .lf-lesson { stroke-dashoffset:0; opacity:1; }
+      .lf-classroom .lf-question { opacity:1; }
+    }
+  </style>
+  <path d="M10 9H71V43H10Z" fill="#142323" stroke="#7f9a91" stroke-width="1.5"/>
+  <path d="M7 44H74M20 45 16 58M61 45 65 58" fill="none" stroke="#777d91" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M19 40H28" stroke="#acbfff" stroke-width="1.5" stroke-linecap="round"/>
+  <path class="lf-lesson" d="M18 23 21 20V31M28 26H36M32 22V30M42 23 45 20V31M51 24H58M51 28H58M63 23Q63 19 67 20 71 22 67 25V28M67 31V32" pathLength="1" fill="none" stroke="#d4dfcd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M78 47H113M83 47V59M108 47V59" fill="none" stroke="#acbfff" stroke-width="1.7" stroke-linecap="round"/>
+  <g transform="translate(94 34)">
+    <g class="lf-student">
+      <path d="M-3 0-10 4-13 10M3 0 10 4 13 10M-3 7-7 11M3 7 7 11" fill="none" stroke="#a4b1c7" stroke-width="1" stroke-linecap="round"/>
+      <ellipse cx="-8" cy="-2" rx="8" ry="4" transform="rotate(25 -8 -2)" fill="#acbfff" fill-opacity=".12" stroke="#acbfff" stroke-width="1"/>
+      <ellipse cx="8" cy="-2" rx="8" ry="4" transform="rotate(-25 8 -2)" fill="#acbfff" fill-opacity=".12" stroke="#acbfff" stroke-width="1"/>
+      <ellipse cy="5" rx="4" ry="8" fill="#263044" stroke="#a4b1c7" stroke-width="1.1"/>
+      <path d="M-3 5H3M-2 9H2" stroke="#6e7d93" stroke-width=".8"/>
+      <circle cy="-5" r="5" fill="#303047" stroke="#acbfff" stroke-width="1"/>
+      <ellipse cx="-3" cy="-6" rx="2.7" ry="3.3" fill="#9b78ff"/>
+      <ellipse cx="3" cy="-6" rx="2.7" ry="3.3" fill="#9b78ff"/>
+      <path d="M-2-10-5-14M2-10 5-14" stroke="#acbfff" stroke-width="1" stroke-linecap="round"/>
+    </g>
+  </g>
+  <path class="lf-question" d="M102 10Q103 5 108 7 112 10 107 13V16M107 20V21" fill="none" stroke="#dcff6b" stroke-width="1.8" stroke-linecap="round"/>
+</svg>
