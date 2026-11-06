@@ -283,7 +283,7 @@ def hero(c):
     c.text(",", p + width - 1, second, size, ACCENT, True)
     role = 231 if c.mobile else 302
     c.text("Full-stack developer.", p, role, 18, bold=True, spacing=-.3)
-    c.text("PHP & Vue at zvoove.", p, role + 28, 14, ACCENT)
+    c.text("Code, design & photography.", p, role + 28, 14, ACCENT)
     c.paragraph("Code, light, and things\nworth taking apart.", p, role + 55, c.inner if c.mobile else 260, leading=23)
     c.art("camera", -12 if c.mobile else 278, 302 if c.mobile else 80, 388 if c.mobile else 516, 303.125 if c.mobile else 403.125)
     note = 584 if c.mobile else 468
@@ -439,9 +439,9 @@ def project(c, entry):
 
 
 SKILLS = [
-    ("Professional development", "PHP · Yii · Vue · JavaScript · HTML/CSS", "My daily foundation: PHP backends, Vue interfaces and business applications at zvoove since 2021."),
+    ("Web development", "PHP · Yii · Vue · JavaScript · HTML/CSS", "Around five years with PHP. Backends, APIs and Vue interfaces for business tools and personal projects."),
     ("Data & integrations", "MySQL/MariaDB · REST · OpenAPI", "Complex SQL, database design, API integrations and data synchronisation."),
-    ("Testing & quality", "Cypress · E2E testing", "Around 30 substantial release tests, execution and failure analysis. Playwright migration in progress."),
+    ("Testing & quality", "Cypress · E2E testing", "End-to-end flows, regression coverage and failure analysis for web applications."),
     ("AI workflows & products", "Codex · Claude Code · Skills · Agents", "Experienced with AI workflows. My React, TypeScript and tRPC products are built with AI support."),
     ("Hosting & tooling", "Linux · nginx · Docker · Git", "A rented root server with my own nginx configurations. Practical basics in Git and Docker."),
     ("Design & media", "Photography · Lightroom · Photoshop", "Graphic and web design, photo editing and video editing with DaVinci Resolve. Also Canva and GIMP."),
@@ -451,7 +451,7 @@ SKILLS = [
 def stack(c):
     c.line(c.pad, 1, c.width - c.pad, 1)
     c.text("Skills & experience.", c.pad, 49, 29 if c.mobile else 35, LIGHT, True, -1)
-    y = c.paragraph("Full-stack developer at zvoove since 2021.\nBetriebsinformatiker EFZ, Novartis apprenticeship, 2016–2020.", c.pad, 82, c.inner, 13, 22)
+    y = c.paragraph("Development, automation, self-hosting and visual work.\nBetriebsinformatiker EFZ, Novartis apprenticeship, 2016–2020.", c.pad, 82, c.inner, 13, 22)
     y += 22
     width = c.inner if c.mobile else (c.inner - 36) / 2
     row_bottom = y
@@ -483,7 +483,7 @@ EVENTS = [
     ("2016", "career", "Start at Novartis", "Betriebsinformatiker apprenticeship."),
     ("2019", "garage", "KTM Duke 390", "The garage starts on two wheels."),
     ("2020", "career", "Finish the EFZ", "Four years of IT foundations."),
-    ("2021", "career", "Join zvoove", "PHP, Vue and business applications."),
+    ("2021", "career", "Into full-stack", "PHP, Vue and business applications."),
     ("2022", "club", "Found Jogge di Balla", "Co-founder and vice president."),
     ("2023", "photo", "A camera joins in", "Sony α7 IV."),
     ("2023", "garage", "Audi TT RS", "A new chapter on four wheels."),

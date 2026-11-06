@@ -1,9 +1,9 @@
 <picture>
   <source media="(max-width: 600px)" srcset="assets/manual-mode/hero-mobile.svg" />
-  <img src="assets/manual-mode/hero.svg" width="100%" alt="Manuel Heller, full-stack developer from the Basel region, Switzerland. PHP and Vue. Code, light, and things worth taking apart. Usually in manual mode. An illustrated camera opens and closes its aperture." />
+  <img src="assets/manual-mode/hero.svg" width="100%" alt="Manuel Heller, full-stack developer from the Basel region, Switzerland. Code, design and photography. Things worth taking apart. Usually in manual mode. An illustrated camera opens and closes its aperture." />
 </picture>
 
-<p>I build <strong>PHP &amp; Vue applications at zvoove</strong>. After hours: tools for my club, experiments that don't always work, a camera and a lowered S5.</p>
+<p>I build <strong>web apps, APIs and tools</strong> — from club software to experiments. Beyond code: design, photography, video and a lowered S5.</p>
 
 <p><a href="https://manuelheller.dev">Portfolio</a> · <a href="https://manuelheller.myportfolio.com">Photography</a> · <a href="https://joggediballa.ch">Jogge di Balla</a></p>
 
@@ -13,7 +13,7 @@
 
 <picture>
   <source media="(max-width: 600px)" srcset="assets/manual-mode/stack-mobile.svg" />
-  <img src="assets/manual-mode/stack.svg" width="100%" alt="Skills and experience. Full-stack developer at zvoove since 2021; Betriebsinformatiker EFZ following a Novartis apprenticeship, 2016–2020. Professional development: PHP, Yii, Vue, JavaScript, HTML and CSS. Data and integrations: MySQL/MariaDB, REST, OpenAPI, complex SQL and data synchronisation. Testing: Cypress, around 30 substantial release tests and failure analysis; Playwright migration in progress. AI workflows: Codex, Claude Code, custom skills and agents. React, TypeScript and tRPC products are built with AI support. Hosting: rented Linux root server and own nginx configurations; practical basics in Git and Docker. Design and media: photography, Lightroom, Photoshop, DaVinci Resolve, Canva and GIMP." />
+  <img src="assets/manual-mode/stack.svg" width="100%" alt="Skills and experience. Development, automation, self-hosting and visual work; Betriebsinformatiker EFZ following a Novartis apprenticeship, 2016–2020. Web development: around five years with PHP; Yii, Vue, JavaScript, HTML and CSS. Backends, APIs and Vue interfaces for business tools and personal projects. Data and integrations: MySQL/MariaDB, REST, OpenAPI, complex SQL and data synchronisation. Testing: Cypress, end-to-end flows, regression coverage and failure analysis for web applications. AI workflows: Codex, Claude Code, custom skills and agents. React, TypeScript and tRPC products are built with AI support. Hosting: rented Linux root server and own nginx configurations; practical basics in Git and Docker. Design and media: photography, Lightroom, Photoshop, DaVinci Resolve, Canva and GIMP." />
 </picture>
 
 <a name="projects"></a>
@@ -90,7 +90,7 @@
 
 <picture>
   <source media="(max-width: 600px)" srcset="assets/manual-mode/history-mobile.svg" />
-  <img src="assets/manual-mode/history.svg" width="100%" alt="Life, versioned as a Git branch graph. A life spine branches into career, garage, photo and club, then merges at now. Career: Novartis apprenticeship in 2016, EFZ in 2020, zvoove in 2021, APIs and data sync in 2025, AI toolkit in 2026. Garage: KTM Duke 390 in 2019, Audi TT RS in 2023, S5 in 2024, polished 20-inch wheels in 2026. Photo: Sony α7 IV in 2023, Costa Rica in 2024, The ICE in 2025. Club: co-founder of Jogge di Balla in 2022, platform live in 2026." />
+  <img src="assets/manual-mode/history.svg" width="100%" alt="Life, versioned as a Git branch graph. A life spine branches into career, garage, photo and club, then merges at now. Career: Novartis apprenticeship in 2016, EFZ in 2020, full-stack development in 2021, APIs and data sync in 2025, AI toolkit in 2026. Garage: KTM Duke 390 in 2019, Audi TT RS in 2023, S5 in 2024, polished 20-inch wheels in 2026. Photo: Sony α7 IV in 2023, Costa Rica in 2024, The ICE in 2025. Club: co-founder of Jogge di Balla in 2022, platform live in 2026." />
 </picture>
 
 <details>

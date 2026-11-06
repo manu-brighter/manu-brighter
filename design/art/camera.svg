@@ -83,29 +83,33 @@
   <ellipse cx="340" cy="449" rx="204" ry="12" fill="#07101b" opacity=".22" filter="url(#mc-shadow)" />
 
 
-  <path d="m123 143 42-30 304-9 82 38q12 6 14 24l7 183q1 17-17 24l-55 20-372-8q-24-1-27-27L88 179q-2-24 35-36Z" fill="#090f18" stroke="#06101a" stroke-width="2" />
-  <path d="m466 112 82 36q9 4 10 18l9 179q1 17-14 23l-51 20-12-224Z" fill="url(#mc-side)" stroke="#40576b" stroke-width="1" />
-  <path d="m125 146 42-30 301-9 79 36-56 19Z" fill="url(#mc-top)" stroke="#668294" stroke-width="1" />
-  <path d="m108 159 19-10 354 1q14 0 15 19l12 194q1 18-19 20l-358-3q-24-1-26-23L93 184q-2-18 15-25Z" fill="url(#mc-body)" stroke="url(#mc-edge)" stroke-width="2" />
-  <path d="M115 167q4-9 17-9l347-1q10 0 12 13" fill="none" stroke="#a0bac8" stroke-width="1" opacity=".5" />
-  <path d="m137 375 347 1q14 0 15-13" fill="none" stroke="#5c788c" stroke-width="1" opacity=".6" />
-  <path d="m508 173 43-15 8 180q1 15-11 19l-32 12Z" fill="#0a1520" stroke="#223749" stroke-width="1" />
-  <path d="m546 177 7 149" fill="none" stroke="#425b6c" stroke-width="1.5" />
-  <path d="m530 196 14-5 2 48-14 5Z" fill="#142634" stroke="#374f62" stroke-width="1" />
-  <path d="m533 203 8-3m-7 9 7-2m-7 9 7-2" stroke="#7890a0" stroke-width=".7" opacity=".7" />
+  <!-- The body recedes up-left, opposite the existing lens barrel's projection. -->
+  <path d="M110 130 500 126Q514 126 524 142L536 160 540 348Q540 369 521 376L139 383Q113 384 105 364L89 191Q86 169 94 153 100 138 110 130Z" fill="#090f18" stroke="#06101a" stroke-width="2" />
+  <path d="M110 130 128 151Q111 161 108 180L123 358Q126 375 141 381L119 370Q105 364 102 345L89 191Q86 166 96 149Z" fill="url(#mc-side)" stroke="#40576b" stroke-width=".8" />
+  <path d="M110 130 500 126Q510 126 516 134L530 151 128 153Z" fill="url(#mc-top)" stroke="#668294" stroke-width="1" />
+  <path d="M128 151 515 149Q531 149 533 166L539 347Q540 367 522 372L140 378Q120 379 117 357L103 187Q101 163 128 151Z" fill="url(#mc-body)" stroke="url(#mc-edge)" stroke-width="1.5" />
+  <path d="M134 157 513 155Q525 155 527 168" fill="none" stroke="#a0bac8" stroke-width="1" opacity=".5" />
+  <path d="m144 372 373-5q14-1 15-17" fill="none" stroke="#5c788c" stroke-width="1" opacity=".6" />
+  <path d="M520 177 526 339Q527 354 517 359" fill="none" stroke="#425b6c" stroke-width="1" opacity=".65" />
+  <path d="m515 199 1 13m0 7 1 13" fill="none" stroke="#7890a0" stroke-width="1" opacity=".4" />
+
+  <!-- A rounded forward grip, with an undercut for the fingers and a shutter shoulder. -->
+  <path d="M116 155Q139 146 163 150 185 153 195 173L196 187Q190 214 189 237 188 257 193 281L200 338Q204 361 189 374 180 381 164 382L137 383Q112 383 106 360L94 205Q91 181 101 166 107 159 116 155Z" fill="url(#mc-rubber)" stroke="#0a121d" stroke-width="2" />
+  <path d="M119 166Q140 157 159 160 176 162 184 179L185 190Q179 216 179 239 179 258 184 284L191 338Q194 357 181 366 174 371 162 372L140 374Q121 374 117 355L104 206Q101 180 119 166Z" fill="url(#mc-grain)" />
+  <path d="M116 155Q140 145 163 150 185 153 195 173L186 184Q177 169 158 167 134 164 108 177L101 171Q106 160 116 155Z" fill="url(#mc-top)" stroke="#334354" stroke-width=".8" />
+  <path d="M115 178Q104 192 108 218L120 352Q122 365 133 369" fill="none" stroke="#a8a0bb" stroke-width="1.8" opacity=".3" />
+  <path d="M187 192Q179 223 181 246 182 265 188 288L194 340Q196 354 189 361" fill="none" stroke="#020910" stroke-width="3.5" opacity=".65" />
+  <path d="M112 175Q134 164 158 169" fill="none" stroke="#b5a8ca" stroke-width="1" opacity=".48" />
+  <path d="M121 374Q142 380 168 375" fill="none" stroke="#667388" stroke-width="1" opacity=".4" />
+  <ellipse cx="145" cy="158" rx="17" ry="6.5" transform="rotate(-4 145 158)" fill="url(#mc-edge)" stroke="#0a1520" stroke-width="1" />
+  <ellipse cx="145" cy="157" rx="12.2" ry="3.8" transform="rotate(-4 145 157)" fill="#1e2634" stroke="#6d8294" stroke-width=".8" />
+  <path d="m137 155 13-.7" stroke="#cbd6df" stroke-width=".8" opacity=".65" />
 
 
-  <path d="M121 179q5-8 16-9l36-1q12 0 17 12l19 162q3 22-12 28l-59 2q-22 0-25-23L101 204q-2-16 20-25Z" fill="url(#mc-rubber)" stroke="#0a121d" stroke-width="2" />
-  <path d="M122 180q5-6 15-7l34-1q12 0 15 12l19 160q2 20-11 24l-57 2q-18-1-21-21l-12-145q-2-14 18-24Z" fill="url(#mc-grain)" />
-  <path d="M123 185q-12 7-11 24l12 138q1 13 11 16" fill="none" stroke="#738995" stroke-width="1.2" opacity=".3" />
-  <path d="m174 187 16 145q2 15-3 23" fill="none" stroke="#020910" stroke-width="4" opacity=".5" />
-  <path d="m126 228 47-3" stroke="#050c13" stroke-width="2" opacity=".65" />
-
-
-  <path d="m252 141 15-38 18-19 71-2 32 18 19 45Z" fill="url(#mc-top)" stroke="#597386" stroke-width="1.2" stroke-linejoin="round" />
-  <path d="m267 103 91-3 27 15 12 30-143 1Z" fill="url(#mc-body)" stroke="#263c50" stroke-width="1.2" stroke-linejoin="round" />
-  <path d="m285 84 69-2 31 18-27 0-91 3Z" fill="#304758" stroke="#7892a2" stroke-width=".8" />
-  <path d="m270 104 87-2 25 14" fill="none" stroke="#88a5b6" stroke-width="1.2" />
+  <path d="M244 132 249 103Q251 92 262 84H341L359 103 384 117 397 145H254Z" fill="url(#mc-top)" stroke="#597386" stroke-width="1.2" stroke-linejoin="round" />
+  <path d="M254 146 269 113Q273 104 280 103H358Q367 104 372 115L387 146Z" fill="url(#mc-body)" stroke="#263c50" stroke-width="1.2" stroke-linejoin="round" />
+  <path d="M262 84H341L359 103H280Z" fill="#304758" stroke="#7892a2" stroke-width=".8" />
+  <path d="M272 110Q276 104 282 105H357Q365 106 369 115" fill="none" stroke="#88a5b6" stroke-width="1.2" />
   <path d="m285 80 48-2 19 10-51 2Z" fill="#0a1520" stroke="#7b95a6" stroke-width="1" />
   <path d="m292 80 8 5 42-1m-42 1 1 4" fill="none" stroke="#bcced6" stroke-width="1" />
   <path d="m310 82 16-.5" stroke="#415d72" stroke-width="2.5" />
