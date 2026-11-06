@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 64" width="120" height="64" class="lp-photo" role="img" aria-labelledby="lp-title lp-desc">
+  <title id="lp-title">The first frame</title>
+  <desc id="lp-desc">A small camera focuses, closes its shutter briefly and reveals a picture. It rests between captures. Reduced motion shows the camera and developed frame.</desc>
+  <style>
+    .lp-photo .lp-focus { transform-origin:43px 34px; animation:lp-focus 18s ease-in-out infinite; }
+    .lp-photo .lp-shutter { transform-origin:43px 34px; animation:lp-shutter 18s ease-in-out infinite; }
+    .lp-photo .lp-print { opacity:0; animation:lp-print 18s ease-in-out infinite; }
+    @keyframes lp-focus { 0%,26%,85%,100% { transform:scale(1); opacity:.45; } 34%,70% { transform:scale(.8); opacity:1; } }
+    @keyframes lp-shutter { 0%,37%,43%,100% { transform:scale(1); } 39%,40% { transform:scale(.25); } }
+    @keyframes lp-print { 0%,40%,88%,100% { opacity:0; transform:translateY(3px); } 49%,78% { opacity:1; transform:translateY(0); } }
+    @media(prefers-reduced-motion:reduce) {
+      .lp-photo * { animation:none!important; }
+      .lp-photo .lp-focus { transform:scale(.8); opacity:1; }
+      .lp-photo .lp-print { opacity:1; transform:translateY(0); }
+    }
+  </style>
+  <path d="M17 22H29L34 15H51L56 22H68V49H17Z" fill="#191e2c" stroke="#acbfff" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M21 17H28V22H21Z" fill="#777c95"/>
+  <circle cx="43" cy="34" r="11" fill="#0d1117" stroke="#a4b7d2" stroke-width="1.5"/>
+  <circle cx="43" cy="34" r="7" fill="#242b42" stroke="#9b78ff"/>
+  <circle class="lp-shutter" cx="43" cy="34" r="4.5" fill="#0d1117" stroke="#82d9e4" stroke-width="1.1"/>
+  <path class="lp-focus" d="M30 27V22H35M51 22H56V27M56 41V46H51M35 46H30V41" fill="none" stroke="#82d9e4" stroke-width="1.2"/>
+  <circle cx="62" cy="27" r="1.4" fill="#dcff6b"/>
+  <g class="lp-print">
+    <path d="M84 15 110 19 106 51 80 47Z" fill="#1e2231" stroke="#acbfff" stroke-width="1.4"/>
+    <path d="M87 21 105 24 103 42 85 39Z" fill="#171b28" stroke="#6d6c89"/>
+    <path d="M86 36 92 30 96 35 100 32 104 37" fill="none" stroke="#9b78ff" stroke-width="1.3" stroke-linejoin="round"/>
+    <circle cx="100" cy="27" r="2" fill="#dcff6b"/>
+  </g>
+</svg>

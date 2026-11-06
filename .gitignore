@@ -1,0 +1,4 @@
+.build-deps/
+.build-tmp/
+.preview/
+__pycache__/

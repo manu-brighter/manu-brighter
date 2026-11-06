@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 64" width="120" height="64" class="ld-document" role="img" aria-labelledby="ld-title ld-desc">
+  <title id="ld-title">Qualification completed</title>
+  <desc id="ld-desc">A small certificate receives a handwritten check mark, then rests. With reduced motion, the completed check remains visible.</desc>
+  <style>
+    .ld-document .ld-check { stroke-dasharray:1; stroke-dashoffset:1; animation:ld-sign 18s ease-in-out infinite; }
+    @keyframes ld-sign {
+      0%,10% { stroke-dashoffset:1; opacity:1; }
+      22%,72% { stroke-dashoffset:0; opacity:1; }
+      78%,100% { stroke-dashoffset:0; opacity:0; }
+    }
+    @media(prefers-reduced-motion:reduce) { .ld-document .ld-check { animation:none; stroke-dashoffset:0; opacity:1; } }
+  </style>
+  <path d="M40 8H66L79 21V56H40Z" fill="#171c28" stroke="#acbfff" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M66 8V21H79" fill="#2a2b43" stroke="#acbfff" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M48 27H68M48 33H63M48 39H57" fill="none" stroke="#7f8097" stroke-width="1.4" stroke-linecap="round"/>
+  <path class="ld-check" d="M59 45 66 51 82 33" pathLength="1" fill="none" stroke="#dcff6b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

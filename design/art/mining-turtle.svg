@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 64" width="120" height="64" class="mt-scene" role="img" aria-labelledby="mt-title mt-desc">
+  <title id="mt-title">One block. A little Lua.</title>
+  <desc id="mt-desc">A small voxel mining robot with a terminal and pickaxe advances two short grid cells, mines one block, and returns. Its trail resolves into a pair of code braces before a long rest. Reduced motion shows the robot, block and route without movement.</desc>
+  <defs>
+    <linearGradient id="mt-metal" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#acbfff"/><stop offset="1" stop-color="#7a7e9a"/>
+    </linearGradient>
+    <linearGradient id="mt-trace" gradientUnits="userSpaceOnUse" x1="5" y1="31" x2="85" y2="31">
+      <stop stop-color="#9b78ff"/><stop offset="1" stop-color="#dcff6b"/>
+    </linearGradient>
+  </defs>
+  <style>
+    .mt-scene .mt-travel { animation: mt-advance 16s ease-in-out infinite; }
+    .mt-scene .mt-pickaxe { animation: mt-chop 16s ease-in-out infinite; transform-origin: 0 0; }
+    .mt-scene .mt-block { animation: mt-block-cycle 16s linear infinite; }
+    .mt-scene .mt-crack { animation: mt-crack-cycle 16s linear infinite; opacity: 0; }
+    .mt-scene .mt-chip-a { animation: mt-chip-a 16s ease-out infinite; opacity: 0; }
+    .mt-scene .mt-chip-b { animation: mt-chip-b 16s ease-out infinite; opacity: 0; }
+    .mt-scene .mt-trail { stroke-dasharray: 24; stroke-dashoffset: 24; opacity: 0; animation: mt-trail-cycle 16s linear infinite; }
+    .mt-scene .mt-braces { opacity: 0; animation: mt-brace-cycle 16s ease-in-out infinite; }
+    @keyframes mt-advance {
+      0%, 8% { transform: translateX(0); }
+      15%, 19% { transform: translateX(12px); }
+      27%, 35% { transform: translateX(24px); }
+      44%, 100% { transform: translateX(0); }
+    }
+    @keyframes mt-chop {
+      0%, 27%, 36%, 100% { transform: rotate(0deg); }
+      29%, 32% { transform: rotate(-24deg); }
+      30.5%, 34% { transform: rotate(13deg); }
+    }
+    @keyframes mt-block-cycle {
+      0%, 33% { opacity: 1; }
+      35%, 94% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    @keyframes mt-crack-cycle {
+      0%, 30% { opacity: 0; }
+      30.5%, 33% { opacity: .85; }
+      35%, 100% { opacity: 0; }
+    }
+    @keyframes mt-chip-a {
+      0%, 33% { transform: translate(0,0); opacity: 0; }
+      34% { transform: translate(-3px,-2px); opacity: .8; }
+      38% { transform: translate(-10px,8px); opacity: 0; }
+      100% { transform: translate(-10px,8px); opacity: 0; }
+    }
+    @keyframes mt-chip-b {
+      0%, 33% { transform: translate(0,0); opacity: 0; }
+      34% { transform: translate(2px,-3px); opacity: .65; }
+      38% { transform: translate(8px,7px); opacity: 0; }
+      100% { transform: translate(8px,7px); opacity: 0; }
+    }
+    @keyframes mt-trail-cycle {
+      0%, 8% { stroke-dashoffset: 24; opacity: 0; }
+      15%, 19% { stroke-dashoffset: 12; opacity: .55; }
+      27%, 44% { stroke-dashoffset: 0; opacity: .55; }
+      49%, 100% { stroke-dashoffset: 0; opacity: 0; }
+    }
+    @keyframes mt-brace-cycle {
+      0%, 43% { opacity: 0; }
+      48%, 57% { opacity: .8; }
+      64%, 100% { opacity: 0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .mt-scene .mt-travel, .mt-scene .mt-pickaxe, .mt-scene .mt-block,
+      .mt-scene .mt-crack, .mt-scene .mt-chip-a, .mt-scene .mt-chip-b,
+      .mt-scene .mt-trail, .mt-scene .mt-braces { animation: none; }
+      .mt-scene .mt-block { opacity: 1; }
+      .mt-scene .mt-trail { stroke-dashoffset: 0; opacity: .35; }
+      .mt-scene .mt-braces { opacity: .55; }
+    }
+  </style>
+
+  <path d="M15 50H118" fill="none" stroke="#aaa3bc" stroke-width=".6" opacity=".2"/>
+  <path d="M27 54H51" fill="none" stroke="#aaa3bc" stroke-width="1" stroke-dasharray="1 5" opacity=".25"/>
+  <path class="mt-trail" d="M27 54H51" fill="none" stroke="url(#mt-trace)" stroke-width="1.3"/>
+  <!-- On return, the temporary route resolves into a quiet pair of voxel braces. -->
+  <path class="mt-braces" d="M13 14H9V25L5 31 9 37V48H13M77 14H81V25L85 31 81 37V48H77" fill="none" stroke="url(#mt-trace)" stroke-width="1.6" stroke-linejoin="round"/>
+
+  <g transform="translate(-67 -5)">
+  <g class="mt-block">
+    <path d="M158 30 164 25H183L177 30Z" fill="#40394f" stroke="#aaa3bc" stroke-width=".65" stroke-linejoin="round"/>
+    <path d="M177 30 183 25V46L177 52Z" fill="#191923" stroke="#77728a" stroke-width=".65" stroke-linejoin="round"/>
+    <path d="M158 30H177V52H158Z" fill="#272437" stroke="#aaa3bc" stroke-width=".7"/>
+    <path d="M161 34H165V38H161ZM169 40H174V44H169ZM161 46H165V49H161Z" fill="#9b78ff" opacity=".65"/>
+    <path d="M165 27H174M179 34V42" fill="none" stroke="#acbfff" stroke-width=".7" opacity=".4"/>
+    <path class="mt-crack" d="M158 35H163L166 39 163 43 168 47V52M166 39H171L173 36" fill="none" stroke="#0d1117" stroke-width="1.4" stroke-linejoin="miter"/>
+  </g>
+  <path class="mt-chip-a" d="M158 39H161V42H158Z" fill="#9b78ff"/>
+  <path class="mt-chip-b" d="M166 36H169V39H166Z" fill="#aaa3bc"/>
+  </g>
+
+  <g transform="translate(27 39)">
+    <g class="mt-travel">
+      <path d="M-13 10H18" stroke="#05070c" stroke-width="3" stroke-linecap="round"/>
+      <!-- A computer-shaped cube with a readable terminal, not an animal shell. -->
+      <path d="M-11-15-4-20H18L11-15Z" fill="#616780" stroke="#acbfff" stroke-width=".8" stroke-linejoin="round"/>
+      <path d="M11-15 18-20V2L11 8Z" fill="#30283e" stroke="#8a80a3" stroke-width=".8" stroke-linejoin="round"/>
+      <path d="M-11-15H11V8H-11Z" fill="#424657" stroke="#acbfff" stroke-width=".8"/>
+      <path d="M-7-11H7V-1H-7Z" fill="#0d1117" stroke="#777e96" stroke-width=".65"/>
+      <path d="m-4-8 2 2-2 2M1-4H4" fill="none" stroke="#dcff6b" stroke-width="1.2" stroke-linecap="square" stroke-linejoin="miter"/>
+      <path d="M-7 3H-3M1 3H6" fill="none" stroke="#aaa3bc" stroke-width="1"/>
+      <path d="M-8 8V10H-3V8M4 8V10H9V8" fill="#72758a" stroke="#303243" stroke-width=".6"/>
+      <path d="M-3-18H9L5-16H-7Z" fill="#343343"/>
+      <path d="M14-10V-3M16-12V-5" stroke="#9b78ff" stroke-width=".7" opacity=".6"/>
+      <path d="M16-1 21 2" stroke="#aaa3bc" stroke-width="2.2"/>
+      <circle cx="20" cy="2" r="2" fill="#303444" stroke="#acbfff" stroke-width=".8"/>
+      <g transform="translate(20 2)">
+        <g class="mt-pickaxe">
+          <path d="M0 3 10-12" fill="none" stroke="#aaa3bc" stroke-width="2.2" stroke-linecap="square"/>
+          <path d="m6-15 4-2 9 6-1 5-4-5-6-1Z" fill="url(#mt-metal)" stroke="#485064" stroke-width=".7" stroke-linejoin="miter"/>
+          <path d="m10-16 8 5" stroke="#e7e5f0" stroke-width=".75"/>
+          <path d="m0 2 2 1" stroke="#9b78ff" stroke-width="2"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 140" width="380" height="140" class="mf-experiment" role="img" aria-labelledby="mf-title mf-desc">
+  <title id="mf-title">A small stimulus-response experiment</title>
+  <desc id="mf-desc">A sensory cue sends a pulse through a schematic network. A six-legged fly then turns toward the cue, pauses and returns to its starting pose. This is an illustration, not a recorded simulation or evidence of learning.</desc>
+  <defs>
+    <linearGradient id="mf-shell" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#354151" />
+      <stop offset=".5" stop-color="#192230" />
+      <stop offset="1" stop-color="#0d1117" />
+    </linearGradient>
+  </defs>
+  <style>
+    .mf-experiment .mf-cue { opacity:0; animation:mf-cue 16s ease-out infinite; transform-origin:27px 70px; }
+    .mf-experiment .mf-source { animation:mf-source 16s ease-in-out infinite; }
+    .mf-experiment .mf-pulse { opacity:0; stroke-dasharray:9 105; stroke-dashoffset:10; animation:mf-pulse 16s linear infinite; }
+    .mf-experiment .mf-pulse-b { animation-delay:.35s; }
+    .mf-experiment .mf-arrival { opacity:0; animation:mf-arrival 16s ease-in-out infinite; }
+    .mf-experiment .mf-turn { transform:rotate(-15deg); animation:mf-turn 16s cubic-bezier(.4,0,.2,1) infinite; }
+    @keyframes mf-cue {
+      0%,8% { opacity:0; transform:scale(.7); }
+      9% { opacity:.8; }
+      16% { opacity:0; transform:scale(1.6); }
+      100% { opacity:0; transform:scale(1.6); }
+    }
+    @keyframes mf-source {
+      0%,7%,20%,100% { fill:#34394a; }
+      10%,14% { fill:#dcff6b; }
+    }
+    @keyframes mf-pulse {
+      0%,12% { stroke-dashoffset:10; opacity:0; }
+      14% { opacity:1; }
+      32% { stroke-dashoffset:-103; opacity:1; }
+      35%,100% { stroke-dashoffset:-103; opacity:0; }
+    }
+    @keyframes mf-arrival {
+      0%,29%,44%,100% { opacity:0; }
+      33%,36% { opacity:1; }
+    }
+    @keyframes mf-turn {
+      0%,34% { transform:rotate(-15deg); }
+      45%,71% { transform:rotate(-90deg); }
+      82%,100% { transform:rotate(-15deg); }
+    }
+    @media (prefers-reduced-motion:reduce) {
+      .mf-experiment * { animation:none!important; }
+      .mf-experiment .mf-cue,.mf-experiment .mf-pulse,.mf-experiment .mf-arrival { opacity:0; }
+      .mf-experiment .mf-turn { transform:rotate(-15deg); }
+    }
+  </style>
+
+  <g fill="none" stroke="#403b53" stroke-width="1.2" stroke-linecap="round">
+    <path d="M35 70H65C88 70 96 38 121 38S148 70 167 70 191 42 212 42 234 70 251 70H268" />
+    <path d="M65 70C88 70 97 103 121 103S148 70 167 70 191 100 212 100 234 70 251 70" />
+    <path d="M121 38C135 38 139 103 121 103M212 42C192 42 192 100 212 100" opacity=".55" />
+  </g>
+  <g fill="none" stroke-width="1.8" stroke-linecap="round">
+    <path class="mf-pulse" pathLength="100" d="M35 70H65C88 70 96 38 121 38S148 70 167 70 191 42 212 42 234 70 251 70H268" stroke="#dcff6b" />
+    <path class="mf-pulse mf-pulse-b" pathLength="100" d="M35 70H65C88 70 97 103 121 103S148 70 167 70 191 100 212 100 234 70 251 70H268" stroke="#9b78ff" />
+  </g>
+  <g fill="#0d1117" stroke="#85859e" stroke-width="1.2">
+    <circle cx="65" cy="70" r="3.3" />
+    <circle cx="121" cy="38" r="4.2" />
+    <circle cx="121" cy="103" r="3.6" />
+    <circle cx="167" cy="70" r="4.5" />
+    <circle cx="212" cy="42" r="3.6" />
+    <circle cx="212" cy="100" r="4.2" />
+    <circle cx="251" cy="70" r="3.3" />
+  </g>
+  <circle class="mf-arrival" cx="251" cy="70" r="5" fill="#dcff6b" />
+  <circle class="mf-cue" cx="27" cy="70" r="12" fill="none" stroke="#dcff6b" stroke-width="1.2" />
+  <circle cx="27" cy="70" r="9" fill="#151b25" stroke="#6a6551" />
+  <circle class="mf-source" cx="27" cy="70" r="4" fill="#34394a" />
+
+  <g transform="translate(318 70)">
+    <g class="mf-turn">
+      <g fill="none" stroke="#9daac3" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M-7-12-18-21-27-24M-8-3-22-4-29 5M-7 9-18 19-23 30" />
+        <path d="M7-12 18-21 27-24M8-3 22-4 29 5M7 9 18 19 23 30" />
+      </g>
+      <ellipse cx="0" cy="12" rx="8.5" ry="19" fill="url(#mf-shell)" stroke="#a3b0c5" stroke-width="1.1" />
+      <path d="M-7 7Q0 11 7 7M-7 14Q0 18 7 14M-5 22Q0 25 5 22" fill="none" stroke="#727f95" stroke-width=".8" />
+      <g fill="#acbfff" fill-opacity=".09" stroke="#acbfff" stroke-width=".9" stroke-linejoin="round">
+        <path d="M-5-8C-15-23-35-35-40-26S-33-4-7 3Z" />
+        <path d="M5-8C15-23 35-35 40-26S33-4 7 3Z" />
+      </g>
+      <g fill="none" stroke="#acbfff" stroke-width=".55" opacity=".55">
+        <path d="M-7-7-35-25M-18-14-20-23M-25-20-33-15M7-7 35-25M18-14 20-23M25-20 33-15" />
+      </g>
+      <ellipse cx="0" cy="-7" rx="8.5" ry="11" fill="url(#mf-shell)" stroke="#b1bed1" stroke-width="1.1" />
+      <path d="M0-15V0" stroke="#9b78ff" stroke-width="1.1" opacity=".7" />
+      <ellipse cx="0" cy="-23" rx="8" ry="7" fill="#202536" stroke="#9aa9bf" />
+      <ellipse cx="-6" cy="-24" rx="4" ry="5.6" fill="#75579b" stroke="#b9a2d4" stroke-width=".8" />
+      <ellipse cx="6" cy="-24" rx="4" ry="5.6" fill="#75579b" stroke="#b9a2d4" stroke-width=".8" />
+      <path d="M-2-29-5-36-9-38M2-29 5-36 9-38" fill="none" stroke="#b0bace" stroke-width=".9" stroke-linecap="round" />
+    </g>
+  </g>
+</svg>

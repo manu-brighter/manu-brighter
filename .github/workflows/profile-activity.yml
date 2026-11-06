@@ -1,0 +1,78 @@
+name: Refresh public project activity
+
+on:
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: chore/profile-data
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    if: github.repository == 'manu-brighter/manu-brighter'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.ref }}
+
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: "24"
+
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: "3.12"
+
+      - name: Check the activity collector
+        run: node --test scripts/test-profile-activity.mjs
+
+      - name: Fetch public default-branch activity
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/fetch-profile-activity.mjs --output design/data/activity.json
+
+      - name: Render the activity graphs
+        run: |
+          python -m pip install --requirement scripts/requirements-profile.txt
+          python scripts/render-manual-mode.py --only activity --activity-data design/data/activity.json --output dist
+          cp design/data/activity.json dist/activity.json
+
+      - name: Publish only activity files to chore/profile-data
+        shell: bash
+        run: |
+          set -euo pipefail
+          target_branch=chore/profile-data
+          publish_dir="$RUNNER_TEMP/profile-data"
+          if git ls-remote --exit-code --heads origin "refs/heads/$target_branch" > "$RUNNER_TEMP/profile-data-ref"; then
+            git fetch --no-tags origin "refs/heads/$target_branch:refs/remotes/origin/$target_branch"
+            git worktree add -b "$target_branch" "$publish_dir" "refs/remotes/origin/$target_branch"
+          else
+            lookup_status=$?
+            if [ "$lookup_status" -ne 2 ]; then
+              echo "Could not inspect the chore/profile-data branch; publishing stopped."
+              exit "$lookup_status"
+            fi
+            git worktree add --detach "$publish_dir" HEAD
+            git -C "$publish_dir" switch --orphan "$target_branch"
+          fi
+          cp dist/activity.svg dist/activity-mobile.svg dist/activity.json "$publish_dir/"
+          git -C "$publish_dir" add -- activity.svg activity-mobile.svg activity.json
+          if git -C "$publish_dir" diff --cached --quiet -- activity.svg activity-mobile.svg activity.json; then
+            echo "Activity files are unchanged."
+            exit 0
+          fi
+          git -C "$publish_dir" -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit \
+            -m 'chore / profile-activity : Refresh public project activity' \
+            -m '- Update the public default-branch commit snapshot and graphs' \
+            --only -- activity.svg activity-mobile.svg activity.json
+          test "$(git -C "$publish_dir" branch --show-current)" = chore/profile-data
+          git -C "$publish_dir" push --set-upstream origin chore/profile-data
