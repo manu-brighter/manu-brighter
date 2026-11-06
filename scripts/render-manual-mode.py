@@ -626,7 +626,7 @@ SECTIONS = [
     ("projects", "Personal software projects", "Shot-Counter and Claude Code Kit, with their purpose and technology.", projects),
     ("stack", "Tools and experience", "Four areas of Manuel's daily development work.", stack),
     ("experiments", "Research and experiments", "Two public research projects, with their current status.", experiments),
-    ("garage", "After the editor", "Manuel's black Audi S5 B8.5, traced from his own photograph, and his photography and design work.", garage),
+    ("garage", "After the editor", "Manuel's lowered black Audi S5 B8.5 in right-facing side-profile line art, with polished split-Y wheels, thin tyres and a boot-lip spoiler, followed by his photography and design work.", garage),
     ("history", "Life, versioned", "Career, garage, photography and club branches connect the milestones in Manuel's life.", history),
     ("footer", "Manuel Heller", "Always something in development.", footer),
 ]

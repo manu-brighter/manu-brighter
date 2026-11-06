@@ -1,9 +1,9 @@
 # Manual mode
 
-The profile combines a dark background with lime, violet and chrome. A mechanically consistent camera iris, an Audi S5 traced from an original photograph, public project activity and a branching life graph connect the developer and photography sides. Motion follows the aperture, order routes, the parked car's contour and the life branches. It stops when the browser requests reduced motion.
+The profile combines a dark background with lime, violet and chrome. A mechanically consistent camera iris, an Audi S5 drawn as a clean side elevation, public project activity and a branching life graph connect the developer and photography sides. Motion follows the aperture, order routes, the parked car's contour and the life branches. It stops when the browser requests reduced motion.
 
 - `manual-mode.html` previews the actual generated SVGs. Open it directly to inspect the current desktop or mobile design.
-- `art/` contains the editable camera and S5 vectors and their animation CSS. The S5 preserves the source photograph's perspective, silhouette, reflections and wheel geometry as filled contours, with no embedded bitmap.
+- `art/` contains the editable camera and S5 vectors and their animation CSS. The S5 follows the supplied side-profile line drawing, mirrored to face right. Its lowered body, polished five-split-Y wheels, slim tyres and boot-lip spoiler are drawn as editable vector paths. The moving polish is masked to the metal; the wheels remain stationary.
 - `data/activity.json` is the checked-in public activity snapshot used for local previews and reproducible builds.
 - `fonts/` contains Manrope Regular and Bold, distributed under the SIL Open Font License in `fonts/OFL.txt`.
 - `../scripts/render-manual-mode.py` lays out the GitHub image sections and outlines their typography.
@@ -20,7 +20,7 @@ python scripts/render-manual-mode.py
 
 The renderer runs locally without GitHub credentials or network access, using the checked-in activity snapshot. Generated images contain no JavaScript, external images or external fonts. Their text is also available in accessible descriptions and README image alternatives. Project links live in the README because links inside an SVG image are not interactive on GitHub.
 
-Edit copy and layouts in the renderer; edit illustrations in `art/`. Regenerate the assets, then inspect both desktop and mobile widths in the preview. The preview uses the same SVGs as GitHub, so it does not maintain a second layout implementation. The supplied photograph is a tracing reference and is not embedded or committed.
+Edit copy and layouts in the renderer; edit illustrations in `art/`. Regenerate the assets, then inspect both desktop and mobile widths in the preview. The preview uses the same SVGs as GitHub, so it does not maintain a second layout implementation. The supplied drawing and wheel photographs are visual references and are not embedded or committed.
 
 ## Public activity
 

@@ -42,7 +42,7 @@ I build **PHP & Vue applications at zvoove**. After hours: tools for my club, ex
 
 <picture>
   <source media="(max-width: 600px)" srcset="assets/manual-mode/garage-mobile.svg" />
-  <img src="assets/manual-mode/garage.svg" width="100%" alt="After the editor. My lowered black Audi S5 B8.5 on polished 20-inch wheels, with its actual silhouette, reflections and wheels traced from my photograph. A light travels along the body contour. Cars, wildlife and travel photography with a Sony α7 IV; Lightroom, Photoshop and DaVinci Resolve afterwards. My portfolio combines photography, design and an interactive GPU fluid simulation." />
+  <img src="assets/manual-mode/garage.svg" width="100%" alt="After the editor. My lowered black Audi S5 B8.5, drawn in a right-facing side profile with polished 20-inch split-Y wheels, slim tyres and a small boot-lip spoiler. Light travels along the body contours and across the stationary polished wheels. Cars, wildlife and travel photography with a Sony α7 IV; Lightroom, Photoshop and DaVinci Resolve afterwards. My portfolio combines photography, design and an interactive GPU fluid simulation." />
 </picture>
 
 [Explore my portfolio](https://manuelheller.dev) · [View my photography](https://manuelheller.myportfolio.com)
