@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 from datetime import date, datetime, timedelta
+from functools import partial
 import json
 import math
 from pathlib import Path
@@ -294,18 +295,22 @@ def hero(c):
 def activity(c):
     data = c.activity
     start, finish = date.fromisoformat(data["from"]), date.fromisoformat(data["to"])
-    expected = [(start + timedelta(days=i)).isoformat() for i in range(84)]
-    if finish != start + timedelta(days=83) or len(data["repositories"]) != 4:
-        raise ValueError("Activity must contain four projects and 84 complete UTC days")
+    months = data["months"]
+    day_count = (finish - start).days + 1
+    expected = [(start + timedelta(days=i)).isoformat() for i in range(day_count)]
+    last_month = finish.year * 12 + finish.month - 1
+    expected_months = [f"{value // 12:04d}-{value % 12 + 1:02d}" for value in range(last_month - 11, last_month + 1)]
+    if data["schema_version"] != 2 or data["days"] != day_count or months != expected_months or start.isoformat() != months[0] + "-01" or len(data["repositories"]) != 4:
+        raise ValueError("Activity must contain four projects and twelve consecutive calendar months")
     labels = {
         "joggediballa-mainpage": "Jogge di Balla",
-        "shot-counter": "Shot-Counter",
+        "fly-connectome-sim": "Fly Connectome",
         "claude-code-kit": "Claude Code Kit",
         "manus-portfolio": "Portfolio",
     }
     if {repo["name"] for repo in data["repositories"]} != set(labels):
         raise ValueError("Unexpected activity repositories")
-    totals = [0] * 84
+    totals = [0] * day_count
     series = []
     for repo in data["repositories"]:
         days = repo["daily"]
@@ -315,25 +320,25 @@ def activity(c):
         if sum(values) != repo["total"]:
             raise ValueError("Repository activity total does not match its days")
         totals = [a + b for a, b in zip(totals, values)]
-        series.append((repo, [sum(values[i:i + 7]) for i in range(0, 84, 7)]))
+        series.append((repo, [sum(day["count"] for day in days if day["date"].startswith(month)) for month in months]))
     if data["daily"] != [{"date": day, "count": total} for day, total in zip(expected, totals)] or sum(totals) != data["total"]:
         raise ValueError("Activity totals do not match the repository data")
-    peak = max((max(weeks) for _, weeks in series), default=0)
+    peak = max((max(values) for _, values in series), default=0)
     scale = max(1, peak)
     c.line(c.pad, 1, c.width - c.pad, 1)
     c.text("In the making.", c.pad, 49, 31 if c.mobile else 35, LIGHT, True, -1)
     y = c.paragraph("A rolling log of my public project commits.", c.pad, 80, c.inner, 14, 23, MUTED)
     count_width = c.text(f'{data["total"]:,}', c.pad, y + 43, 46, ACCENT, True, -1.8)
-    c.text("commits / 12 weeks", c.pad + count_width + 15, y + 41, 12 if c.mobile else 14, LIGHT)
+    c.text("commits / 12 months", c.pad + count_width + 15, y + 41, 12 if c.mobile else 14, LIGHT)
     top = y + 79
-    c.text("7-day totals", c.pad, top, 11, MUTED)
+    c.text("Monthly totals", c.pad, top, 12, MUTED)
     c.text(f"Shared scale: 0–{scale}", c.width - c.pad, top, 11, MUTED, anchor="end")
     chart_x = c.pad if c.mobile else c.pad + 179
     chart_w = c.inner if c.mobile else c.inner - 179
     bar_step = chart_w / 12
     colors = [ACCENT, VIOLET, CYAN, "#e2bbdb"]
     y = top + 26
-    for index, (repo, weeks) in enumerate(series):
+    for index, (repo, monthly) in enumerate(series):
         color = colors[index]
         c.text(labels[repo["name"]], c.pad, y + 12, 14, color, True)
         if c.mobile:
@@ -343,18 +348,22 @@ def activity(c):
             c.text(f'{repo["total"]:,} commits', c.pad, y + 35, 12, MUTED)
             baseline = y + 47
         c.line(chart_x, baseline, chart_x + chart_w, baseline)
-        for week, count in enumerate(weeks):
-            x = chart_x + week * bar_step + 2
+        for month_index, count in enumerate(monthly):
+            x = chart_x + month_index * bar_step + 2
             height = count / scale * 45
             if count:
                 c.add("rect", x=number(x), y=number(baseline - height), width=number(bar_step - 4), height=number(height), rx=1.5, fill=color, opacity=".88")
             else:
                 c.add("circle", cx=number(x + (bar_step - 4) / 2), cy=baseline - 2, r=1.2, fill=LINE)
-        c.copy.append(f'{labels[repo["name"]]}: {repo["total"]} commits. Seven-day totals: {", ".join(str(count) for count in weeks)}.')
+        c.copy.append(f'{labels[repo["name"]]}: {repo["total"]} commits. Monthly totals: {", ".join(f"{month}: {count}" for month, count in zip(months, monthly))}.')
         y = baseline + 30
-    c.text(start.strftime("%d %b"), chart_x, y - 8, 11, MUTED)
-    c.text(finish.strftime("%d %b %Y"), chart_x + chart_w, y - 8, 11, MUTED, anchor="end")
-    y = c.paragraph("My commits on four public default branches. Work repositories and unmerged branches are outside this view.", c.pad, y + 26, c.inner, 12, 20)
+    for index, month in enumerate(months):
+        if c.mobile and index not in (0, 3, 6, 9, 11):
+            continue
+        label = date.fromisoformat(month + "-01").strftime("%b")
+        c.text(label, chart_x + (index + .5) * bar_step, y - 8, 11, MUTED, anchor="middle")
+    y = c.paragraph(f'{start.strftime("%b %Y")}–{finish.strftime("%b %Y")}. Latest month through {finish.strftime("%d %b")}.', c.pad, y + 24, c.inner, 12, 20)
+    y = c.paragraph("My commits on four public default branches. Work repositories and other branches are outside this view.", c.pad, y + 6, c.inner, 12, 20)
     fetched = datetime.fromisoformat(data["fetched_at"].replace("Z", "+00:00"))
     c.text(f'Snapshot · {fetched.strftime("%d %b %Y, %H:%M")} UTC', c.pad, y + 12, 11, MUTED)
     return y + 43
@@ -400,68 +409,61 @@ def club(c):
     return bottom + 22
 
 
+PROJECTS = [
+    ("club", "Jogge di Balla", "Live · ongoing", "Co-founder and developer. Club membership, permissions, orders, till, live photos and streaming overlays.", "React · TypeScript · tRPC · MySQL", ACCENT),
+    ("fly", "Fly Connectome Sim", "Experimental · in progress", "Connectome experiments with a simulation kernel, controlled stimulation and replay. No demonstrated learning yet.", "C++17 · Python · Node.js", VIOLET),
+    ("toolkit", "Claude Code Kit", "Published toolkit", "Reusable skills, specialist agents and hooks for development, design, project upkeep and security reviews.", "Claude Code · Markdown · JavaScript hooks", ACCENT),
+    ("portfolio", "manuelheller.dev", "Live", "My developer and photography portfolio. Four languages, interactive GPU ink and adaptive rendering quality.", "Next.js · React · TypeScript · WebGL/GLSL", ACCENT),
+    ("shot-counter", "Shot-Counter", "Inactive", "Event counter with QR joining, synchronised phones and a shared screen. Also packaged as a desktop app.", "Vue 3 · Express · SQLite · Electron", MUTED),
+    ("mercurius", "Mercurius", "Research concluded", "Trading research with reproducible backtests. Three hypotheses rejected; no real money used.", "Python · SQLite · Alpaca", MUTED),
+]
+
+
 def projects(c):
-    y = 45
-    entries = [
-        ("Shot-Counter", "One score, everywhere.", "QR joining, live updates across phones and a shared screen, plus a desktop app.", "Vue 3 / Express / SQLite / Electron", ACCENT),
-        ("Claude Code Kit", "My workflow, made reusable.", "Skills and specialist agents for project upkeep, creative frontends and security reviews.", "Skills / Agents / AI workflows", VIOLET),
-    ]
-    for title, subtitle, copy, tech, color in entries:
-        c.line(c.pad, y - 34, c.width - c.pad, y - 34)
-        c.text(title, c.pad, y, 23, color, True, -.6)
-        if c.mobile:
-            end = c.paragraph(subtitle, c.pad, y + 29, c.inner, fill=LIGHT)
-            end = c.paragraph(copy, c.pad, end + 8, c.inner)
-        else:
-            c.paragraph(subtitle, c.pad, y + 30, 245, fill=LIGHT)
-            end = c.paragraph(copy, c.pad + 288, y, c.inner - 288)
-        end = c.paragraph(tech, c.pad, max(end + 7, y + 69), c.inner, 12, 22)
-        y = end + 46
-    return y - 15
+    c.line(c.pad, 1, c.width - c.pad, 1)
+    c.text("Projects.", c.pad, 49, 31 if c.mobile else 35, LIGHT, True, -1)
+    y = c.paragraph("What I built, what it does, and where it stands.", c.pad, 82, c.inner, 14, 23)
+    return y + 6
+
+
+def project(c, entry):
+    slug, title, status, copy, tech, color = entry
+    c.line(c.pad, 1, c.width - c.pad, 1)
+    c.text(title, c.pad, 38, 22, LIGHT, True, -.6)
+    c.text(status, c.pad, 63, 12, color)
+    x = c.pad if c.mobile else c.pad + 269
+    width = c.inner if c.mobile else c.inner - 269
+    y = c.paragraph(copy, x, 94 if c.mobile else 36, width, 13, 22)
+    y = c.paragraph(tech, x, y + 10, width, 12, 21, CYAN)
+    return max(y + 17, 99)
 
 
 SKILLS = [
-    ("Daily work", "PHP · Vue · MySQL", "Business applications, APIs and data sync at zvoove since 2021."),
-    ("Quality", "Cypress · E2E", "Release tests and failure analysis. Playwright migration in progress."),
-    ("Personal builds", "React · TypeScript · tRPC", "Built with AI support; I own the ideas, design and ongoing operation."),
-    ("Operations", "Linux · nginx · Docker", "A rented root server with my own configurations. Tools I build, systems I run."),
+    ("Professional development", "PHP · Yii · Vue · JavaScript · HTML/CSS", "My daily foundation: PHP backends, Vue interfaces and business applications at zvoove since 2021."),
+    ("Data & integrations", "MySQL/MariaDB · REST · OpenAPI", "Complex SQL, database design, API integrations and data synchronisation."),
+    ("Testing & quality", "Cypress · E2E testing", "Around 30 substantial release tests, execution and failure analysis. Playwright migration in progress."),
+    ("AI workflows & products", "Codex · Claude Code · Skills · Agents", "Experienced with AI workflows. My React, TypeScript and tRPC products are built with AI support."),
+    ("Hosting & tooling", "Linux · nginx · Docker · Git", "A rented root server with my own nginx configurations. Practical basics in Git and Docker."),
+    ("Design & media", "Photography · Lightroom · Photoshop", "Graphic and web design, photo editing and video editing with DaVinci Resolve. Also Canva and GIMP."),
 ]
 
 
 def stack(c):
-    c.heading("Under the hood.")
-    y = 84
-    for title, tech, copy in SKILLS:
-        c.text(title, c.pad, y, 12, MUTED)
-        if c.mobile:
-            c.text(tech, c.pad, y + 27, 16, CYAN, True)
-            y = c.paragraph(copy, c.pad, y + 54, c.inner, 13, 22) + 23
-        else:
-            c.text(tech, c.pad + 147, y, 16, CYAN, True)
-            y = c.paragraph(copy, c.pad + 147, y + 27, c.inner - 147, 13, 22) + 24
-    return y + 3
-
-
-EXPERIMENTS = [
-    ("Research concluded", "Mercurius", "Three trading hypotheses. None passed the backtests. No real money used; the results remain public."),
-    ("Work in progress", "Fly connectome simulation", "An experiment with a fruit-fly neural wiring graph. The simulation runs; learning results are still ahead."),
-]
-
-
-def experiments(c):
     c.line(c.pad, 1, c.width - c.pad, 1)
-    w = c.inner if c.mobile else (c.inner - 26) / 2
-    y, bottom = 37, 0
-    for index, (state, title, copy) in enumerate(EXPERIMENTS):
-        x = c.pad if c.mobile else c.pad + index * (w + 26)
-        c.add("circle", cx=x + 3, cy=y - 4, r=2.5, fill="#8c9ed8")
-        c.text(state, x + 15, y, 12, MUTED)
-        c.text(title, x, y + 31, 17, bold=True, spacing=-.35)
-        end = c.paragraph(copy, x, y + 61, w)
-        bottom = max(bottom, end)
-        if c.mobile:
-            y = end + 34
-    return bottom + 25
+    c.text("Skills & experience.", c.pad, 49, 29 if c.mobile else 35, LIGHT, True, -1)
+    y = c.paragraph("Full-stack developer at zvoove since 2021.\nBetriebsinformatiker EFZ, Novartis apprenticeship, 2016–2020.", c.pad, 82, c.inner, 13, 22)
+    y += 22
+    width = c.inner if c.mobile else (c.inner - 36) / 2
+    row_bottom = y
+    for index, (title, tech, copy) in enumerate(SKILLS):
+        x = c.pad if c.mobile else c.pad + index % 2 * (width + 36)
+        c.text(title, x, y, 15, LIGHT, True, -.2)
+        end = c.paragraph(tech, x, y + 27, width, 13, 22, CYAN)
+        end = c.paragraph(copy, x, end + 8, width, 13, 22)
+        row_bottom = max(row_bottom, end)
+        if c.mobile or index % 2:
+            y = row_bottom + 29
+    return row_bottom + 28
 
 
 def garage(c):
@@ -473,7 +475,6 @@ def garage(c):
     y = 110 + art_height + 38
     c.text("Chasing light.", c.pad, y, 24, VIOLET, True, -.6)
     end = c.paragraph("Cars, wildlife and places worth getting up early for. Sony α7 IV in hand; Lightroom, Photoshop and DaVinci Resolve afterwards.", c.pad, y + 32, c.inner)
-    end = c.paragraph("My portfolio brings both sides together: photography, design and a GPU fluid simulation you can play with.", c.pad, end + 9, c.inner, 13, 23, CYAN)
     return end + 20
 
 
@@ -621,11 +622,11 @@ def footer(c):
 
 SECTIONS = [
     ("hero", "Manuel Heller, full-stack developer", "A detailed animated camera accompanies Manuel's introduction.", hero),
-    ("activity", "In the making", "Actual user-authored GitHub commits across four public project default branches, grouped into twelve seven-day periods by UTC committer date. This is a dated snapshot, not the complete GitHub contribution calendar.", activity),
-    ("club", "Jogge di Balla", "Food and drink orders move from service to the kitchen and bar.", club),
-    ("projects", "Personal software projects", "Shot-Counter and Claude Code Kit, with their purpose and technology.", projects),
-    ("stack", "Tools and experience", "Four areas of Manuel's daily development work.", stack),
-    ("experiments", "Research and experiments", "Two public research projects, with their current status.", experiments),
+    ("stack", "Skills and experience", "Manuel's professional foundation, integrations, testing, AI-assisted work, hosting and creative skills, with explicit experience context.", stack),
+    ("projects", "Project overview", "All six personal projects in one linked overview, with purpose, technology and status.", projects),
+    *[(f"project-{entry[0]}", entry[1], f"{entry[2]}. {entry[3]} {entry[4]}.", partial(project, entry=entry)) for entry in PROJECTS],
+    ("club", "Jogge di Balla in detail", "Food and drink orders move from service to the kitchen and bar.", club),
+    ("activity", "In the making", "Actual user-authored GitHub commits across four public project default branches, grouped into twelve calendar months by UTC committer date. The latest month may be partial. This is a dated snapshot, not the complete GitHub contribution calendar.", activity),
     ("garage", "After the editor", "Manuel's lowered black Audi S5 B8.5 in right-facing side-profile line art, with polished split-Y wheels, thin tyres and a boot-lip spoiler, followed by his photography and design work.", garage),
     ("history", "Life, versioned", "Career, garage, photography and club branches connect the milestones in Manuel's life.", history),
     ("footer", "Manuel Heller", "Always something in development.", footer),

@@ -8,14 +8,14 @@ import { promisify } from "node:util";
 export const OWNER = "manu-brighter";
 export const REPOSITORIES = Object.freeze([
   "joggediballa-mainpage",
-  "shot-counter",
+  "fly-connectome-sim",
   "claude-code-kit",
   "manus-portfolio",
 ]);
 const DAY = 86_400_000;
-const DAYS = 84;
+const MONTHS = 12;
 const execute = promisify(execFile);
-const SCOPE = "Public commits authored by manu-brighter on each listed repository's default branch, including merge commits. Grouped by UTC committer date across 84 complete days. Each default-branch head is pinned before pagination. This is project commit activity, not GitHub contribution totals.";
+const SCOPE = "Public commits authored by manu-brighter on each listed repository's default branch, including merge commits. Grouped by UTC committer date across 12 calendar months; the last month may be partial and contains only complete UTC days. Each default-branch head is pinned before pagination. This is project commit activity, not GitHub contribution totals.";
 
 export function utcWindow(until, now = new Date()) {
   const boundary = until ?? now.toISOString().slice(0, 10);
@@ -25,12 +25,15 @@ export function utcWindow(until, now = new Date()) {
     throw new Error("--until is not a valid calendar date");
   }
   if (boundary > now.toISOString().slice(0, 10)) throw new Error("--until cannot include incomplete or future UTC days");
-  const start = end - DAYS * DAY;
+  const lastDay = new Date(end - DAY);
+  const startMonth = lastDay.getUTCMonth() - (MONTHS - 1);
+  const start = Date.UTC(lastDay.getUTCFullYear(), startMonth, 1);
   if (start < Date.parse("1970-01-02T00:00:00Z") || end > Date.parse("2099-12-31T00:00:00Z")) {
     throw new Error("Window is outside GitHub's supported Git timestamp range");
   }
-  const dates = Array.from({ length: DAYS }, (_, index) => new Date(start + index * DAY).toISOString().slice(0, 10));
-  return { start, end, dates, from: dates[0], to: dates.at(-1) };
+  const dates = Array.from({ length: (end - start) / DAY }, (_, index) => new Date(start + index * DAY).toISOString().slice(0, 10));
+  const months = Array.from({ length: MONTHS }, (_, index) => new Date(Date.UTC(lastDay.getUTCFullYear(), startMonth + index, 1)).toISOString().slice(0, 7));
+  return { start, end, dates, months, from: dates[0], to: dates.at(-1) };
 }
 
 export function createGitHubRequest({ token = process.env.GITHUB_TOKEN, fetchImpl = fetch } = {}) {
@@ -161,11 +164,12 @@ export async function collectActivity({ until, now = new Date(), request = creat
     count: repositories.reduce((sum, repository) => sum + repository.daily[index].count, 0),
   }));
   const data = {
-    schema_version: 1,
+    schema_version: 2,
     fetched_at: now.toISOString(),
     from: window.from,
     to: window.to,
-    days: DAYS,
+    days: window.dates.length,
+    months: window.months,
     timezone: "UTC",
     scope: SCOPE,
     repositories,
@@ -177,14 +181,15 @@ export async function collectActivity({ until, now = new Date(), request = creat
 }
 
 export function validateActivity(data) {
-  if (data?.schema_version !== 1 || data.days !== DAYS || data.timezone !== "UTC" || data.scope !== SCOPE) throw new Error("Invalid activity schema or scope");
+  if (data?.schema_version !== 2 || !Number.isSafeInteger(data.days) || data.days < 1 || data.timezone !== "UTC" || data.scope !== SCOPE) throw new Error("Invalid activity schema or scope");
   const fetched = new Date(data.fetched_at);
   if (!Number.isFinite(fetched.getTime())) throw new Error("Invalid activity fetch timestamp");
   const until = new Date(Date.parse(`${data.to}T00:00:00Z`) + DAY).toISOString().slice(0, 10);
   const window = utcWindow(until, fetched);
-  if (data.from !== window.from || data.to !== window.to) throw new Error("Invalid activity date range");
+  if (data.from !== window.from || data.to !== window.to || data.days !== window.dates.length) throw new Error("Invalid activity date range");
+  if (!Array.isArray(data.months) || data.months.length !== MONTHS || data.months.some((month, index) => month !== window.months[index])) throw new Error("Invalid activity months");
   const validateDays = (daily, total) => {
-    if (!Array.isArray(daily) || daily.length !== DAYS) throw new Error("Incomplete daily activity data");
+    if (!Array.isArray(daily) || daily.length !== window.dates.length) throw new Error("Incomplete daily activity data");
     daily.forEach((day, index) => {
       if (day.date !== window.dates[index] || !Number.isSafeInteger(day.count) || day.count < 0) throw new Error("Invalid daily activity count or date");
     });

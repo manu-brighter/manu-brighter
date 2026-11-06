@@ -2,8 +2,10 @@
 
 The profile combines a dark background with lime, violet and chrome. A mechanically consistent camera iris, an Audi S5 drawn as a clean side elevation, public project activity and a branching life graph connect the developer and photography sides. Motion follows the aperture, order routes, the parked car's contour and the life branches. It stops when the browser requests reduced motion.
 
+Skills and professional experience occupy one section immediately after the introduction. All six projects follow in one overview: each row links to its repository and gives its purpose, technology and status. The club's animated case study is expandable inside that overview. Inactive and concluded projects remain visible there but are separate from the current activity sample.
+
 - `manual-mode.html` previews the actual generated SVGs. Open it directly to inspect the current desktop or mobile design.
-- `art/` contains the editable camera and S5 vectors and their animation CSS. The S5 follows the supplied side-profile line drawing, mirrored to face right. Its lowered body, polished five-split-Y wheels, slim tyres and boot-lip spoiler are drawn as editable vector paths. The moving polish is masked to the metal; the wheels remain stationary.
+- `art/` contains the editable camera and S5 vectors and their animation CSS. The S5 follows the supplied side-profile line drawing, mirrored to face right. Its lowered body, polished five-split-Y wheels, slim tyres and boot-lip spoiler are drawn as editable vector paths. The moving polish is masked to the metal; the wheels remain stationary. The DRL brow, outer hook and separated inner return follow the supplied B8.5 headlight photograph, with a restrained animated glow.
 - `data/activity.json` is the checked-in public activity snapshot used for local previews and reproducible builds.
 - `fonts/` contains Manrope Regular and Bold, distributed under the SIL Open Font License in `fonts/OFL.txt`.
 - `../scripts/render-manual-mode.py` lays out the GitHub image sections and outlines their typography.
@@ -24,7 +26,7 @@ Edit copy and layouts in the renderer; edit illustrations in `art/`. Regenerate 
 
 ## Public activity
 
-`scripts/fetch-profile-activity.mjs` reads four fixed public repositories via the GitHub REST API. It counts commits authored by `manu-brighter` on their default branches, including merges, across the last 84 complete UTC days. Each head SHA is pinned before pagination. Days use the commit's **committer timestamp**; twelve successive seven-day buckets are shown on a shared scale. This is project activity, not GitHub's contribution calendar or all professional work.
+`scripts/fetch-profile-activity.mjs` reads four fixed public repositories via the GitHub REST API: Jogge di Balla, Fly Connectome Sim, Claude Code Kit and the portfolio. It counts commits authored by `manu-brighter` on each repository's actual default branch, including merges. Each head SHA is pinned before pagination. Days use the commit's **committer timestamp**; twelve calendar months are shown on a shared scale. The view ends on the latest completed UTC day, so the latest month can be partial. For example, `--until 2026-11-06` covers December 2025 through 5 November 2026; `--until 2026-11-01` covers all of November 2025 through October 2026. Schema version 2 records the month labels and variable day count explicitly. This is project activity, not GitHub's contribution calendar or all professional work.
 
 ```shell
 node scripts/fetch-profile-activity.mjs --output design/data/activity.json
