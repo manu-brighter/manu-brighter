@@ -275,7 +275,6 @@ def hero(c):
     c.add("path", d=trace, fill="none", stroke="url(#mm-light-trace)", stroke_width="20", opacity=".055")
     c.add("path", d=trace, fill="none", stroke="url(#mm-light-trace)", stroke_width="4", opacity=".32")
     c.add("path", d=trace, fill="none", stroke="url(#mm-light-trace)", stroke_width="1.1", opacity=".85")
-    c.text("mh,", p, 48 if c.mobile else 55, 20, ACCENT, True, -.8)
     c.text("Basel region, Switzerland", c.width - p, 46 if c.mobile else 53, 12, MUTED, anchor="end")
     size, first, second = (62, 126, 190) if c.mobile else (77, 163, 241)
     c.text("Manuel", p, first, size, fill=ACCENT, bold=True, spacing=-3 if c.mobile else -4)
@@ -284,7 +283,7 @@ def hero(c):
     role = 231 if c.mobile else 302
     c.text("Full-stack developer.", p, role, 18, bold=True, spacing=-.3)
     c.text("Code, design & photography.", p, role + 28, 14, ACCENT)
-    c.paragraph("Code, light, and things\nworth taking apart.", p, role + 55, c.inner if c.mobile else 260, leading=23)
+    c.paragraph("From club software\nto connectome experiments.", p, role + 55, c.inner if c.mobile else 260, leading=23)
     c.art("camera", -12 if c.mobile else 278, 302 if c.mobile else 80, 388 if c.mobile else 516, 303.125 if c.mobile else 403.125)
     note = 584 if c.mobile else 468
     c.line(p, note - 5, p + 25, note - 5, ACCENT)
@@ -387,13 +386,16 @@ def club(c):
         c.add("path", d=wire, fill="none", stroke="#40374f", stroke_width="1.5")
         c.add("path", d=wire, fill="none", stroke=color, stroke_width="3", stroke_linecap="round", pathLength="100", **{"class": f"mm-order-route {'b' if index else 'a'}"})
         c.add("rect", x=end_x, y=row_y - 9, width=end_w, height=54, rx=8, fill="#1b2020" if not index else "#211a36", stroke="#5d7040" if not index else "#7554a9")
+        c.add("rect", x=end_x, y=row_y - 9, width=end_w, height=54, rx=8, fill="none", stroke=color, stroke_width="1.5", **{"class": f"mm-order-receive {'b' if index else 'a'}"})
         c.text(label, end_x + end_w / 2, row_y + 14, 16, color, True, anchor="middle")
         c.text(detail, end_x + end_w / 2, row_y + 32, 12, MUTED, anchor="middle")
     c.add("style").text = """
-      #manual-mode .mm-order-route{stroke-dasharray:9 110;animation:mm-order-route 8s ease-in-out infinite}
-      #manual-mode .mm-order-route.b{animation-delay:1.6s}
+      #manual-mode .mm-order-route{opacity:0;stroke-dasharray:9 110;animation:mm-order-route 8s ease-in-out infinite}
+      #manual-mode .mm-order-receive{opacity:0;animation:mm-order-receive 8s ease-in-out infinite}
+      #manual-mode .mm-order-route.b,#manual-mode .mm-order-receive.b{animation-delay:1.6s}
       @keyframes mm-order-route{0%,12%{stroke-dashoffset:10;opacity:0}17%{opacity:1}65%{stroke-dashoffset:-104;opacity:1}72%,100%{stroke-dashoffset:-104;opacity:0}}
-      @media(prefers-reduced-motion:reduce){#manual-mode .mm-order-route{animation:none;opacity:0}}
+      @keyframes mm-order-receive{0%,54%{opacity:0}60%{opacity:1}70%,100%{opacity:0}}
+      @media(prefers-reduced-motion:reduce){#manual-mode .mm-order-route,#manual-mode .mm-order-receive{animation:none;opacity:0}}
     """
     y += 197
     items = [("Run the club", "Members, permissions and attendance."), ("Run the event", "Orders and a till for service, kitchen and bar."), ("Share the night", "Moderated photos and streaming overlays.")]
@@ -414,7 +416,7 @@ PROJECTS = [
     ("fly", "Fly Connectome Sim", "Experimental · in progress", "Connectome experiments with a simulation kernel, controlled stimulation and replay. No demonstrated learning yet.", "C++17 · Python · Node.js", VIOLET),
     ("toolkit", "Claude Code Kit", "Published toolkit", "Reusable skills, specialist agents and hooks for development, design, project upkeep and security reviews.", "Claude Code · Markdown · JavaScript hooks", ACCENT),
     ("portfolio", "manuelheller.dev", "Live", "My developer and photography portfolio. Four languages, interactive GPU ink and adaptive rendering quality.", "Next.js · React · TypeScript · WebGL/GLSL", ACCENT),
-    ("shot-counter", "Shot-Counter", "Inactive", "Event counter with QR joining, synchronised phones and a shared screen. Also packaged as a desktop app.", "Vue 3 · Express · SQLite · Electron", MUTED),
+    ("shot-counter", "Shot-Counter", "Inactive", "Live team shot counter with QR joining, synchronised phones and a shared screen. Also packaged as a desktop app.", "Vue 3 · Express · SQLite · Electron", MUTED),
     ("mercurius", "Mercurius", "Research concluded", "Trading research with reproducible backtests. Three hypotheses rejected; no real money used.", "Python · SQLite · Alpaca", MUTED),
 ]
 
@@ -431,6 +433,9 @@ def project(c, entry):
     c.line(c.pad, 1, c.width - c.pad, 1)
     c.text(title, c.pad, 38, 22, LIGHT, True, -.6)
     c.text(status, c.pad, 63, 12, color)
+    link_x = c.width - c.pad if c.mobile else c.pad + 233
+    link_width = c.text("GitHub", link_x, 63, 12, ACCENT, anchor="end")
+    c.line(link_x - link_width, 67, link_x, 67, ACCENT)
     x = c.pad if c.mobile else c.pad + 269
     width = c.inner if c.mobile else c.inner - 269
     y = c.paragraph(copy, x, 94 if c.mobile else 36, width, 13, 22)
@@ -452,48 +457,49 @@ def stack(c):
     c.line(c.pad, 1, c.width - c.pad, 1)
     c.text("Skills & experience.", c.pad, 49, 29 if c.mobile else 35, LIGHT, True, -1)
     y = c.paragraph("Development, automation, self-hosting and visual work.\nBetriebsinformatiker EFZ, Novartis apprenticeship, 2016–2020.", c.pad, 82, c.inner, 13, 22)
-    y += 22
+    y += 16 if c.mobile else 22
     width = c.inner if c.mobile else (c.inner - 36) / 2
     row_bottom = y
     for index, (title, tech, copy) in enumerate(SKILLS):
         x = c.pad if c.mobile else c.pad + index % 2 * (width + 36)
         c.text(title, x, y, 15, LIGHT, True, -.2)
-        end = c.paragraph(tech, x, y + 27, width, 13, 22, CYAN)
-        end = c.paragraph(copy, x, end + 8, width, 13, 22)
+        end = c.paragraph(tech, x, y + (23 if c.mobile else 27), width, 13, 22, CYAN)
+        end = c.paragraph(copy, x, end + (6 if c.mobile else 8), width, 13, 22)
         row_bottom = max(row_bottom, end)
         if c.mobile or index % 2:
-            y = row_bottom + 29
-    return row_bottom + 28
+            y = row_bottom + (21 if c.mobile else 29)
+    return row_bottom + (22 if c.mobile else 28)
 
 
 def garage(c):
     c.line(c.pad, 1, c.width - c.pad, 1)
     c.text("After the editor.", c.pad, 52, 32 if c.mobile else 39, LIGHT, True, -1)
-    c.text("My S5 B8.5. Black, low, polished 20s.", c.pad, 83, 13 if c.mobile else 14, ACCENT)
+    c.text("My S5 B8.5. Black, low, two-piece 20s.", c.pad, 83, 13 if c.mobile else 14, ACCENT)
     art_height = c.width * 610 / 1575
     c.art("car", 0, 110, c.width, art_height)
     y = 110 + art_height + 38
-    c.text("Chasing light.", c.pad, y, 24, VIOLET, True, -.6)
-    end = c.paragraph("Cars, wildlife and places worth getting up early for. Sony α7 IV in hand; Lightroom, Photoshop and DaVinci Resolve afterwards.", c.pad, y + 32, c.inner)
+    c.text("Photography.", c.pad, y, 24, VIOLET, True, -.6)
+    end = c.paragraph("Cars at The ICE. Wildlife in Costa Rica. Sony α7 IV in hand.", c.pad, y + 32, c.inner)
+    end = c.paragraph("Edited in Lightroom, Photoshop and DaVinci Resolve.", c.pad, end + 8, c.inner, 12, 21)
     return end + 20
 
 
 EVENTS = [
     ("2014", "life", "Minecraft + Lua", "Mining turtles on my own server."),
-    ("2016", "career", "Start at Novartis", "Betriebsinformatiker apprenticeship."),
-    ("2019", "garage", "KTM Duke 390", "The garage starts on two wheels."),
-    ("2020", "career", "Finish the EFZ", "Four years of IT foundations."),
+    ("2016", "career", "Started at Novartis", "Betriebsinformatiker apprenticeship."),
+    ("2019", "garage", "KTM Duke 390", "The garage started on two wheels."),
+    ("2020", "career", "Earned the EFZ", "Four years of IT foundations."),
     ("2021", "career", "Into full-stack", "PHP, Vue and business applications."),
-    ("2022", "club", "Found Jogge di Balla", "Co-founder and vice president."),
-    ("2023", "photo", "A camera joins in", "Sony α7 IV."),
+    ("2022", "club", "Founded Jogge di Balla", "Co-founder and vice president."),
+    ("2023", "photo", "First camera", "Sony α7 IV."),
     ("2023", "garage", "Audi TT RS", "A new chapter on four wheels."),
     ("2024", "garage", "The S5 project", "Audi S5 B8.5."),
     ("2024", "photo", "Costa Rica, solo", "Wildlife through the lens."),
     ("2025", "career", "APIs + data sync", "Interfaces and integrations."),
     ("2025", "photo", "The ICE, St. Moritz", "Cars, winter light and Koenigsegg."),
     ("2026", "club", "Club platform live", "Service, kitchen and bar connected."),
-    ("2026", "career", "Publish AI toolkit", "Reusable skills and specialist agents."),
-    ("2026", "garage", "New 20-inch wheels", "Polished details for the S5."),
+    ("2026", "career", "Published AI toolkit", "Reusable skills and specialist agents."),
+    ("2026", "career", "Trying to teach a fly", "Connectome experiments. Learning still pending."),
     ("now", "life", "Still in development", "Code, cameras, cars and club life."),
 ]
 
@@ -611,12 +617,7 @@ def history(c):
 
 def footer(c):
     c.line(c.pad, 1, c.width - c.pad, 1)
-    w = c.text("manuel heller", c.pad, 47, 22, bold=True, spacing=-1)
-    c.text(",", c.pad + w, 47, 22, ACCENT, True)
-    if c.mobile:
-        c.text("Always something in development.", c.pad, 77, 14, MUTED)
-        return 105
-    c.text("Always something in development.", c.width - c.pad, 46, 14, MUTED, anchor="end")
+    c.text("Always something in development.", c.pad, 47, 14, MUTED)
     return 80
 
 
@@ -625,11 +626,11 @@ SECTIONS = [
     ("stack", "Skills and experience", "Manuel's professional foundation, integrations, testing, AI-assisted work, hosting and creative skills, with explicit experience context.", stack),
     ("projects", "Project overview", "All six personal projects in one linked overview, with purpose, technology and status.", projects),
     *[(f"project-{entry[0]}", entry[1], f"{entry[2]}. {entry[3]} {entry[4]}.", partial(project, entry=entry)) for entry in PROJECTS],
-    ("club", "Jogge di Balla in detail", "Food and drink orders move from service to the kitchen and bar.", club),
+    ("club", "Jogge di Balla in detail", "Food and drink orders move from service to the kitchen and bar, with a brief outline highlight on arrival.", club),
     ("activity", "In the making", "Actual user-authored GitHub commits across four public project default branches, grouped into twelve calendar months by UTC committer date. The latest month may be partial. This is a dated snapshot, not the complete GitHub contribution calendar.", activity),
     ("garage", "After the editor", "Manuel's lowered black Audi S5 B8.5 in right-facing side-profile line art, with polished split-Y wheels, thin tyres and a boot-lip spoiler, followed by his photography and design work.", garage),
     ("history", "Life, versioned", "Career, garage, photography and club branches connect the milestones in Manuel's life.", history),
-    ("footer", "Manuel Heller", "Always something in development.", footer),
+    ("footer", "Always something in development", "A closing note.", footer),
 ]
 
 
