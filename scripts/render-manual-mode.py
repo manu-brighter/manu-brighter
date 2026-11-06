@@ -416,7 +416,7 @@ PROJECTS = [
     ("fly", "Fly Connectome Sim", "Experimental · in progress", "Connectome experiments with a simulation kernel, controlled stimulation and replay. No demonstrated learning yet.", "C++17 · Python · Node.js", VIOLET),
     ("toolkit", "Claude Code Kit", "Published toolkit", "Reusable skills, specialist agents and hooks for development, design, project upkeep and security reviews.", "Claude Code · Markdown · JavaScript hooks", ACCENT),
     ("portfolio", "manuelheller.dev", "Live", "My developer and photography portfolio. Four languages, interactive GPU ink and adaptive rendering quality.", "Next.js · React · TypeScript · WebGL/GLSL", ACCENT),
-    ("shot-counter", "Shot-Counter", "Inactive", "Live team shot counter with QR joining, synchronised phones and a shared screen. Also packaged as a desktop app.", "Vue 3 · Express · SQLite · Electron", MUTED),
+    ("shot-counter", "Shot-Counter", "Released · no longer updated", "Complete Electron app for live team shot counting, QR joining and synchronised screens. Available for Windows and Linux.", "Vue 3 · Express · SQLite · Electron", ACCENT),
     ("mercurius", "Mercurius", "Research concluded", "Trading research with reproducible backtests. Three hypotheses rejected; no real money used.", "Python · SQLite · Alpaca", MUTED),
 ]
 
@@ -433,9 +433,6 @@ def project(c, entry):
     c.line(c.pad, 1, c.width - c.pad, 1)
     c.text(title, c.pad, 38, 22, LIGHT, True, -.6)
     c.text(status, c.pad, 63, 12, color)
-    link_x = c.width - c.pad if c.mobile else c.pad + 233
-    link_width = c.text("GitHub", link_x, 63, 12, ACCENT, anchor="end")
-    c.line(link_x - link_width, 67, link_x, 67, ACCENT)
     x = c.pad if c.mobile else c.pad + 269
     width = c.inner if c.mobile else c.inner - 269
     y = c.paragraph(copy, x, 94 if c.mobile else 36, width, 13, 22)
@@ -444,20 +441,21 @@ def project(c, entry):
 
 
 SKILLS = [
-    ("Web development", "PHP · Yii · Vue · JavaScript · HTML/CSS", "Around five years with PHP. Backends, APIs and Vue interfaces for business tools and personal projects."),
-    ("Data & integrations", "MySQL/MariaDB · REST · OpenAPI", "Complex SQL, database design, API integrations and data synchronisation."),
-    ("Testing & quality", "Cypress · E2E testing", "End-to-end flows, regression coverage and failure analysis for web applications."),
-    ("AI workflows & products", "Codex · Claude Code · Skills · Agents", "Experienced with AI workflows. My React, TypeScript and tRPC products are built with AI support."),
-    ("Hosting & tooling", "Linux · nginx · Docker · Git", "A rented root server with my own nginx configurations. Practical basics in Git and Docker."),
+    ("Backend & APIs", "PHP · Yii · REST · OpenAPI", "Backend logic, API integrations and data synchronisation."),
+    ("Frontend", "Vue · JavaScript · HTML · CSS", "Web interfaces and Vue components."),
+    ("Data", "MySQL · MariaDB · SQLite", "Complex SQL, database design and query optimisation."),
+    ("Testing & quality", "Cypress · Playwright · Vitest", "End-to-end, unit and regression tests. Visual and accessibility checks."),
+    ("AI workflows", "Codex · Claude Code · MCP", "Custom skills, agents, hooks and plugins."),
+    ("AI-assisted project stack", "React · TypeScript · Next.js · tRPC", "Node.js / Express, Electron, Vite, Tailwind CSS and Three.js / WebGL / GLSL."),
+    ("Hosting & tooling", "Linux · nginx · Docker · Git · GitHub Actions", "Self-hosting and nginx configuration. Practical basics in Git and Docker."),
     ("Design & media", "Photography · Lightroom · Photoshop", "Graphic and web design, photo editing and video editing with DaVinci Resolve. Also Canva and GIMP."),
 ]
 
 
 def stack(c):
     c.line(c.pad, 1, c.width - c.pad, 1)
-    c.text("Skills & experience.", c.pad, 49, 29 if c.mobile else 35, LIGHT, True, -1)
-    y = c.paragraph("Development, automation, self-hosting and visual work.\nBetriebsinformatiker EFZ, Novartis apprenticeship, 2016–2020.", c.pad, 82, c.inner, 13, 22)
-    y += 16 if c.mobile else 22
+    c.text("Skills.", c.pad, 49, 29 if c.mobile else 35, LIGHT, True, -1)
+    y = 90
     width = c.inner if c.mobile else (c.inner - 36) / 2
     row_bottom = y
     for index, (title, tech, copy) in enumerate(SKILLS):
@@ -623,7 +621,7 @@ def footer(c):
 
 SECTIONS = [
     ("hero", "Manuel Heller, full-stack developer", "A detailed animated camera accompanies Manuel's introduction.", hero),
-    ("stack", "Skills and experience", "Manuel's professional foundation, integrations, testing, AI-assisted work, hosting and creative skills, with explicit experience context.", stack),
+    ("stack", "Skills", "Backend, frontend, data, testing, AI workflows, AI-assisted project technologies, hosting and creative skills.", stack),
     ("projects", "Project overview", "All six personal projects in one linked overview, with purpose, technology and status.", projects),
     *[(f"project-{entry[0]}", entry[1], f"{entry[2]}. {entry[3]} {entry[4]}.", partial(project, entry=entry)) for entry in PROJECTS],
     ("club", "Jogge di Balla in detail", "Food and drink orders move from service to the kitchen and bar, with a brief outline highlight on arrival.", club),

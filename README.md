@@ -7,13 +7,13 @@
 
 <p><a href="https://manuelheller.dev">Portfolio</a> · <a href="https://manuelheller.myportfolio.com">Photography</a> · <a href="https://joggediballa.ch">Jogge di Balla</a></p>
 
-<p><a href="#skills">Skills &amp; experience</a> · <a href="#projects">All projects</a> · <a href="#activity">GitHub activity</a></p>
+<p><a href="#skills">Skills</a> · <a href="#projects">All projects</a> · <a href="#activity">GitHub activity</a></p>
 
 <a name="skills"></a>
 
 <picture>
   <source media="(max-width: 600px)" srcset="assets/manual-mode/stack-mobile.svg" />
-  <img src="assets/manual-mode/stack.svg" width="100%" alt="Skills and experience. Development, automation, self-hosting and visual work; Betriebsinformatiker EFZ following a Novartis apprenticeship, 2016–2020. Web development: around five years with PHP; Yii, Vue, JavaScript, HTML and CSS. Backends, APIs and Vue interfaces for business tools and personal projects. Data and integrations: MySQL/MariaDB, REST, OpenAPI, complex SQL and data synchronisation. Testing: Cypress, end-to-end flows, regression coverage and failure analysis for web applications. AI workflows: Codex, Claude Code, custom skills and agents. React, TypeScript and tRPC products are built with AI support. Hosting: rented Linux root server and own nginx configurations; practical basics in Git and Docker. Design and media: photography, Lightroom, Photoshop, DaVinci Resolve, Canva and GIMP." />
+  <img src="assets/manual-mode/stack.svg" width="100%" alt="Skills. Backend and APIs: PHP, Yii, REST, OpenAPI, backend logic, API integrations and data synchronisation. Frontend: Vue, JavaScript, HTML, CSS, web interfaces and components. Data: MySQL, MariaDB, SQLite, complex SQL, database design and query optimisation. Testing: Cypress, Playwright and Vitest; end-to-end, unit, regression, visual and accessibility checks. AI workflows: Codex, Claude Code, MCP, custom skills, agents, hooks and plugins. AI-assisted project stack: React, TypeScript, Next.js, tRPC, Node.js, Express, Electron, Vite, Tailwind CSS, Three.js, WebGL and GLSL. Hosting: Linux, nginx and GitHub Actions; self-hosting, nginx configuration and practical basics in Git and Docker. Design and media: photography, graphic and web design, Lightroom, Photoshop, DaVinci Resolve, Canva and GIMP." />
 </picture>
 
 <a name="projects"></a>
@@ -50,9 +50,10 @@
 <a href="https://github.com/manu-brighter/shot-counter">
 <picture>
   <source media="(max-width: 600px)" srcset="assets/manual-mode/project-shot-counter-mobile.svg" />
-  <img src="assets/manual-mode/project-shot-counter.svg" width="100%" alt="Shot-Counter. Inactive. Live team shot counter with QR joining, synchronised phones and a shared screen, also packaged as a desktop app. Vue 3, Express, SQLite and Electron." />
+  <img src="assets/manual-mode/project-shot-counter.svg" width="100%" alt="Shot-Counter. Released, no longer updated. Complete Electron app for live team shot counting, QR joining and synchronised screens. Available for Windows and Linux. Vue 3, Express, SQLite and Electron." />
 </picture>
 </a>
+<p><a href="https://github.com/manu-brighter/shot-counter/releases/latest">Download Shot-Counter for Windows / Linux</a></p>
 <a href="https://github.com/manu-brighter/mercurius-quant-bot">
 <picture>
   <source media="(max-width: 600px)" srcset="assets/manual-mode/project-mercurius-mobile.svg" />
