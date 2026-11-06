@@ -37,8 +37,8 @@ python scripts/render-manual-mode.py --only activity
 
 The fetcher uses `GITHUB_TOKEN`, or an authenticated `gh` session locally. `--until YYYY-MM-DD` selects an exclusive UTC boundary for reproducible periods. A failed, private or incomplete response aborts without replacing the previous snapshot. No tokens, emails or commit messages enter the published JSON.
 
-`.github/workflows/profile-activity.yml` prepares a six-hour refresh at minute 17. It publishes only `activity.svg`, `activity-mobile.svg` and `activity.json` to `chore/profile-data`; the README references these independent images. The preview deliberately uses the local snapshot. GitHub may cache published images, and scheduled jobs can be delayed. The visible timestamp identifies the snapshot actually being shown.
+`.github/workflows/profile-activity.yml` runs a six-hour refresh at minute 17. It publishes only `activity.svg`, `activity-mobile.svg` and `activity.json` to `chore/profile-data`; the README references these independent images. The preview deliberately uses the local snapshot. GitHub may cache published images, and scheduled jobs can be delayed. The visible timestamp identifies the snapshot actually being shown.
 
-**While this workflow exists only on the feature branch, the schedule is inactive.** GitHub requires scheduled workflows on the default branch. The initial data branch is published separately; automation becomes active only after a separately authorised merge. No workflow step pushes to `main`, `master` or `develop`.
+GitHub runs the schedule from the default branch, `main`. A manual run of **Refresh public project activity** can refresh the published snapshot between scheduled runs. No workflow step pushes to `main`, `master` or `develop`.
 
 The profile intentionally uses its dark palette in both GitHub themes. The older contribution graphics workflow remains independent and is not embedded in this design.
