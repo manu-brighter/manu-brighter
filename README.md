@@ -67,7 +67,7 @@
 </a>
 
 <details>
-<summary>Inside Jogge di Balla: from service to kitchen and bar</summary>
+<summary><picture><source media="(max-width: 600px)" srcset="assets/manual-mode/disclosure-club-mobile.svg" /><img src="assets/manual-mode/disclosure-club.svg" height="54" align="middle" alt="Inside Jogge di Balla: from service to kitchen and bar" /></picture></summary>
 
 <a href="https://github.com/manu-brighter/joggediballa-mainpage">
 <picture>
@@ -102,7 +102,7 @@
 </picture>
 
 <details>
-<summary>A few personal defaults</summary>
+<summary><picture><source media="(max-width: 600px)" srcset="assets/manual-mode/disclosure-defaults-mobile.svg" /><img src="assets/manual-mode/disclosure-defaults.svg" height="54" align="middle" alt="A few personal defaults" /></picture></summary>
 <pre><code>[defaults]
 trailing_commas = always,
 curiosity = enabled
