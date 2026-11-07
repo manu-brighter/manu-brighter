@@ -64,9 +64,9 @@ class Typeface:
 
 
 class Canvas:
-    def __init__(self, name, mobile, title, description, fonts, artwork, columns=1):
+    def __init__(self, name, mobile, title, description, fonts, artwork, columns=1, width=None):
         self.name, self.mobile, self.fonts, self.artwork = name, mobile, fonts, artwork
-        self.width = 360 if mobile else 748
+        self.width = width if width is not None else (360 if mobile else 748)
         if columns > 1:
             self.width /= columns
         self.pad = 22 if mobile else 35
@@ -320,6 +320,21 @@ def link_label(c, label, position=0, color=ACCENT, compact=False):
     left = x - (width if position == 2 else width / 2 if position == 1 else 0)
     c.line(left, 29, left + width, 29, color)
     return 48
+
+
+DISCLOSURES = [
+    ("disclosure-club", "Inside Jogge di Balla", "From service to kitchen and bar"),
+    ("disclosure-defaults", "A few personal defaults", None),
+]
+
+
+def disclosure(c, label, subtitle=None):
+    # The native summary marker supplies the first part of the content inset.
+    x = 4 if c.mobile else 16
+    c.text(label, x, 21 if subtitle else 32, 14, ACCENT, True)
+    if subtitle:
+        c.text(subtitle, x, 42, 12, MUTED)
+    return 54
 
 
 def activity(c):
@@ -679,6 +694,7 @@ SECTIONS = [
     *[(name, label, f"Open {label}.", partial(link_label, label=label, position=position, color=color, compact=True)) for name, label, position, color in NAV_LINKS],
     ("download-shot-counter", "Download Shot-Counter", "Download the released Electron app for Windows or Linux.", partial(link_label, label="Download Shot-Counter for Windows / Linux")),
     ("view-photography", "View my photography", "Open my photography portfolio.", partial(link_label, label="View my photography")),
+    *[(name, label, "Toggle this section to read more.", partial(disclosure, label=label, subtitle=subtitle)) for name, label, subtitle in DISCLOSURES],
     ("stack", "Skills", "Backend, frontend, data, testing, AI workflows, AI-assisted project technologies, hosting and creative skills.", stack),
     ("projects", "Project overview", "All six personal projects in one linked overview, with purpose, technology and status.", projects),
     *[(f"project-{entry[0]}", entry[1], f"{entry[2]}. {entry[3]} {entry[4]}.", partial(project, entry=entry)) for entry in PROJECTS],
@@ -718,7 +734,8 @@ def main():
         if args.only and name != args.only:
             continue
         for mobile in (False, True):
-            canvas = Canvas(name, mobile, title, description, fonts, artwork, columns=3 if name in {link[0] for link in NAV_LINKS} else 1)
+            width = (240 if mobile else 310) if name in {item[0] for item in DISCLOSURES} else None
+            canvas = Canvas(name, mobile, title, description, fonts, artwork, columns=3 if name in {link[0] for link in NAV_LINKS} else 1, width=width)
             if name == "activity":
                 canvas.activity = json.loads(args.activity_data.read_text(encoding="utf-8"))
             canvas.save(render(canvas), args.output)
