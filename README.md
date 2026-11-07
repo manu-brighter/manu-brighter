@@ -101,17 +101,6 @@
   <img src="assets/manual-mode/history.svg" width="100%" alt="Life, versioned as a Git branch graph. A life spine branches into career, garage, photo and club, then merges at now. Small right-hand illustrations accompany selected milestones: a mining turtle for Minecraft and Lua, a checked certificate for the EFZ, a camera capturing its first picture, and a puzzled fly at a classroom desk. The classroom is a playful metaphor, not a learning result. Career: Novartis apprenticeship in 2016, EFZ in 2020, full-stack development in 2021, APIs and data sync in 2025, AI toolkit and attempts to teach a fly through connectome experiments in 2026, with learning still pending. Garage: KTM Duke 390 in 2019, Audi TT RS in 2023, S5 in 2024. Photo: Sony α7 IV in 2023, Costa Rica in 2024, The ICE in 2025. Club: co-founder of Jogge di Balla in 2022, platform live in 2026." />
 </picture>
 
-<details>
-<summary><picture><source media="(max-width: 600px)" srcset="assets/manual-mode/disclosure-defaults-mobile.svg" /><img src="assets/manual-mode/disclosure-defaults.svg" height="54" align="middle" alt="A few personal defaults" /></picture></summary>
-<pre><code>[defaults]
-trailing_commas = always,
-curiosity = enabled
-outside_the_editor = camera_or_s5
-
-[handle_with_care]
-legacy_encoding = ISO-8859-1</code></pre>
-</details>
-
 <picture>
   <source media="(max-width: 600px)" srcset="assets/manual-mode/footer-mobile.svg" />
   <img src="assets/manual-mode/footer.svg" width="100%" alt="Always something in development." />

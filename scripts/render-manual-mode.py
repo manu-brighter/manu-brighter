@@ -324,7 +324,6 @@ def link_label(c, label, position=0, color=ACCENT, compact=False):
 
 DISCLOSURES = [
     ("disclosure-club", "Inside Jogge di Balla", "From service to kitchen and bar"),
-    ("disclosure-defaults", "A few personal defaults", None),
 ]
 
 
