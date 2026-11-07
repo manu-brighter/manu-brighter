@@ -64,9 +64,11 @@ class Typeface:
 
 
 class Canvas:
-    def __init__(self, name, mobile, title, description, fonts, artwork):
+    def __init__(self, name, mobile, title, description, fonts, artwork, columns=1):
         self.name, self.mobile, self.fonts, self.artwork = name, mobile, fonts, artwork
         self.width = 360 if mobile else 748
+        if columns > 1:
+            self.width /= columns
         self.pad = 22 if mobile else 35
         self.inner = self.width - 2 * self.pad
         self.root = element("svg", id="manual-mode", width=self.width, role="img", aria_labelledby=f"{name}-title {name}-desc")
@@ -289,6 +291,35 @@ def hero(c):
     c.line(p, note - 5, p + 25, note - 5, ACCENT)
     c.text("Usually in manual mode.", p + 36, note, 14, MUTED)
     return 600 if c.mobile else 510
+
+
+def intro(c):
+    end = c.paragraph(
+        "I build web apps, APIs and tools, from club software to experiments. "
+        "Beyond code: design, photography, video and a lowered S5.",
+        c.pad, 19, c.inner, 14, 24,
+    )
+    return end + 8
+
+
+NAV_LINKS = [
+    ("nav-portfolio", "Portfolio", 0, ACCENT),
+    ("nav-photography", "Photography", 1, ACCENT),
+    ("nav-club", "Jogge di Balla", 2, ACCENT),
+    ("nav-skills", "Skills", 0, CYAN),
+    ("nav-projects", "All projects", 1, CYAN),
+    ("nav-activity", "GitHub activity", 2, CYAN),
+]
+
+
+def link_label(c, label, position=0, color=ACCENT, compact=False):
+    size = 13 if compact and c.mobile else 14
+    anchor = ("start", "middle", "end")[position]
+    x = (c.pad, c.width / 2, c.width - c.pad)[position]
+    width = c.text(label, x, 23, size, color, anchor=anchor)
+    left = x - (width if position == 2 else width / 2 if position == 1 else 0)
+    c.line(left, 29, left + width, 29, color)
+    return 48
 
 
 def activity(c):
@@ -644,6 +675,10 @@ def footer(c):
 
 SECTIONS = [
     ("hero", "Manuel Heller, full-stack developer", "A detailed animated camera accompanies Manuel's introduction.", hero),
+    ("intro", "About Manuel", "What I build and what I enjoy outside the editor.", intro),
+    *[(name, label, f"Open {label}.", partial(link_label, label=label, position=position, color=color, compact=True)) for name, label, position, color in NAV_LINKS],
+    ("download-shot-counter", "Download Shot-Counter", "Download the released Electron app for Windows or Linux.", partial(link_label, label="Download Shot-Counter for Windows / Linux")),
+    ("view-photography", "View my photography", "Open my photography portfolio.", partial(link_label, label="View my photography")),
     ("stack", "Skills", "Backend, frontend, data, testing, AI workflows, AI-assisted project technologies, hosting and creative skills.", stack),
     ("projects", "Project overview", "All six personal projects in one linked overview, with purpose, technology and status.", projects),
     *[(f"project-{entry[0]}", entry[1], f"{entry[2]}. {entry[3]} {entry[4]}.", partial(project, entry=entry)) for entry in PROJECTS],
@@ -683,7 +718,7 @@ def main():
         if args.only and name != args.only:
             continue
         for mobile in (False, True):
-            canvas = Canvas(name, mobile, title, description, fonts, artwork)
+            canvas = Canvas(name, mobile, title, description, fonts, artwork, columns=3 if name in {link[0] for link in NAV_LINKS} else 1)
             if name == "activity":
                 canvas.activity = json.loads(args.activity_data.read_text(encoding="utf-8"))
             canvas.save(render(canvas), args.output)

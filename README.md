@@ -3,11 +3,14 @@
   <img src="assets/manual-mode/hero.svg" width="100%" alt="Manuel Heller, full-stack developer from the Basel region, Switzerland. Code, design and photography. From club software to connectome experiments. Usually in manual mode. An illustrated camera opens and closes its aperture." />
 </picture>
 
-<p>I build <strong>web apps, APIs and tools</strong>, from club software to experiments. Beyond code: design, photography, video and a lowered S5.</p>
+<picture>
+  <source media="(max-width: 600px)" srcset="assets/manual-mode/intro-mobile.svg" />
+  <img src="assets/manual-mode/intro.svg" width="100%" alt="I build web apps, APIs and tools, from club software to experiments. Beyond code: design, photography, video and a lowered S5." />
+</picture>
 
-<p><a href="https://manuelheller.dev">Portfolio</a> · <a href="https://manuelheller.myportfolio.com">Photography</a> · <a href="https://joggediballa.ch">Jogge di Balla</a></p>
+<div align="left"><a href="https://manuelheller.dev"><picture><source media="(max-width: 600px)" srcset="assets/manual-mode/nav-portfolio-mobile.svg" /><img src="assets/manual-mode/nav-portfolio.svg" width="33.33%" alt="Portfolio" /></picture></a><a href="https://manuelheller.myportfolio.com"><picture><source media="(max-width: 600px)" srcset="assets/manual-mode/nav-photography-mobile.svg" /><img src="assets/manual-mode/nav-photography.svg" width="33.33%" alt="Photography" /></picture></a><a href="https://joggediballa.ch"><picture><source media="(max-width: 600px)" srcset="assets/manual-mode/nav-club-mobile.svg" /><img src="assets/manual-mode/nav-club.svg" width="33.33%" alt="Jogge di Balla" /></picture></a></div>
 
-<p><a href="#skills">Skills</a> · <a href="#projects">All projects</a> · <a href="#activity">GitHub activity</a></p>
+<div align="left"><a href="#skills"><picture><source media="(max-width: 600px)" srcset="assets/manual-mode/nav-skills-mobile.svg" /><img src="assets/manual-mode/nav-skills.svg" width="33.33%" alt="Skills" /></picture></a><a href="#projects"><picture><source media="(max-width: 600px)" srcset="assets/manual-mode/nav-projects-mobile.svg" /><img src="assets/manual-mode/nav-projects.svg" width="33.33%" alt="All projects" /></picture></a><a href="#activity"><picture><source media="(max-width: 600px)" srcset="assets/manual-mode/nav-activity-mobile.svg" /><img src="assets/manual-mode/nav-activity.svg" width="33.33%" alt="GitHub activity" /></picture></a></div>
 
 <a name="skills"></a>
 
@@ -53,7 +56,9 @@
   <img src="assets/manual-mode/project-shot-counter.svg" width="100%" alt="Shot-Counter. Released, no longer updated. Complete Electron app for live team shot counting, QR joining and synchronised screens. Available for Windows and Linux. Vue 3, Express, SQLite and Electron." />
 </picture>
 </a>
-<p><a href="https://github.com/manu-brighter/shot-counter/releases/latest">Download Shot-Counter for Windows / Linux</a></p>
+<a href="https://github.com/manu-brighter/shot-counter/releases/latest">
+<picture><source media="(max-width: 600px)" srcset="assets/manual-mode/download-shot-counter-mobile.svg" /><img src="assets/manual-mode/download-shot-counter.svg" width="100%" alt="Download Shot-Counter for Windows / Linux" /></picture>
+</a>
 <a href="https://github.com/manu-brighter/mercurius-quant-bot">
 <picture>
   <source media="(max-width: 600px)" srcset="assets/manual-mode/project-mercurius-mobile.svg" />
@@ -87,7 +92,9 @@
   <img src="assets/manual-mode/garage.svg" width="100%" alt="After the editor. My lowered black Audi S5 B8.5 in a right-facing side profile, polished 20-inch two-piece split-Y wheels, slim tyres and a boot-lip spoiler. Light follows the body and polished wheels, with the B8.5 daytime-running-light contour glowing. Photography: cars at The ICE and wildlife in Costa Rica, with a Sony α7 IV. Edited in Lightroom, Photoshop and DaVinci Resolve." />
 </picture>
 
-<p><a href="https://manuelheller.myportfolio.com">View my photography</a></p>
+<a href="https://manuelheller.myportfolio.com">
+<picture><source media="(max-width: 600px)" srcset="assets/manual-mode/view-photography-mobile.svg" /><img src="assets/manual-mode/view-photography.svg" width="100%" alt="View my photography" /></picture>
+</a>
 
 <picture>
   <source media="(max-width: 600px)" srcset="assets/manual-mode/history-mobile.svg" />
